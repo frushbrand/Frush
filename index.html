@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frush | AI Brand Content Partner</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+    
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#064E3B',   // Deep Green
+                            main: '#10B981',   // Emerald 500
+                            light: '#ECFDF5',  // Emerald 50
+                            accent: '#F59E0B', // Amber 500
+                            text: '#1F2937'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', 'sans-serif'],
+                    },
+                    keyframes: {
+                        scroll: {
+                            '0%': { transform: 'translateX(0)' },
+                            '100%': { transform: 'translateX(-50%)' }, /* 요소 전체 길이의 절반만큼 이동 후 리셋 */
+                        }
+                    },
+                    animation: {
+                        scroll: 'scroll 20s linear infinite', /* 20초 동안 무한 반복 */
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* 기본 설정 */
+        body {
+            font-family: 'Pretendard', sans-serif;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
+            word-break: keep-all; /* 한글 단어 단위 줄바꿈 (가독성 향상) */
+            word-wrap: break-word;
+        }
+
+        /* 텍스트 줄바꿈 강제 적용 (URL 등 긴 단어 대응) */
+        .break-word-all {
+            word-break: break-all;
+        }
+
+        /* 스크롤바 커스텀 */
+        ::-webkit-scrollbar { width: 0.5rem; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 0.25rem; }
+        ::-webkit-scrollbar-thumb:hover { background: #064E3B; }
+
+        /* 비디오 스타일 */
+        video {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 소셜 바 (플로팅) - px 대신 rem 사용 */
+        .social-bar {
+            position: fixed;
+            left: 1.25rem; /* 20px */
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 50;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        .social-icon {
+            width: 3.125rem; /* 50px */
+            height: 3.125rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0.25rem 0.375rem rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            font-size: 1.5rem;
+            color: #333;
+            border: 0.125rem solid transparent;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+            border-color: #10B981;
+            color: #10B981;
+        }
+
+        /* 모바일 소셜 바 */
+        @media (max-width: 768px) {
+            .social-bar {
+                flex-direction: row;
+                left: 50%;
+                top: auto;
+                bottom: 1.25rem;
+                transform: translateX(-50%);
+                background: rgba(255,255,255,0.95);
+                padding: 0.5rem 1.25rem;
+                border-radius: 9999px;
+                backdrop-filter: blur(5px);
+                box-shadow: 0 -0.3rem 1.25rem rgba(0,0,0,0.15);
+                gap: 1.25rem;
+            }
+            .social-icon {
+                width: 2.5rem;
+                height: 2.5rem;
+                font-size: 1.25rem;
+                box-shadow: none;
+                background: transparent;
+            }
+        }
+
+        /* 파트너사 로고 슬라이더 트랙 */
+        .slider-track {
+            display: flex;
+            width: max-content; /* 내용물만큼 너비 확보 */
+        }
+        
+        /* 로고 개별 스타일 */
+        .partner-logo-item {
+            width: 10rem; /* 160px */
+            margin: 0 2rem;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .partner-logo-item img {
+            max-width: 100%;
+            max-height: 5rem;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        .partner-logo-item img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="text-gray-800 bg-white">
+
+    <nav class="fixed w-full z-40 top-0 left-0 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 md:h-20">
+                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
+                    <img src="Frush_v2.png" alt="Frush" class="h-8 md:h-10 w-auto"> 
+                </div>
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-6 xl:space-x-8">
+                        <a href="#home" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
+                        <a href="#problems" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Why Frush</a>
+                        <a href="#process" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Process</a>
+                        <a href="#pricing" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Pricing</a>
+                        <a href="#portfolio" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Portfolio</a>
+                        <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="bg-brand-main text-white px-5 py-2 rounded-full font-bold hover:bg-brand-dark transition shadow-lg transform hover:-translate-y-0.5 text-sm">문의하기</a>
+                    </div>
+                </div>
+                <div class="-mr-2 flex lg:hidden">
+                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-main focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="lg:hidden hidden bg-white border-t absolute w-full" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center shadow-lg">
+                <a href="#home" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#problems" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-2 rounded-md text-base font-medium">Why Frush</a>
+                <a href="#process" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-2 rounded-md text-base font-medium">Process</a>
+                <a href="#pricing" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-2 rounded-md text-base font-medium">Pricing</a>
+                <a href="#portfolio" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-2 rounded-md text-base font-medium">Portfolio</a>
+                <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="text-brand-main font-bold block px-3 py-2 rounded-md text-base mt-4">문의하기</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="social-bar">
+        <a href="https://instagram.com" target="_blank" class="social-icon" aria-label="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://kmong.com" target="_blank" class="social-icon" aria-label="Kmong">
+            <span class="font-bold text-sm">Km</span>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon" aria-label="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+    </div>
+
+    <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
+                브라우저가 비디오를 지원하지 않습니다.
+            </video>
+            <div class="absolute inset-0 bg-black/60"></div>
+        </div>
+
+        <div class="container mx-auto px-4 md:px-6 relative z-10 text-center flex flex-col items-center justify-center h-full pt-20" data-aos="zoom-in" data-aos-duration="1000">
+            
+            <div class="mb-8 animate-pulse">
+                <span class="bg-red-600 text-white text-sm md:text-xl font-black px-6 py-2 rounded-full shadow-[0_0_20px_rgba(220,38,38,0.7)] uppercase tracking-wider border-2 border-red-400">
+                    🔥 누적 조회수 4,000만+ 돌파
+                </span>
+            </div>
+
+            <span class="inline-block py-1 px-4 rounded-full bg-brand-main text-white text-xs md:text-sm font-bold mb-6 tracking-widest uppercase shadow-lg">
+                AI Brand Content Startup
+            </span>
+            
+            <div class="mb-6 md:mb-8 w-32 md:w-56">
+                <img src="Frush_v2.png" alt="Frush Logo" class="w-full h-auto object-contain mx-auto filter drop-shadow-2xl brightness-0 invert">
+            </div>
+            
+            <h1 class="text-3xl md:text-6xl lg:text-7xl font-light text-green-50 mb-8 leading-tight break-keep">
+                죽어있는 매장의 스크린,<br>
+                <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-main to-brand-light">가장 강력한 마케팅 채널</span>로 깨우다.
+            </h1>
+            
+            <div class="mt-8 md:mt-16 animate-bounce">
+                <a href="#problems" class="text-white opacity-70 hover:opacity-100 transition p-4">
+                    <i class="fas fa-chevron-down text-2xl md:text-4xl"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="problems" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="bg-gray-50 rounded-3xl md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col lg:flex-row" data-aos="fade-up">
+                <div class="lg:w-5/12 p-8 md:p-16 flex flex-col justify-center">
+                    <h2 class="text-2xl md:text-4xl lg:text-5xl font-bold mb-6 text-brand-text leading-tight">
+                        아직도 매장에<br>
+                        <span class="text-red-500 underline decoration-4 decoration-red-200">뉴스</span>만 틀어놓으셨나요?
+                    </h2>
+                    <p class="text-gray-600 text-base md:text-xl mb-8 leading-relaxed">
+                        고객이 매장에 머무는 시간은 브랜드를 각인시킬 <strong class="bg-yellow-100 px-1">골든타임</strong>입니다.
+                        하지만 대부분의 매장 스크린은 의미 없는 방송과 빈 화면으로 방치되고 있습니다.
+                    </p>
+                    <div class="bg-white p-6 rounded-2xl border-l-8 border-brand-main shadow-lg">
+                        <p class="font-bold text-brand-dark text-lg md:text-xl">"공간도 마케팅입니다.<br>스크린을 귀사의 광고판으로 바꾸세요."</p>
+                    </div>
+                </div>
+                <div class="lg:w-7/12 bg-gray-200 relative min-h-[300px] md:min-h-[500px]">
+                    <img src="프러쉬매장.png" alt="매장 스크린 활용 예시" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
+                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                        <span class="text-white text-xl md:text-4xl font-bold border-4 border-white px-6 md:px-10 py-3 md:py-4 backdrop-blur-sm text-center">Branded Space<br class="md:hidden"> Transformation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-light">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold text-brand-dark mb-4">기술보다 중요한 건 <span class="text-brand-main">일관된 메시지</span></h2>
+                <p class="text-gray-600 text-base md:text-lg">복잡한 기술 없이도 소비자의 뇌리에 박힌 성공 사례들입니다.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10">
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg hover:-translate-y-2 transition duration-500" data-aos="fade-right">
+                    <div class="flex items-center mb-6">
+                        <span class="text-5xl md:text-6xl mr-6">🥩</span>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold">명륜진사갈비</h3>
+                            <span class="text-sm md:text-base text-brand-main font-bold uppercase tracking-wider">Sonic Branding</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-base md:text-lg">"무한으로 즐겨요~"<br>
+                    로고송 하나가 전국민에게 각인되었습니다. <strong>청각 브랜딩의 승리</strong>입니다.</p>
+                </div>
+                <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg hover:-translate-y-2 transition duration-500" data-aos="fade-left">
+                    <div class="flex items-center mb-6">
+                        <span class="text-5xl md:text-6xl mr-6">🛒</span>
+                        <div>
+                            <h3 class="text-xl md:text-2xl font-bold">노브랜드</h3>
+                            <span class="text-sm md:text-base text-brand-accent font-bold uppercase tracking-wider">Consistent Identity</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-base md:text-lg">화려함 대신 본질에 집중했습니다. <strong>일관된 톤앤매너</strong>가 강력한 팬덤을 구축했습니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="bg-gray-900 rounded-3xl md:rounded-[3rem] p-8 md:p-16 text-white shadow-2xl">
+                <h2 class="text-2xl md:text-4xl font-bold mb-10 text-center" data-aos="fade-up">하지만 현실적인 고민이 있으시죠?</h2>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+                    <div class="grid grid-cols-1 gap-4" data-aos="fade-right">
+                        <div class="bg-white/5 p-5 md:p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start">
+                            <span class="text-2xl md:text-3xl mr-4 md:mr-5">💸</span>
+                            <div>
+                                <h3 class="font-bold text-white text-base md:text-lg mb-1">기존 영상 외주</h3>
+                                <p class="text-gray-400 text-sm md:text-base">건당 수백만원, TV용이라 매장 재생 부적합</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-5 md:p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start">
+                            <span class="text-2xl md:text-3xl mr-4 md:mr-5">🏆</span>
+                            <div>
+                                <h3 class="font-bold text-white text-base md:text-lg mb-1">영상 광고 공모전</h3>
+                                <p class="text-gray-400 text-sm md:text-base">최소 500만원+ 소요, 톤앤매너 붕괴 위험</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-5 md:p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start">
+                            <span class="text-2xl md:text-3xl mr-4 md:mr-5">👥</span>
+                            <div>
+                                <h3 class="font-bold text-white text-base md:text-lg mb-1">디자인팀 고용</h3>
+                                <p class="text-gray-400 text-sm md:text-base">지속적 일감 부족, 인건비 및 관리 부담</p>
+                            </div>
+                        </div>
+                        <div class="bg-white/5 p-5 md:p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start">
+                            <span class="text-2xl md:text-3xl mr-4 md:mr-5">⏳</span>
+                            <div>
+                                <h3 class="font-bold text-white text-base md:text-lg mb-1">임원 직접 제작</h3>
+                                <p class="text-gray-400 text-sm md:text-base">툴 구독료 + 본업 소홀로 인한 막대한 기회비용</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 md:p-10 rounded-3xl text-gray-800 h-full flex flex-col justify-center shadow-lg min-h-[300px]" data-aos="fade-left">
+                        <h3 class="text-center font-bold text-lg md:text-xl mb-6">제작 비용 비교 (단위: 만원)</h3>
+                        <div class="relative w-full h-[300px]"> <canvas id="costChart"></canvas>
+                        </div>
+                        <p class="text-center text-xs md:text-sm text-gray-500 mt-6 bg-gray-100 py-2 rounded-full">
+                            * 외주/고용 대비 <span class="text-brand-main font-bold">50% 이상 절감</span> 효과
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="mt-12 text-center" data-aos="zoom-in">
+                    <span class="inline-block border-2 border-brand-main text-brand-main px-6 py-3 rounded-full font-bold text-base md:text-lg animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.5)]">
+                        "Frush는 이 모든 비효율을 해결하기 위해 탄생했습니다."
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 md:mb-16" data-aos="fade-up">압도적인 퍼포먼스 차이</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center bg-white p-8 md:p-16 rounded-3xl md:rounded-[3rem] shadow-xl border border-gray-100" data-aos="fade-up">
+                <div class="w-full min-h-[250px]">
+                    <h3 class="text-center font-bold text-gray-700 mb-6 text-lg md:text-xl">제작 소요 기간 (단위: 주)</h3>
+                    <div class="relative w-full h-[250px]">
+                        <canvas id="timeChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="space-y-6 md:space-y-8">
+                    <div class="bg-brand-light p-6 md:p-8 rounded-2xl shadow-sm border-l-8 border-brand-main">
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">⏱ 제작 기간 50% 단축</h3>
+                        <p class="text-gray-700 text-base md:text-lg">
+                            기존 4주 이상 걸리던 과정을 <strong>2주 이내</strong>로 끝냅니다.
+                            빠르게 변하는 시장 트렌드에 즉각 반응할 수 있습니다.
+                        </p>
+                    </div>
+                    <div class="bg-brand-light p-6 md:p-8 rounded-2xl shadow-sm border-l-8 border-brand-main">
+                        <h3 class="text-xl md:text-2xl font-bold text-brand-dark mb-3">💰 비용 가성비 극대화</h3>
+                        <p class="text-gray-700 text-base md:text-lg">
+                            촬영장, 모델, 스튜디오가 필요 없습니다.
+                            불필요한 거품을 뺀 가격으로 고퀄리티 결과물을 제공합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-down">
+                <span class="bg-brand-main text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-4 inline-block shadow-lg">Science of Video Marketing</span>
+                <h2 class="text-2xl md:text-5xl font-bold mb-4 md:mb-6 keep-all">왜 <span class="text-brand-main">영상 콘텐츠</span>여야 할까요?</h2>
+                <p class="text-gray-400 text-base md:text-xl keep-all">단순한 트렌드가 아닙니다. <strong>뇌과학과 통계</strong>가 증명하는 생존 전략입니다.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-gray-800/80 p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-brand-main transition-all duration-300 hover:-translate-y-2 group" data-aos="flip-left" data-aos-delay="0">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-3xl md:text-4xl">🧠</div>
+                        <div class="text-xs text-brand-main font-bold border border-brand-main px-2 py-1 rounded">Insivia</div>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-brand-main transition">95<span class="text-2xl text-brand-main">%</span></div>
+                    <h3 class="font-bold text-gray-200 text-lg md:text-xl mb-4">메시지 기억률</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6 keep-all">
+                        텍스트(10%) 대비 9.5배의 각인 효과. <strong>'이중 부호화 이론'</strong>에 따르면 시각과 청각을 동시 자극 시 장기 기억으로 저장합니다.
+                    </p>
+                </div>
+                <div class="bg-gray-800/80 p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-brand-accent transition-all duration-300 hover:-translate-y-2 group" data-aos="flip-left" data-aos-delay="100">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-3xl md:text-4xl">🛒</div>
+                        <div class="text-xs text-brand-accent font-bold border border-brand-accent px-2 py-1 rounded text-brand-accent">EyeView</div>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-brand-accent transition">80<span class="text-2xl text-brand-accent">%</span></div>
+                    <h3 class="font-bold text-gray-200 text-lg md:text-xl mb-4">구매 전환 상승</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6 keep-all">
+                        <strong>'거울 뉴런'</strong> 효과로 소비자는 영상을 통해 제품을 대리 체험하며, 이는 불확실성을 제거하고 구매 욕구를 자극합니다.
+                    </p>
+                </div>
+                <div class="bg-gray-800/80 p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-2 group" data-aos="flip-left" data-aos-delay="200">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-3xl md:text-4xl">👀</div>
+                        <div class="text-xs text-blue-400 font-bold border border-blue-400 px-2 py-1 rounded text-blue-400">Mist Media</div>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-blue-400 transition">88<span class="text-2xl text-blue-400">%</span></div>
+                    <h3 class="font-bold text-gray-200 text-lg md:text-xl mb-4">체류 시간 증가</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6 keep-all">
+                        영상은 <strong>선형적 소비</strong>를 유도합니다. 체류 시간 증가는 구글 SEO 점수 상승과 상위 노출로 직결됩니다.
+                    </p>
+                </div>
+                <div class="bg-gray-800/80 p-6 md:p-8 rounded-3xl border border-gray-700 hover:border-purple-400 transition-all duration-300 hover:-translate-y-2 group" data-aos="flip-left" data-aos-delay="300">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="text-3xl md:text-4xl">🚀</div>
+                        <div class="text-xs text-purple-400 font-bold border border-purple-400 px-2 py-1 rounded text-purple-400">SmallBiz</div>
+                    </div>
+                    <div class="text-4xl md:text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-purple-400 transition">12<span class="text-2xl text-purple-400">배</span></div>
+                    <h3 class="font-bold text-gray-200 text-lg md:text-xl mb-4">공유 확산도</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed mb-6 keep-all">
+                        이미지 대비 1200% 더 많이 공유됩니다. 감정을 즉각적으로 전이시키는 <strong>'사회적 화폐'</strong>로 작용합니다.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="mt-12 md:mt-16 text-center" data-aos="fade-up">
+                 <p class="text-lg md:text-2xl text-gray-300 font-light italic keep-all">"2025년, 영상은 선택이 아니라 <span class="text-brand-main font-bold">생존의 필수 조건</span>입니다."</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-4" data-aos="fade-up">이미 대기업들은 시작했습니다</h2>
+            <p class="text-center text-red-500 font-bold mb-10 md:mb-16 animate-bounce text-base md:text-lg">"남들도 다 하는데, 우리 브랜드만 뒤처질 수는 없습니다."</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 mb-6">
+                <div class="relative rounded-3xl overflow-hidden group shadow-2xl aspect-video border-4 border-gray-100" data-aos="zoom-in" data-aos-delay="0">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                        <source src="https://videos.pexels.com/video-files/3195394/3195394-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent p-6 md:p-8 text-white">
+                        <h3 class="text-xl md:text-2xl font-bold mb-1">LG 유플러스 '익시'</h3>
+                        <p class="text-xs md:text-sm opacity-90">100% 생성형 AI 광고로 MZ세대 타겟팅 성공</p>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden group shadow-2xl aspect-video border-4 border-gray-100" data-aos="zoom-in" data-aos-delay="200">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
+                        <source src="https://videos.pexels.com/video-files/5854673/5854673-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent p-6 md:p-8 text-white">
+                        <h3 class="text-xl md:text-2xl font-bold mb-1">서울우유 '박은빈'</h3>
+                        <p class="text-xs md:text-sm opacity-90">AI 기술로 배우 대체 및 화제성 확보</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-4xl font-bold text-center text-brand-text mb-4" data-aos="fade-up">Frush 작업 프로세스</h2>
+            <div class="flex justify-center items-center mb-10 md:mb-16" data-aos="fade-up">
+                <span class="bg-brand-main text-white px-6 md:px-8 py-2 rounded-full text-base md:text-lg font-bold shadow-lg">Total: 2주 내외 소요</span>
+            </div>
+            
+            <div class="relative py-6 md:py-10">
+                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -z-0 transform -translate-y-1/2 rounded-full"></div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative z-10">
+                    <div class="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="0">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-gray-800 text-white rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-xl md:text-2xl font-bold shadow-lg">1</div>
+                        <h3 class="font-bold text-lg md:text-xl mb-3">브랜드/컨셉 회의</h3>
+                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 3일</p>
+                        <p class="text-sm md:text-base text-gray-600">구글 설문 & 미팅</p>
+                    </div>
+                    <div class="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white border-2 border-brand-main text-brand-main rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-xl md:text-2xl font-bold shadow-lg">2</div>
+                        <h3 class="font-bold text-lg md:text-xl mb-3">기획 & 디자인</h3>
+                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 1주</p>
+                        <p class="text-sm md:text-base text-gray-600">키 이미지 & 스토리보드</p>
+                    </div>
+                    <div class="bg-white border border-gray-100 p-6 md:p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white border-2 border-brand-main text-brand-main rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-xl md:text-2xl font-bold shadow-lg">3</div>
+                        <h3 class="font-bold text-lg md:text-xl mb-3">영상 제작</h3>
+                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 1주</p>
+                        <p class="text-sm md:text-base text-gray-600">AI 영상/모션/음향</p>
+                    </div>
+                    <div class="bg-brand-main text-white p-6 md:p-8 rounded-2xl shadow-lg text-center transform scale-100 lg:scale-105" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-14 h-14 md:w-16 md:h-16 bg-white text-brand-main rounded-full flex items-center justify-center mx-auto mb-4 md:mb-6 text-xl md:text-2xl font-bold shadow-lg">4</div>
+                        <h3 class="font-bold text-lg md:text-xl mb-3">최종 납품</h3>
+                        <p class="text-xs text-green-100 mb-2 font-bold">즉시 사용 가능</p>
+                        <p class="text-sm md:text-base text-white">파일 전달 & 가이드</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-2xl md:text-5xl font-bold text-center text-brand-text mb-4" data-aos="fade-up">합리적인 제작 플랜</h2>
+            <p class="text-center text-gray-500 mb-10 md:mb-16 text-base md:text-lg" data-aos="fade-up">매장 상황에 딱 맞는 패키지를 선택하세요. (VAT 별도)</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 items-stretch max-w-6xl mx-auto">
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-sm border border-gray-200 flex flex-col hover:shadow-xl transition" data-aos="fade-up">
+                    <h3 class="text-lg md:text-xl font-bold text-gray-500 mb-2">단건 제작 (Single)</h3>
+                    <div class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">120만원</div>
+                    <div class="border-t border-gray-100 mb-6"></div>
+                    <ul class="text-sm md:text-base text-gray-600 space-y-4 mb-8 flex-grow">
+                        <li>• AI 광고 영상 1건</li>
+                        <li>• 수정 2회 포함</li>
+                        <li>• 송출 가이드 제공</li>
+                    </ul>
+                    <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="w-full py-4 border border-gray-300 rounded-xl text-center text-gray-500 hover:bg-gray-50 transition font-bold">선택하기</a>
+                </div>
+
+                <div class="bg-white p-6 md:p-8 rounded-3xl shadow-2xl relative transform md:-translate-y-4 border-2 border-brand-main flex flex-col z-10" data-aos="fade-up" data-aos-delay="100">
+                    <div class="absolute top-0 right-0 bg-brand-light text-brand-dark text-xs px-4 py-1.5 rounded-bl-xl font-bold">추천 (초기 매장)</div>
+                    <h3 class="text-lg md:text-xl font-bold text-brand-dark mb-2">실속 세트 (Set)</h3>
+                    <div class="text-3xl md:text-4xl font-bold text-brand-dark mb-2">140만원</div>
+                    <p class="text-xs md:text-sm text-gray-500 mb-6">개별 구매 시 <span class="line-through">170만원</span> 상당</p>
+                    <div class="border-t border-gray-100 mb-6"></div>
+                    <ul class="text-sm md:text-base text-gray-600 space-y-4 mb-8 flex-grow">
+                        <li class="flex items-center"><span class="text-brand-main mr-3 text-lg">✔</span> <strong>영상 1건 + 이미지 1건</strong></li>
+                        <li class="flex items-center"><span class="text-brand-main mr-3 text-lg">✔</span> <strong>브랜드 로고송 1개</strong></li>
+                        <li class="flex items-center"><span class="text-brand-main mr-3 text-lg">✔</span> 수정 2회 포함</li>
+                        <li class="flex items-center"><span class="text-brand-main mr-3 text-lg">✔</span> 송출 가이드 제공</li>
+                    </ul>
+                    <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="w-full py-4 bg-brand-main text-white text-center font-bold rounded-xl hover:bg-green-600 transition shadow-lg ring-4 ring-green-100">선택하기</a>
+                </div>
+
+                <div class="bg-brand-dark p-6 md:p-8 rounded-3xl shadow-2xl border-2 border-brand-accent relative text-white transform md:-translate-y-8 flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-brand-accent text-white text-xs px-8 py-1.5 rounded-b-xl font-bold shadow-md w-max">BEST VALUE</div>
+                    <h3 class="text-lg md:text-xl font-bold text-brand-light mb-2 mt-4">매장 재생용 풀 패키지</h3>
+                    <div class="flex items-center mb-2">
+                        <span class="line-through text-gray-400 text-lg md:text-xl mr-3">480만원</span>
+                        <span class="text-brand-accent text-xl md:text-2xl mr-3">➡</span>
+                        <span class="text-3xl md:text-4xl font-bold text-white">400만원</span>
+                    </div>
+                    <p class="text-xs md:text-sm text-brand-main mb-6">다지점 관리 / 브랜드 강화 최적화</p>
+                    <div class="border-t border-brand-main opacity-30 mb-6"></div>
+                    <div class="bg-white/10 p-5 rounded-xl mb-6 text-sm flex-grow backdrop-blur-sm">
+                        <p class="font-bold text-brand-accent mb-3 text-base">[풍성한 구성]</p>
+                        <ul class="space-y-2 text-gray-100 text-xs md:text-sm">
+                            <li>🎬 메인 영상 3건</li>
+                            <li>⚡ 10초 숏 영상 3건 (메인 상품)</li>
+                            <li>🎨 브랜드 이미지 3건</li>
+                            <li>🎵 로고송 1개</li>
+                        </ul>
+                    </div>
+                    <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="w-full py-4 bg-brand-main text-white text-center font-bold rounded-xl hover:bg-brand-accent transition shadow-lg">선택하기</a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center bg-gray-100 p-4 rounded-xl text-xs md:text-sm text-gray-500 max-w-4xl mx-auto">
+                <span class="font-bold text-red-500">환불 규정:</span> 결제 후 7일 이내 100% 환불 가능합니다. (단, 작업 진행 단계에 따라 차등 공제될 수 있습니다.)
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl md:text-5xl font-bold mb-10 md:mb-16 text-center text-brand-text" data-aos="fade-up">Frush Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+                <div class="aspect-[9/16] md:aspect-video lg:aspect-[9/16] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
+                        <source src="https://videos.pexels.com/video-files/4114799/4114799-hd_1080_1920_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">F&B 시즐 영상</span>
+                    </div>
+                </div>
+                <div class="aspect-[9/16] md:aspect-video lg:aspect-[9/16] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="100">
+                     <video autoplay muted loop playsinline class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
+                        <source src="https://videos.pexels.com/video-files/5091624/5091624-hd_1080_1920_24fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">브랜드 로고송</span>
+                    </div>
+                </div>
+                <div class="aspect-[9/16] md:aspect-video lg:aspect-[9/16] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
+                     <video autoplay muted loop playsinline class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
+                        <source src="https://videos.pexels.com/video-files/6963744/6963744-hd_1080_1920_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">시즌 메뉴 포스터</span>
+                    </div>
+                </div>
+                <div class="aspect-[9/16] md:aspect-video lg:aspect-[9/16] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
+                     <video autoplay muted loop playsinline class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
+                        <source src="https://videos.pexels.com/video-files/3205634/3205634-hd_1080_1920_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">SNS 숏폼 광고</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="bg-white py-8 border-t border-gray-100 overflow-hidden relative">
+        <div class="container mx-auto px-4 mb-8 text-center">
+            <h3 class="text-center text-gray-400 font-bold uppercase tracking-widest text-lg md:text-xl">Trusted Partners</h3>
+        </div>
+        <div class="w-full flex overflow-hidden">
+            <div class="slider-track animate-scroll hover:[animation-play-state:paused]">
+                <div class="flex">
+                    <div class="partner-logo-item"><img src="그린비전 로고.png" alt="그린비전"></div>
+                    <div class="partner-logo-item"><img src="하진이네 로고.jpg" alt="하진이네"></div>
+                    <div class="partner-logo-item"><img src="농촌감성 로고.jpg" alt="농촌감성"></div>
+                    <div class="partner-logo-item"><img src="노이다 로고.png" alt="노이다"></div>
+                    <div class="partner-logo-item"><img src="https://placehold.co/150x50/eee/999?text=Partner+E" alt="Partner E"></div>
+                    <div class="partner-logo-item"><img src="https://placehold.co/150x50/eee/999?text=Partner+F" alt="Partner F"></div>
+                </div>
+                <div class="flex">
+                    <div class="partner-logo-item"><img src="그린비전 로고.png" alt="그린비전"></div>
+                    <div class="partner-logo-item"><img src="하진이네 로고.jpg" alt="하진이네"></div>
+                    <div class="partner-logo-item"><img src="농촌감성 로고.jpg" alt="농촌감성"></div>
+                    <div class="partner-logo-item"><img src="노이다 로고.png" alt="노이다"></div>
+                    <div class="partner-logo-item"><img src="https://placehold.co/150x50/eee/999?text=Partner+E" alt="Partner E"></div>
+                    <div class="partner-logo-item"><img src="https://placehold.co/150x50/eee/999?text=Partner+F" alt="Partner F"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="py-16 md:py-24 bg-gray-900 text-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <h2 class="text-3xl font-bold text-center mb-16">About Frush</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16">
+                <div class="bg-gray-800 p-8 md:p-10 rounded-3xl flex flex-col items-center text-center shadow-xl border border-gray-700" data-aos="fade-right">
+                    <div class="w-32 h-32 md:w-40 md:h-40 rounded-full mb-8 overflow-hidden border-4 border-brand-main bg-gray-100 shadow-lg">
+                         <img src="서보훈_v1.jpg" alt="서보훈 대표" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <h3 class="text-2xl md:text-3xl font-bold mb-3">서보훈 <span class="text-base md:text-lg font-normal text-gray-400 block sm:inline">CEO & Founder</span></h3>
+                    <p class="text-brand-main font-bold mb-6 text-base md:text-lg">서울대학교 농업생명과학대학 졸업</p>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-8 keep-all">
+                        "현장에서의 데이터 분석 경험과 브랜딩 노하우를 결합하여 가장 합리적이고 효과적인 AI 콘텐츠 솔루션을 제공합니다."
+                    </p>
+                    <div class="text-left w-full bg-gray-700/50 p-6 rounded-2xl text-sm space-y-3">
+                        <p class="font-bold text-gray-200 border-b border-gray-600 pb-2 mb-2 text-base">History & Experience</p>
+                        <p>• 2023 Tridge Data & Intelligence 인턴</p>
+                        <p>• 2022 우야지막창 동대구역점 점장</p>
+                        <p class="text-gray-400 italic mt-2">
+                            - The Role of Public Food Delivery... (1저자)<br>
+                            - Smart Agriculture... (1저자)
+                        </p>
+                    </div>
+                </div>
+
+                <div class="space-y-8 flex flex-col justify-center" data-aos="fade-left">
+                    <div class="bg-gray-800 p-8 md:p-10 rounded-3xl border-l-8 border-brand-main shadow-xl">
+                        <h3 class="text-xl font-bold mb-4 text-gray-400">Company Vision</h3>
+                        <p class="text-2xl sm:text-3xl text-white font-bold mb-6 keep-all">"소비자에게 도달하는<br> 가장 완벽한 방식"</p>
+                        <ul class="space-y-3 text-gray-300 text-lg">
+                            <li><span class="font-bold text-white">설립일:</span> 2025년 3월 24일</li>
+                            <li><span class="font-bold text-white">26년 목표:</span></li>
+                            <li class="pl-4 text-brand-main flex items-center"><i class="fas fa-check mr-2"></i> 법인 사업자 전환</li>
+                            <li class="pl-4 text-brand-main flex items-center"><i class="fas fa-check mr-2"></i> 브랜드 광고 송출 시스템 구축</li>
+                        </ul>
+                    </div>
+                    <div class="bg-brand-dark p-8 md:p-10 rounded-3xl relative overflow-hidden shadow-xl border border-gray-700">
+                        <div class="absolute top-0 right-0 p-6 opacity-10 text-8xl">🏆</div>
+                        <h3 class="text-xl font-bold mb-6 text-white">Awards & Recognition</h3>
+                        <ul class="space-y-4 text-brand-light text-base md:text-lg">
+                            <li class="flex items-start"><span class="mr-4 text-2xl">🥇</span> 2025 농림축산식품부 장관상 수상</li>
+                            <li class="flex items-start"><span class="mr-4 text-2xl">🏆</span> 2024 서울대학교 CALS 창업경진대회 대상</li>
+                            <li class="flex items-start"><span class="mr-4 text-2xl">🌱</span> 2024 NH 애그테크 청년 창업 캠퍼스 SEED 우수상</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">Frush Brand Content Partner</h2>
+                <div class="inline-block bg-gray-50 p-4 md:p-6 rounded-r-2xl border-l-8 border-brand-main shadow-sm">
+                    <p class="text-gray-600 text-base md:text-xl keep-all">
+                        "우리는 영상 스튜디오가 아닙니다.<br>
+                        <strong>브랜드를 소비자에게 가장 잘 전달하는 파트너</strong>입니다."
+                    </p>
+                </div>
+            </div>
+            <div class="flex flex-col md:flex-row gap-8 items-stretch justify-center">
+                <div class="md:w-5/12 bg-white border border-gray-200 rounded-3xl p-8 relative shadow-xl z-10" data-aos="fade-right">
+                    <div class="bg-gray-800 text-white px-5 py-1.5 rounded-full text-sm font-bold inline-block mb-6 md:mb-8">NOW</div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-text mb-6 keep-all">명확한 타겟 콘텐츠 제작</h3>
+                    <ul class="text-left space-y-4 md:space-y-6 text-base md:text-lg">
+                        <li class="flex items-start"><span class="mr-4 text-2xl">🎯</span> <span>소비자 심리를 파고드는 기획</span></li>
+                        <li class="flex items-start"><span class="mr-4 text-2xl">🚀</span> <span>빠르고 저렴한 고품질 AI 제작</span></li>
+                        <li class="flex items-start"><span class="mr-4 text-2xl">📺</span> <span>매장 내 송출 가이드 제공</span></li>
+                    </ul>
+                </div>
+                <div class="md:w-5/12 bg-brand-light border-2 border-brand-main rounded-3xl p-8 relative opacity-90 shadow-none hover:shadow-xl hover:opacity-100 transition" data-aos="fade-left">
+                    <div class="bg-brand-main text-white px-5 py-1.5 rounded-full text-sm font-bold inline-block mb-6 md:mb-8">FUTURE (확장 예정)</div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-2 keep-all">미디어 플랫폼 확장</h3>
+                    <p class="text-sm text-brand-main font-bold mb-6">* 콘텐츠 파트너사 대상 확장</p>
+                    <ul class="text-left space-y-4 md:space-y-6 text-base md:text-lg">
+                        <li class="flex items-start"><span class="mr-4 text-2xl">📡</span> <span>전 매장 통합 CMS 구축</span></li>
+                        <li class="flex items-start"><span class="mr-4 text-2xl">🎥</span> <span>유튜브 라이브 채널화 지원</span></li>
+                        <li class="flex items-start"><span class="mr-4 text-2xl">💰</span> <span>타사 광고 수주 수익 창출</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4 md:px-6 max-w-4xl">
+            <h2 class="text-2xl md:text-4xl font-bold text-center mb-10 md:mb-16 text-brand-text" data-aos="fade-up">자주 묻는 질문 (Q&A)</h2>
+            <div class="space-y-6">
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="0">
+                    <h3 class="flex items-center text-lg md:text-xl font-bold text-brand-dark mb-4">
+                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
+                        <span class="keep-all">Frush는 AI 에이전트(챗봇)를 제공하는 회사인가요?</span>
+                    </h3>
+                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-base md:text-lg keep-all">
+                        A. 아닙니다. 저희는 AI 기술을 활용하여 <strong>고품질의 광고 영상, 이미지, 음원을 제작하고 관리해 드리는 솔루션 에이전시</strong>입니다. 
+                        AI 툴을 직접 제공하는 것이 아니라, 결과물을 만들어 드리는 서비스입니다.
+                    </p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="flex items-center text-lg md:text-xl font-bold text-brand-dark mb-4">
+                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
+                        <span class="keep-all">풀 패키지의 '통합 파일 제공'이 뭔가요?</span>
+                    </h3>
+                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-base md:text-lg keep-all">
+                        A. 매장 내 TV나 디스플레이에서 여러 영상을 일일이 재생하기 번거로우시죠? 
+                        풀 패키지는 제작된 모든 영상을 <strong>하나의 루프(반복) 영상 파일로 합쳐서 제공</strong>해 드립니다. 
+                        USB에 담아 꽂기만 하면 하루 종일 끊김 없이 브랜드 영상이 재생됩니다.
+                    </p>
+                </div>
+                <div class="bg-white p-6 md:p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="flex items-center text-lg md:text-xl font-bold text-brand-dark mb-4">
+                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
+                        <span class="keep-all">AI로 만들면 퀄리티가 어색하지 않나요?</span>
+                    </h3>
+                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-base md:text-lg keep-all">
+                        A. Frush는 100% 자동 생성에 맡기지 않습니다. 전문 디렉터가 검수하고 리터칭하는 
+                        <strong>'Human-in-the-loop'</strong> 방식을 사용하여 상업적으로 즉시 사용 가능한 퀄리티를 보장합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white text-center py-16 md:py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-main opacity-5 pointer-events-none"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <img src="Frush_v2.png" alt="Frush Logo" class="h-16 md:h-20 mx-auto mb-10 filter brightness-0 invert opacity-80">
+            
+            <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight">
+                지금, 매장의 공간을<br>
+                <span class="text-brand-main">브랜드</span>로 채우세요.
+            </h2>
+            <p class="text-lg md:text-xl text-gray-400 mb-16">
+                가장 합리적이고 스마트한 AI 브랜드 콘텐츠 파트너,<br>
+                <strong>Frush</strong>가 사장님의 성공을 돕겠습니다.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-16">
+                <a href="tel:010-9998-5893" class="bg-white text-black px-8 py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-gray-200 transition transform hover:-translate-y-1 w-full md:w-auto">
+                    <i class="fas fa-phone-alt mr-2"></i> 010-9998-5893
+                </a>
+                <a href="mailto:frush.brand@gmail.com" class="bg-gray-800 text-white border border-gray-600 px-8 py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1 w-full md:w-auto break-word-all">
+                    <i class="fas fa-envelope mr-2"></i> frush.brand@gmail.com
+                </a>
+                <a href="https://smore.im/form/vX4tbyBrge" target="_blank" class="bg-brand-main text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1 w-full md:w-auto">
+                    <i class="fas fa-paper-plane mr-2"></i> 문의하기 / 플랜 선택
+                </a>
+            </div>
+
+            <div class="text-sm text-gray-500 border-t border-gray-800 pt-10 w-full max-w-2xl mx-auto px-4">
+                <p class="mb-2">🏢 서울특별시 관악구 신림로 134, 오성벤처빌딩 3층</p>
+                <p>Copyright © 2025 Frush. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // AOS 애니메이션 초기화
+        AOS.init({
+            once: true,
+            duration: 800,
+            offset: 100
+        });
+
+        // 모바일 메뉴 토글
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // 네비게이션 바 스크롤 효과
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+
+        // Chart.js 설정
+        Chart.register(ChartDataLabels);
+        Chart.defaults.font.family = 'Pretendard';
+        Chart.defaults.color = '#6B7280';
+        Chart.defaults.responsive = true;
+        Chart.defaults.maintainAspectRatio = false;
+
+        // 비용 차트
+        const ctxCost = document.getElementById('costChart').getContext('2d');
+        new Chart(ctxCost, {
+            type: 'bar',
+            data: {
+                labels: ['외주', '디자인팀', 'DIY', 'Frush'],
+                datasets: [{
+                    label: '제작 비용 (만원)',
+                    data: [300, 250, 200, 140], 
+                    backgroundColor: ['#E5E7EB', '#E5E7EB', '#E5E7EB', '#10B981'],
+                    borderRadius: 8,
+                    barPercentage: 0.6,
+                    hoverBackgroundColor: '#059669'
+                }]
+            },
+            options: {
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'top',
+                        formatter: (value) => value + '만',
+                        font: { weight: 'bold', size: 12 },
+                        color: '#374151'
+                    }
+                },
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false }, max: 350, display: false },
+                    x: { grid: { display: false }, ticks: { font: { weight: 'bold', size: 11 } } }
+                }
+            }
+        });
+
+        // 시간 차트
+        const ctxTime = document.getElementById('timeChart').getContext('2d');
+        new Chart(ctxTime, {
+            type: 'bar',
+            data: {
+                labels: ['기존 방식', 'Frush AI'],
+                datasets: [
+                    {
+                        label: '소요 기간 (주)',
+                        data: [4, 2],
+                        backgroundColor: ['#9CA3AF', '#064E3B'],
+                        borderRadius: 8,
+                        barPercentage: 0.5
+                    }
+                ]
+            },
+            options: {
+                indexAxis: 'y',
+                plugins: {
+                    legend: { display: false },
+                    tooltip: { enabled: false },
+                    datalabels: {
+                        anchor: 'end',
+                        align: 'end',
+                        formatter: (value) => value + '주',
+                        font: { weight: 'bold', size: 14 },
+                        color: '#1F2937'
+                    }
+                },
+                scales: {
+                    x: { display: false, max: 5 }, 
+                    y: { 
+                        grid: { display: false },
+                        ticks: { font: { weight: 'bold', size: 14 } }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
