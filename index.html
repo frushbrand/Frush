@@ -219,7 +219,7 @@
     <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 w-full h-full z-0">
             <video autoplay muted loop playsinline class="w-full h-full object-cover">
-                <source src="Videos/프러쉬_업로드용.mp4" type="video/mp4">
+                <source src="Videos/표지.mp4" type="video/mp4">
                 브라우저가 비디오를 지원하지 않습니다.
             </video>
             <div class="absolute inset-0 bg-black/60"></div>
@@ -272,8 +272,9 @@
 
     <section id="problems" class="py-20 md:py-28 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="bg-gray-50 rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col lg:flex-row" data-aos="fade-up">
-                <div class="lg:w-5/12 p-8 md:p-16 flex flex-col justify-center">
+            <div class="bg-gray-50 rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col" data-aos="fade-up">
+                
+                <div class="w-full p-8 md:p-12 lg:p-16 flex flex-col justify-center">
                     <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-brand-text leading-tight break-keep">
                         아직도 매장에<br>
                         <span class="text-red-500 underline decoration-4 decoration-red-200">뉴스</span>만 틀어놓으셨나요?
@@ -286,12 +287,14 @@
                         <p class="font-bold text-brand-dark text-lg md:text-xl break-keep">"공간도 마케팅입니다.<br>스크린을 귀사의 광고판으로 바꾸세요."</p>
                     </div>
                 </div>
-                <div class="lg:w-7/12 bg-gray-200 relative min-h-[400px]">
-                    <img src="Images/프러쉬매장.png" alt="프러쉬 솔루션이 적용된 매장 디지털 사이니지 광고 화면 예시" class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-700">
-                    <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
-                        <span class="text-white text-2xl md:text-4xl font-bold border-4 border-white px-8 py-4 backdrop-blur-sm text-center">Branded Space<br>Transformation</span>
-                    </div>
+                
+                <div class="w-full relative aspect-video bg-gray-200">
+                    <video autoplay muted loop playsinline class="w-full h-full object-cover">
+                        <source src="Videos/프러쉬_업로드용.mp4" alt="프러쉬 서비스 소개 영상" type="video/mp4">
+                        브라우저가 비디오를 지원하지 않습니다.
+                    </video>
                 </div>
+
             </div>
         </div>
     </section>
