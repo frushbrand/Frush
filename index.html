@@ -743,12 +743,12 @@
                     </div>
                 </div>
 
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-800 rounded-2xl relative group overflow-hidden shadow-xl flex items-center justify-center" data-aos="zoom-in" data-aos-delay="300">
-                    <!-- TODO: 나홀로복싱 영상 파일을 Videos/ 폴더에 추가 후 video 태그로 교체 -->
-                    <div class="text-center p-8">
-                        <div class="text-5xl mb-4 opacity-60">🎬</div>
-                        <span class="text-white font-bold text-xl">나홀로복싱 레퍼런스</span>
-                        <p class="text-gray-400 text-sm mt-2">영상 준비중</p>
+                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
+                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
+                        <source src="Videos/나홀로복싱 레퍼런스_업로드용.mp4" type="video/mp4">
+                    </video>
+                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">나홀로복싱 레퍼런스</span>
                     </div>
                 </div>
             </div>
