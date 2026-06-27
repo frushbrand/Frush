@@ -87,6 +87,12 @@ body {
   background: linear-gradient(120deg, rgba(4, 10, 18, 0.74) 18%, rgba(4, 10, 18, 0.12) 58%, rgba(4, 10, 18, 0.72) 100%);
 }
 
+.stacked-hero-frame::after {
+  background:
+    radial-gradient(circle at center, rgba(7, 17, 30, 0.08) 0%, rgba(4, 10, 18, 0.48) 64%, rgba(4, 10, 18, 0.82) 100%),
+    linear-gradient(120deg, rgba(4, 10, 18, 0.72) 14%, rgba(4, 10, 18, 0.08) 52%, rgba(4, 10, 18, 0.78) 100%);
+}
+
 .hero-frame video,
 .hero-frame img {
   width: 100%;
@@ -99,6 +105,65 @@ body {
   position: absolute;
   inset: 0;
   z-index: 2;
+}
+
+.hero-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 128px 128px;
+}
+
+.stacked-panels-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 900px;
+}
+
+.stacked-panels-scene {
+  position: relative;
+  width: 0;
+  height: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.35s ease-out;
+}
+
+.stacked-panel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  border-radius: 1rem;
+  transform-origin: bottom center;
+  pointer-events: none;
+  transition: transform 0.35s ease-out;
+}
+
+.stacked-panel-image,
+.stacked-panel-gradient,
+.stacked-panel-vignette,
+.stacked-panel-border {
+  position: absolute;
+  inset: 0;
+}
+
+.stacked-panel-image {
+  background-size: cover;
+  background-position: center;
+}
+
+.stacked-panel-gradient {
+  mix-blend-mode: multiply;
+}
+
+.stacked-panel-vignette {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.32) 100%);
+}
+
+.stacked-panel-border {
+  border-radius: inherit;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-sizing: border-box;
 }
 
 .hero-side-label {
@@ -147,6 +212,22 @@ body {
   background: var(--brand-main);
   box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
   animation: pulse-dot 2.6s infinite;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.35rem;
+  height: 2.35rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.06);
+  color: #ffffff;
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
 .kicker-line {
@@ -349,6 +430,10 @@ body {
 @media (max-width: 767px) {
   .hero-frame {
     border-radius: 1.5rem;
+  }
+
+  .stacked-panels-stage {
+    transform: scale(0.86);
   }
 
   .partner-card {

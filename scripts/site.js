@@ -1,5 +1,57 @@
 window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
+  const TEAM_PHOTO_URL = 'https://github.com/user-attachments/assets/84ce4c93-fcb5-440a-95a8-0fe036529b57';
+  const PANEL_COUNT = 22;
+  const Z_SPREAD = 42;
+  const SIGMA = 2.8;
+  const PANEL_IMAGES = [
+    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
+    'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
+    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
+    'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80',
+    'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80',
+    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&q=80',
+    'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80',
+    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
+    'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80',
+    'https://images.unsplash.com/photo-1510784722466-f2aa240c3c4a?w=600&q=80',
+    'https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=600&q=80',
+    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
+    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
+    'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=600&q=80',
+    'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
+    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80',
+    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
+    'https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=600&q=80',
+    'https://images.unsplash.com/photo-1501696461415-6bd6660c6742?w=600&q=80',
+    'https://images.unsplash.com/photo-1445962125599-30f582ac21f4?w=600&q=80',
+    'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=600&q=80',
+    'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600&q=80'
+  ];
+  const GRADIENT_OVERLAYS = [
+    'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(236,72,153,0.45) 100%)',
+    'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(59,130,246,0.45) 100%)',
+    'linear-gradient(135deg, rgba(245,158,11,0.55) 0%, rgba(239,68,68,0.45) 100%)',
+    'linear-gradient(135deg, rgba(16,185,129,0.45) 0%, rgba(6,182,212,0.55) 100%)',
+    'linear-gradient(135deg, rgba(236,72,153,0.55) 0%, rgba(245,158,11,0.45) 100%)',
+    'linear-gradient(135deg, rgba(59,130,246,0.55) 0%, rgba(99,55,255,0.45) 100%)',
+    'linear-gradient(135deg, rgba(239,68,68,0.45) 0%, rgba(236,72,153,0.55) 100%)',
+    'linear-gradient(135deg, rgba(6,182,212,0.45) 0%, rgba(16,185,129,0.55) 100%)',
+    'linear-gradient(135deg, rgba(99,55,255,0.45) 0%, rgba(6,182,212,0.55) 100%)',
+    'linear-gradient(135deg, rgba(245,158,11,0.45) 0%, rgba(16,185,129,0.55) 100%)',
+    'linear-gradient(135deg, rgba(239,68,68,0.55) 0%, rgba(245,158,11,0.45) 100%)',
+    'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(59,130,246,0.45) 100%)',
+    'linear-gradient(135deg, rgba(16,185,129,0.55) 0%, rgba(99,55,255,0.45) 100%)',
+    'linear-gradient(135deg, rgba(236,72,153,0.45) 0%, rgba(59,130,246,0.55) 100%)',
+    'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(245,158,11,0.45) 100%)',
+    'linear-gradient(135deg, rgba(59,130,246,0.45) 0%, rgba(16,185,129,0.55) 100%)',
+    'linear-gradient(135deg, rgba(245,158,11,0.55) 0%, rgba(99,55,255,0.45) 100%)',
+    'linear-gradient(135deg, rgba(239,68,68,0.45) 0%, rgba(6,182,212,0.55) 100%)',
+    'linear-gradient(135deg, rgba(99,55,255,0.45) 0%, rgba(236,72,153,0.55) 100%)',
+    'linear-gradient(135deg, rgba(16,185,129,0.45) 0%, rgba(245,158,11,0.55) 100%)',
+    'linear-gradient(135deg, rgba(236,72,153,0.55) 0%, rgba(239,68,68,0.45) 100%)',
+    'linear-gradient(135deg, rgba(59,130,246,0.55) 0%, rgba(6,182,212,0.45) 100%)'
+  ];
 
   const pages = {
     home: { label: '홈', href: 'index.html' },
@@ -27,10 +79,10 @@ window.FrushSite = (() => {
     { year: '2024', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' }
   ];
 
-  const process = [
-    { step: '01', title: '브랜드 정렬', description: '브랜드 목표, 톤앤매너, 주요 타깃을 빠르게 정렬합니다.' },
-    { step: '02', title: '콘셉트 설계', description: '컷 구성과 메시지를 영상 포맷에 맞춰 압축 설계합니다.' },
-    { step: '03', title: '제작·납품', description: 'AI 생성과 후반 연출을 결합해 즉시 활용 가능한 결과물로 마무리합니다.' }
+  const strengths = [
+    { label: 'Strength 01', title: '서울대 출신 대표의 직접 디렉션', description: '브랜드 목표를 먼저 정리하고 장면과 메시지의 우선순위를 빠르게 맞춥니다.' },
+    { label: 'Strength 02', title: 'PD 출신 기획자의 스토리 설계', description: '영상 리듬과 전달 포인트를 동시에 챙겨 완성도 높은 구조를 만듭니다.' },
+    { label: 'Strength 03', title: '전문 영상 작업자 팀의 실행력', description: '세로형, 광고, 기타 영상까지 포맷별 제작 경험을 바탕으로 결과물을 정교하게 마감합니다.' }
   ];
 
   const works = [
@@ -211,7 +263,7 @@ window.FrushSite = (() => {
           <div class="glass rounded-full px-4 sm:px-6 py-3 shadow-soft">
             <div class="flex items-center justify-between gap-4">
               <a href="index.html" class="flex items-center gap-3">
-                <img src="${assetPath('Images/Frush_v2.png')}" alt="프러쉬 로고" class="h-9 w-auto">
+                <span class="brand-mark" aria-hidden="true">F</span>
                 <span class="hidden sm:block text-sm font-semibold tracking-[0.2em] text-white/70">FRUSH STUDIO</span>
               </a>
               <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
@@ -241,13 +293,12 @@ window.FrushSite = (() => {
           <div class="grid gap-6 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8">
             <div>
               <div class="flex items-center gap-3">
-                <img src="${assetPath('Images/Frush_v2.png')}" alt="프러쉬 로고" class="h-8 w-auto opacity-90">
+                <span class="brand-mark" aria-hidden="true">F</span>
                 <span class="text-sm tracking-[0.24em] text-white/80">FRUSH STUDIO</span>
               </div>
               <p class="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">업체 정보</p>
               <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
-                <p><span class="font-semibold text-white">업체명</span> 프러쉬 | Frush</p>
-                <p><span class="font-semibold text-white">분야</span> 세로형 영상 · 광고 영상 · 브랜드 필름 제작</p>
+                <p><span class="font-semibold text-white">업체명</span> 프러쉬 스튜디오</p>
                 <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
               </div>
             </div>
@@ -256,7 +307,6 @@ window.FrushSite = (() => {
                 <p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">문의</p>
                 <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
                   <p><span class="font-semibold text-white">메인 이메일</span> <a href="mailto:frush.brand@gmail.com" class="transition hover:text-brand-main">frush.brand@gmail.com</a></p>
-                  <p><span class="font-semibold text-white">상담 채널</span> <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="transition hover:text-brand-main">open.kakao.com/me/frush</a></p>
                 </div>
               </div>
               <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -323,12 +373,12 @@ window.FrushSite = (() => {
     `;
   }
 
-  function createWorkCard(work) {
-    const darkMode = work.theme === 'dark';
-    const cardBg = darkMode ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200/80';
-    const textColor = darkMode ? 'text-white' : 'text-brand-text';
-    const subColor = darkMode ? 'text-white/65' : 'text-slate-500';
-    const chipBg = darkMode ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark';
+  function createWorkCard(work, options = {}) {
+    const darkSurface = options.surface === 'dark';
+    const cardBg = darkSurface ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200/80';
+    const textColor = darkSurface ? 'text-white' : 'text-brand-text';
+    const subColor = darkSurface ? 'text-white/65' : 'text-slate-500';
+    const chipBg = darkSurface ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark';
     return `
       <article class="work-card reveal overflow-hidden rounded-[2rem] ${cardBg} shadow-sm" data-reveal>
         <button type="button" class="block w-full text-left" data-video-title="${work.title}" data-video-src="${assetPath(work.src)}" data-video-poster="${assetPath(work.poster)}">
@@ -353,6 +403,7 @@ window.FrushSite = (() => {
               <span>${work.year}</span>
             </div>
             <p class="mt-4 text-base font-semibold ${textColor}">${work.client}</p>
+            <p class="mt-3 text-sm leading-6 ${subColor}">${work.summary}</p>
             <div class="mt-5 inline-flex items-center gap-2 rounded-full ${chipBg} px-4 py-2 text-sm font-semibold">
               영상 보기
             </div>
@@ -373,7 +424,7 @@ window.FrushSite = (() => {
       selected = works.filter((work) => work.category === filter);
     }
 
-    target.innerHTML = selected.map(createWorkCard).join('');
+    target.innerHTML = selected.map((work) => createWorkCard(work, options)).join('');
 
     if (options.dark) {
       target.querySelectorAll('.work-card').forEach((card) => {
@@ -382,23 +433,42 @@ window.FrushSite = (() => {
     }
   }
 
-  function renderAwardsAndProcess(targetId) {
+  function renderStrengthsAndAwards(targetId) {
     const target = document.getElementById(targetId);
     if (!target) return;
 
     target.innerHTML = `
-      <section class="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <section class="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
+        <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
+          <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">전략과 실행, 그리고 신뢰를 한 팀으로 연결합니다</h2>
+          <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
+          <div class="mt-8 overflow-hidden rounded-[1.75rem]">
+            <img src="${TEAM_PHOTO_URL}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
+          </div>
+          <div class="mt-8 rounded-[1.75rem] bg-brand-light/70 p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-dark">Team Snapshot</p>
+            <p class="mt-3 text-sm leading-7 text-slate-600 sm:text-base">브랜드 방향을 잡는 대표, 구조를 설계하는 기획자, 완성도를 만드는 제작팀이 처음 상담부터 납품까지 같은 호흡으로 움직입니다.</p>
+          </div>
+        </article>
         <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
           <div class="flex items-start justify-between gap-4">
             <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">전체 수상 이력</h2>
+              <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Strengths & Awards</p>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 장점과 수상 이력 7가지</h2>
             </div>
             <div class="hidden h-14 w-14 items-center justify-center rounded-2xl bg-brand-light text-brand-dark md:flex">
               <i class="fas fa-award text-xl"></i>
             </div>
           </div>
-          <div class="mt-8 grid gap-4">
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            ${strengths.map((item) => `
+              <div class="award-chip rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4">
+                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-main">${item.label}</p>
+                <p class="mt-3 text-base font-semibold leading-7 text-brand-text">${item.title}</p>
+                <p class="mt-3 text-sm leading-6 text-slate-500">${item.description}</p>
+              </div>
+            `).join('')}
             ${awards.map((award) => `
               <div class="award-chip rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4">
                 <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-main">
@@ -411,25 +481,67 @@ window.FrushSite = (() => {
             `).join('')}
           </div>
         </article>
-        <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Process</p>
-          <h2 class="mt-3 text-3xl font-semibold text-brand-text">작업 프로세스</h2>
-          <div class="mt-8 grid gap-4">
-            ${process.map((item) => `
-              <div class="process-card rounded-[1.5rem] border border-slate-200/80 bg-white p-5">
-                <div class="flex items-start gap-4">
-                  <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-light font-bold text-brand-dark">${item.step}</div>
-                  <div>
-                    <h3 class="text-lg font-semibold text-brand-text">${item.title}</h3>
-                    <p class="mt-2 text-sm leading-6 text-slate-500">${item.description}</p>
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </article>
       </section>
     `;
+  }
+
+  function setupStackedPanels() {
+    const stage = document.getElementById('stacked-panels-scene');
+    const container = document.getElementById('stacked-panels-container');
+    if (!stage || !container) return;
+
+    const panels = Array.from({ length: PANEL_COUNT }, (_, index) => {
+      const panel = document.createElement('div');
+      const t = index / (PANEL_COUNT - 1);
+      const width = 200 + t * 80;
+      const height = 280 + t * 120;
+      panel.className = 'stacked-panel';
+      panel.style.width = `${width}px`;
+      panel.style.height = `${height}px`;
+      panel.style.marginLeft = `${-width / 2}px`;
+      panel.style.marginTop = `${-height / 2}px`;
+      panel.style.opacity = `${0.25 + t * 0.75}`;
+      panel.style.transform = `translate3d(0, 0, ${(index - (PANEL_COUNT - 1)) * Z_SPREAD}px) scaleY(1)`;
+      panel.innerHTML = `
+        <div class="stacked-panel-image" style="background-image:url('${PANEL_IMAGES[index % PANEL_IMAGES.length]}')"></div>
+        <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
+        <div class="stacked-panel-vignette"></div>
+        <div class="stacked-panel-border"></div>
+      `;
+      container.appendChild(panel);
+      return { panel, depth: (index - (PANEL_COUNT - 1)) * Z_SPREAD };
+    });
+
+    const setSceneRotation = (x, y) => {
+      container.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`;
+    };
+
+    const updatePanels = (cursorRatio) => {
+      panels.forEach(({ panel, depth }, index) => {
+        const dist = Math.abs(index - cursorRatio);
+        const influence = Math.exp(-(dist * dist) / (2 * SIGMA * SIGMA));
+        const offsetY = -influence * 70;
+        const scaleY = 0.35 + influence * 0.65;
+        panel.style.transform = `translate3d(0, ${offsetY}px, ${depth}px) scaleY(${scaleY})`;
+      });
+    };
+
+    setSceneRotation(18, -42);
+
+    stage.addEventListener('mousemove', (event) => {
+      const rect = stage.getBoundingClientRect();
+      const cx = (event.clientX - rect.left) / rect.width;
+      const cy = (event.clientY - rect.top) / rect.height;
+      setSceneRotation(18 + (cy - 0.5) * -10, -42 + (cx - 0.5) * 14);
+      updatePanels(cx * (PANEL_COUNT - 1));
+    });
+
+    stage.addEventListener('mouseleave', () => {
+      setSceneRotation(18, -42);
+      panels.forEach(({ panel, depth }) => {
+        panel.style.transform = `translate3d(0, 0, ${depth}px) scaleY(1)`;
+      });
+    });
   }
 
   function setupRevealObserver() {
@@ -545,14 +657,15 @@ window.FrushSite = (() => {
     renderShell(config.pageKey);
 
     if (config.partnerTargetId) renderPartners(config.partnerTargetId);
-    if (config.featuredTargetId) renderWorks(config.featuredTargetId, featuredWorkIds);
-    if (config.awardsProcessTargetId) renderAwardsAndProcess(config.awardsProcessTargetId);
-    if (config.collectionTargetId && config.collectionKey) renderWorks(config.collectionTargetId, config.collectionKey, { dark: config.collectionKey === 'ads' });
+    if (config.featuredTargetId) renderWorks(config.featuredTargetId, featuredWorkIds, { surface: 'dark' });
+    if (config.strengthsAwardsTargetId) renderStrengthsAndAwards(config.strengthsAwardsTargetId);
+    if (config.collectionTargetId && config.collectionKey) renderWorks(config.collectionTargetId, config.collectionKey, { surface: 'light', dark: false });
 
     setupNavbar();
     setupModal();
     setupRevealObserver();
     setupParallax();
+    setupStackedPanels();
   }
 
   return {
