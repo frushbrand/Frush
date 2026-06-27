@@ -1,7 +1,6 @@
 window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
-  const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
-  const PANEL_COUNT = 22;
+  const PANEL_COUNT = 18;
   const PANEL_IMAGES = [
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
     'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
@@ -314,32 +313,34 @@ window.FrushSite = (() => {
     return `
       <footer class="border-t border-white/8 bg-[#07111e] py-12 text-white/70">
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="grid gap-6 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8">
-            <div>
-              <div class="flex items-center gap-3">
-                <span class="brand-mark" aria-hidden="true">F</span>
-                <span class="text-sm tracking-[0.24em] text-white/80">FRUSH STUDIO</span>
-              </div>
-              <p class="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">업체 정보</p>
-              <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
-                <p><span class="font-semibold text-white">업체명</span> 프러쉬 스튜디오</p>
-                <p><span class="font-semibold text-white">대표자</span> 서보훈</p>
-                <p><span class="font-semibold text-white">사업자 등록번호</span> 310-72-00689</p>
-                <p><span class="font-semibold text-white">주소</span> 서울특별시 강남구 논현로 10길 30 5층</p>
-                <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
-              </div>
-            </div>
-            <div class="flex flex-col justify-between gap-5">
+          <div class="rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:p-9">
+            <div class="grid gap-8 md:grid-cols-[1.15fr_0.85fr]">
               <div>
-                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">문의</p>
+                <div class="flex items-center gap-3">
+                  <span class="brand-mark" aria-hidden="true">F</span>
+                  <span class="text-sm tracking-[0.24em] text-white/80">FRUSH STUDIO</span>
+                </div>
+                <p class="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">업체 정보</p>
                 <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
-                  <p><span class="font-semibold text-white">메인 이메일</span> <a href="mailto:frush.brand@gmail.com" class="transition hover:text-brand-main">frush.brand@gmail.com</a></p>
+                  <p><span class="font-semibold text-white">업체명</span> 프러쉬 스튜디오</p>
+                  <p><span class="font-semibold text-white">대표자</span> 서보훈</p>
+                  <p><span class="font-semibold text-white">사업자 등록번호</span> 310-72-00689</p>
+                  <p><span class="font-semibold text-white">주소</span> 서울특별시 강남구 논현로 10길 30 5층</p>
+                  <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
                 </div>
               </div>
-              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-main px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">문의하기</a>
-                <p class="text-sm text-white/45">Copyright © 2026 Frush. All rights reserved.</p>
+              <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">문의</p>
+                <div class="mt-4 space-y-1.5 text-sm leading-6 text-white/72">
+                  <p class="font-semibold text-white">메인 이메일</p>
+                  <p><a href="mailto:frush.brand@gmail.com" class="transition hover:text-brand-main">frush.brand@gmail.com</a></p>
+                </div>
+                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand-main px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">문의하기</a>
               </div>
+            </div>
+            <div class="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
+              <p class="text-sm text-white/45">Copyright © 2026 Frush. All rights reserved.</p>
+              <p class="text-sm text-white/45">Seoul · AI Video Production Studio</p>
             </div>
           </div>
         </div>
@@ -455,13 +456,19 @@ window.FrushSite = (() => {
     const target = document.getElementById(targetId);
     if (!target) return;
 
+    const stats = [
+      { value: '50+', label: '누적 제작 실적' },
+      { value: '5.0', label: '프로젝트 만족도' },
+      { value: 'All', label: '세로형·광고·필름' }
+    ];
+
     target.innerHTML = `
-      <section class="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
-        <article class="strength-card strength-card--team rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
+      <section class="grid items-stretch gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+        <article class="strength-card strength-card--team flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
-          <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">전략과 실행, 그리고 신뢰를 한 팀으로 연결합니다</h2>
-          <p class="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
-          <div class="strength-point-list mt-7">
+          <h2 class="mt-4 text-3xl font-semibold leading-[1.18] text-white sm:text-[2.4rem]">전략과 실행, 그리고 신뢰를<br class="hidden sm:block"> 한 팀으로 연결합니다</h2>
+          <p class="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
+          <div class="strength-point-list mt-8">
             <div class="strength-point-item">
               <span class="strength-point-item__label">Strategy</span>
               <p>초기 상담에서 브랜드 목적과 메시지를 먼저 정리합니다.</p>
@@ -471,29 +478,35 @@ window.FrushSite = (() => {
               <p>기획, 촬영, 편집까지 필요한 제작 흐름을 한 팀으로 이어갑니다.</p>
             </div>
           </div>
-          <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
-            <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
+          <div class="strength-stat-row mt-auto pt-8">
+            ${stats.map((stat) => `
+              <div class="strength-stat">
+                <span class="strength-stat__value">${stat.value}</span>
+                <span class="strength-stat__label">${stat.label}</span>
+              </div>
+            `).join('')}
           </div>
         </article>
-        <article class="strength-card strength-card--awards rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
+        <article class="strength-card strength-card--awards flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
           <div class="flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 7개</h2>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 <span class="text-brand-main">7</span>개</h2>
+              <p class="mt-3 text-sm leading-6 text-slate-500">국내외 영상·AI 콘텐츠 공모전에서 검증된 기획력과 완성도.</p>
             </div>
-            <div class="hidden h-14 w-14 items-center justify-center rounded-2xl bg-brand-light text-brand-dark md:flex">
+            <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-dark text-brand-light shadow-soft md:flex">
               <i class="fas fa-award text-xl"></i>
             </div>
           </div>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+          <div class="mt-7 grid flex-1 content-start gap-3.5 sm:grid-cols-2">
             ${awards.map((award) => `
-              <div class="award-chip rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4">
-                <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-main">
+              <div class="award-chip rounded-[1.4rem] border border-slate-200/70 bg-white px-5 py-4">
+                <div class="flex flex-wrap items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-brand-main">
                   <span>${award.year}</span>
-                  <span class="h-1 w-1 rounded-full bg-brand-main"></span>
-                  <span>${award.org}</span>
+                  <span class="h-1 w-1 rounded-full bg-brand-main/70"></span>
+                  <span class="text-slate-400">${award.org}</span>
                 </div>
-                <p class="mt-3 text-base font-semibold leading-7 text-brand-text">${award.title}</p>
+                <p class="mt-2.5 text-[0.95rem] font-semibold leading-6 text-brand-text">${award.title}</p>
               </div>
             `).join('')}
           </div>
@@ -527,23 +540,26 @@ window.FrushSite = (() => {
     const getDimensions = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        return { radius: 260, cardWidth: 90, cardHeight: 132, arcLift: -14 };
+        return { radius: 250, cardWidth: 92, cardHeight: 132, arcLift: -8 };
       }
       if (width < 1024) {
-        return { radius: 390, cardWidth: 116, cardHeight: 168, arcLift: -18 };
+        return { radius: 380, cardWidth: 120, cardHeight: 172, arcLift: -10 };
       }
-      return { radius: 520, cardWidth: 142, cardHeight: 208, arcLift: -24 };
+      return { radius: 540, cardWidth: 150, cardHeight: 214, arcLift: -12 };
     };
 
     const updatePanels = () => {
       const { radius, cardWidth, cardHeight, arcLift } = getDimensions();
-      const startAngle = 202;
-      const endAngle = 338;
+      // A wide, even arch that sweeps over the headline (image reference).
+      const startAngle = 196;
+      const endAngle = 344;
       const step = (endAngle - startAngle) / Math.max(PANEL_COUNT - 1, 1);
-      const sceneShiftX = currentPointerX * 28;
-      const sceneShiftY = currentPointerY * -20;
-      const sceneRotateX = currentPointerY * -10;
-      const sceneRotateY = currentPointerX * 14;
+
+      // The whole arch reacts to the pointer as one 3D object.
+      const sceneShiftX = currentPointerX * 26;
+      const sceneShiftY = currentPointerY * -16;
+      const sceneRotateX = 6 + currentPointerY * -12;
+      const sceneRotateY = currentPointerX * 16;
 
       container.style.transform = `translate3d(${sceneShiftX}px, ${sceneShiftY}px, 0) rotateX(${sceneRotateX}deg) rotateY(${sceneRotateY}deg)`;
 
@@ -554,27 +570,30 @@ window.FrushSite = (() => {
         const y = Math.sin(angleRad) * radius + arcLift;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
         const centerDistance = Math.abs(spread - 0.5);
-        const depth = (0.5 - centerDistance) * 240 - 110;
-        const depthOffset = currentPointerX * (18 + spread * 26);
-        const lift = currentPointerY * (18 + (1 - centerDistance) * 18);
-        const scale = 0.82 + (1 - centerDistance) * 0.28 + Math.abs(currentPointerY) * 0.03;
-        const rotateZ = (spread - 0.5) * 26 + currentPointerX * 8 + currentPointerY * 4;
-        const rotateX = currentPointerY * -12 + (0.5 - centerDistance) * 4;
-        const rotateY = currentPointerX * 14 + (spread - 0.5) * 18;
+
+        // Each card sits tangent to the arc; subtle per-card parallax on hover.
+        const depth = (0.5 - centerDistance) * 200 - 80;
+        const depthOffset = currentPointerX * (12 + spread * 22);
+        const lift = currentPointerY * (14 + (1 - centerDistance) * 16);
+        const scale = 0.9 + (1 - centerDistance) * 0.16 + Math.abs(currentPointerY) * 0.02;
+        const tangent = angle - 270; // rotate to follow the arc tangent
+        const rotateZ = tangent * 0.55 + currentPointerX * 6;
+        const rotateX = currentPointerY * -10 + (0.5 - centerDistance) * 3;
+        const rotateY = currentPointerX * 12 + (spread - 0.5) * 14;
 
         panel.style.width = `${cardWidth}px`;
         panel.style.height = `${cardHeight}px`;
         panel.style.marginLeft = `${-cardWidth / 2}px`;
         panel.style.marginTop = `${-cardHeight / 2}px`;
-        panel.style.opacity = `${0.28 + (1 - centerDistance) * 0.62}`;
+        panel.style.opacity = `${0.62 + (1 - centerDistance) * 0.38}`;
         panel.style.zIndex = `${Math.round((1 - centerDistance) * 100)}`;
-        panel.style.transform = `translate3d(${x - depthOffset}px, ${y + lift}px, ${depth + currentPointerX * 22 - currentPointerY * 10}px) rotateZ(${rotateZ}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
+        panel.style.transform = `translate3d(${x - depthOffset}px, ${y + lift}px, ${depth + currentPointerX * 20 - currentPointerY * 8}px) rotateZ(${rotateZ}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
       });
     };
 
     const animatePanels = () => {
-      currentPointerX += (targetPointerX - currentPointerX) * 0.08;
-      currentPointerY += (targetPointerY - currentPointerY) * 0.08;
+      currentPointerX += (targetPointerX - currentPointerX) * 0.075;
+      currentPointerY += (targetPointerY - currentPointerY) * 0.075;
       updatePanels();
       window.requestAnimationFrame(animatePanels);
     };
@@ -582,13 +601,15 @@ window.FrushSite = (() => {
     updatePanels();
     animatePanels();
 
-    stage.addEventListener('mousemove', (event) => {
-      const rect = stage.getBoundingClientRect();
+    // Track the pointer across the whole hero stage so the arch tilts in 3D.
+    const stageRoot = stage.closest('.hero-stage') || stage;
+    stageRoot.addEventListener('mousemove', (event) => {
+      const rect = stageRoot.getBoundingClientRect();
       targetPointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
       targetPointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
     });
 
-    stage.addEventListener('mouseleave', () => {
+    stageRoot.addEventListener('mouseleave', () => {
       targetPointerX = 0;
       targetPointerY = 0;
     });
