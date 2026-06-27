@@ -234,7 +234,7 @@ window.FrushSite = (() => {
               </a>
               <div class="hidden md:flex items-center gap-6 text-sm font-semibold">
                 ${navItems}
-                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="rounded-full bg-brand-main px-5 py-2 text-white shadow-lg transition hover:bg-brand-dark">오픈카톡</a>
+                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="rounded-full bg-brand-main px-5 py-2 text-white shadow-lg transition hover:bg-brand-dark">문의하기</a>
               </div>
               <button id="menuButton" type="button" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white" aria-label="메뉴 열기">
                 <i class="fas fa-bars"></i>
@@ -243,7 +243,7 @@ window.FrushSite = (() => {
             <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 mt-4 pt-4 pb-1">
               <div class="flex flex-col gap-2 text-sm font-semibold">
                 ${mobileItems}
-                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="rounded-2xl bg-brand-main px-4 py-3 text-white transition hover:bg-brand-dark">오픈카톡 바로가기</a>
+                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="rounded-2xl bg-brand-main px-4 py-3 text-white transition hover:bg-brand-dark">문의하기</a>
               </div>
             </div>
           </div>
@@ -254,17 +254,36 @@ window.FrushSite = (() => {
 
   function renderFooter() {
     return `
-      <footer class="border-t border-white/8 bg-[#07111e] py-10 text-white/60">
-        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 lg:px-8 md:flex-row md:items-center md:justify-between">
-          <div class="flex items-center gap-3">
-            <img src="${assetPath('Images/Frush_v2.png')}" alt="프러쉬 로고" class="h-8 w-auto opacity-90">
-            <span class="text-sm tracking-[0.24em]">FRUSH STUDIO</span>
+      <footer class="border-t border-white/8 bg-[#07111e] py-12 text-white/70">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="grid gap-6 rounded-[2rem] border border-white/10 bg-white/[0.03] p-6 md:grid-cols-[1.1fr_0.9fr] md:p-8">
+            <div>
+              <div class="flex items-center gap-3">
+                <img src="${assetPath('Images/Frush_v2.png')}" alt="프러쉬 로고" class="h-8 w-auto opacity-90">
+                <span class="text-sm tracking-[0.24em] text-white/80">FRUSH STUDIO</span>
+              </div>
+              <p class="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">업체 정보</p>
+              <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
+                <p><span class="font-semibold text-white">업체명</span> 프러쉬 | Frush</p>
+                <p><span class="font-semibold text-white">분야</span> 세로형 영상 · 광고 영상 · 브랜드 필름 제작</p>
+                <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
+              </div>
+            </div>
+            <div class="flex flex-col justify-between gap-5">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">문의</p>
+                <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
+                  <p><span class="font-semibold text-white">메인 이메일</span> <a href="mailto:frush.brand@gmail.com" class="transition hover:text-brand-main">frush.brand@gmail.com</a></p>
+                  <p><span class="font-semibold text-white">상담 채널</span> <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="transition hover:text-brand-main">open.kakao.com/me/frush</a></p>
+                </div>
+              </div>
+              <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-main px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">문의하기</a>
+                <p class="text-sm text-white/45">Copyright © 2026 Frush. All rights reserved.</p>
+              </div>
+            </div>
           </div>
-          <div class="flex flex-col gap-1 text-sm md:items-end">
-            <p>AI 영상 제작 스튜디오 Frush</p>
-            <p>Copyright © 2026 Frush. All rights reserved.</p>
-          </div>
-        </div>
+        </div> 
       </footer>
     `;
   }
@@ -292,8 +311,10 @@ window.FrushSite = (() => {
 
   function createPartnerCard(logo) {
     return `
-      <div class="partner-card" style="--from:${logo.gradient.from}; --via:${logo.gradient.via}; --to:${logo.gradient.to};">
-        <img src="${assetPath(logo.src)}" alt="${logo.alt}">
+      <div class="partner-card">
+        <div class="partner-card__inner">
+          <img src="${assetPath(logo.src)}" alt="${logo.alt}">
+        </div>
       </div>
     `;
   }
@@ -329,7 +350,7 @@ window.FrushSite = (() => {
     return `
       <article class="work-card reveal overflow-hidden rounded-[2rem] ${cardBg} shadow-sm" data-reveal>
         <button type="button" class="block w-full text-left" data-video-title="${work.title}" data-video-src="${assetPath(work.src)}" data-video-poster="${assetPath(work.poster)}">
-          <div class="work-thumb relative aspect-[16/10]">
+          <div class="work-thumb relative aspect-[4/3]">
             <img src="${assetPath(work.poster)}" alt="${work.title} 썸네일" loading="lazy">
             <div class="absolute inset-x-0 bottom-0 z-[1] flex items-end justify-between gap-3 p-5">
               <div>
@@ -349,9 +370,9 @@ window.FrushSite = (() => {
               <span>•</span>
               <span>${work.year}</span>
             </div>
-            <p class="mt-4 text-sm leading-6 ${subColor}">${work.summary}</p>
+            <p class="mt-4 text-base font-semibold ${textColor}">${work.client}</p>
             <div class="mt-5 inline-flex items-center gap-2 rounded-full ${chipBg} px-4 py-2 text-sm font-semibold">
-              프로젝트 보기
+              영상 보기
             </div>
           </div>
         </button>
@@ -389,7 +410,7 @@ window.FrushSite = (() => {
           <div class="flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">성과는 간결하게, 신뢰는 분명하게</h2>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">전체 수상 이력</h2>
             </div>
             <div class="hidden h-14 w-14 items-center justify-center rounded-2xl bg-brand-light text-brand-dark md:flex">
               <i class="fas fa-award text-xl"></i>

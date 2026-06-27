@@ -27,51 +27,38 @@
   <main>
     <section class="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-24 lg:pt-40">
       <div class="mx-auto max-w-7xl">
-        <div class="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+        <div class="subpage-hero-shell grid items-center gap-8 p-6 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
           <div class="reveal" data-reveal>
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Vertical Works</p>
             <h1 class="mt-4 text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl">빠르게 소비되는 화면에도<br>브랜드의 밀도를 남깁니다.</h1>
             <p class="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">숏폼은 단순히 짧은 영상이 아니라 첫 1초의 집중도를 설계하는 포맷입니다. Frush는 브랜드 메시지를 잃지 않으면서도 빠른 템포를 만드는 세로형 영상을 제작합니다.</p>
             <div class="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">오픈카톡 상담</a>
-              <a href="index.html#featured" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">대표작 8선</a>
+              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">문의하기</a>
+              <a href="#portfolio" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">포트폴리오 보기</a>
             </div>
           </div>
-          <div class="hero-frame h-[420px] sm:h-[520px] reveal" data-reveal data-parallax="0.06">
-            <video autoplay muted loop playsinline poster="Image_Storage/나진국밥_썸네일.png">
-              <source src="Videos/나진국밥 레퍼런스_업로드용3.mp4" type="video/mp4">
-            </video>
+          <div class="reveal" data-reveal>
+            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-brand-light/80">대표 영상</p>
+            <div class="hero-frame h-[420px] sm:h-[520px]" data-parallax="0.06">
+              <video autoplay muted loop playsinline poster="Image_Storage/나진국밥_썸네일.png">
+                <source src="Videos/나진국밥 레퍼런스_업로드용3.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-[#08111c] pb-24 text-white sm:pb-28 lg:pb-32">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div id="category-summary"></div>
-      </div>
-    </section>
-
-    <section class="bg-[#f7faf8] py-24 text-brand-text sm:py-28 lg:py-32">
+    <section id="portfolio" class="bg-[#f7faf8] py-24 text-brand-text sm:py-28 lg:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal" data-reveal>
           <div>
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Portfolio</p>
             <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">세로형 포트폴리오</h2>
           </div>
-          <p class="max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">브랜드 쇼릴, 매장 홍보, 퍼포먼스 콘텐츠까지 세로형 포맷에 맞는 프로젝트를 따로 정리했습니다.</p>
+          <p class="max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">브랜드 쇼릴, 매장 홍보, 퍼포먼스 콘텐츠를 장면 중심으로 정리했습니다.</p>
         </div>
-        <div id="category-works" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
-      </div>
-    </section>
-
-    <section class="bg-[#f7faf8] pb-24 text-brand-text sm:pb-28 lg:pb-32">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="mb-8 reveal" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Explore more</p>
-          <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">다른 메뉴도 이어서 보기</h2>
-        </div>
-        <div id="related-pages" class="grid gap-6 md:grid-cols-3"></div>
+        <div id="category-works" class="grid gap-6 md:grid-cols-2 xl:grid-cols-2"></div>
       </div>
     </section>
   </main>
@@ -84,9 +71,7 @@
     window.FrushSite.initPage({
       pageKey: 'vertical',
       collectionKey: 'vertical',
-      collectionTargetId: 'category-works',
-      categorySummaryTargetId: 'category-summary',
-      relatedTargetId: 'related-pages'
+      collectionTargetId: 'category-works'
     });
   </script>
 </body>
