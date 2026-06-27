@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="9b6288ef73331303024b44f68df636dbb66790ce">
+  <title>프러쉬(Frush) | 광고 영상</title>
+  <meta name="description" content="프러쉬의 광고형 영상 작업과 캠페인 무드를 확인하세요.">
+  <meta name="keywords" content="프러쉬, Frush, AI영상제작, 광고영상, 브랜드광고">
+  <meta name="author" content="Frush (프러쉬)">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="프러쉬(Frush) | 광고 영상">
+  <meta property="og:description" content="프러쉬의 광고형 영상 작업과 캠페인 무드를 확인하세요.">
+  <meta property="og:image" content="Images/Frush_v2.png">
+  <meta property="og:url" content="https://www.myfrush.com/ads.html">
+  <link rel="icon" href="Images/ms-icon-150x150_v1.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/tailwind-config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
+</head>
+<body class="subpage-bg">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-24 lg:pt-40">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid items-center gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+          <div class="reveal" data-reveal>
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Commercial Works</p>
+            <h1 class="mt-4 text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl">브랜드가 원하는 무드를<br>광고 문법으로 선명하게 만듭니다.</h1>
+            <p class="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">인지도를 높이는 장면, 메시지를 박아 넣는 컷, 브랜드 톤을 유지하는 연출까지. Frush는 광고형 영상에서도 기획과 완성도를 동시에 챙깁니다.</p>
+            <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">오픈카톡 상담</a>
+              <a href="index.html#featured" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">대표작 8선</a>
+            </div>
+          </div>
+          <div class="hero-frame h-[420px] sm:h-[520px] reveal" data-reveal data-parallax="0.06">
+            <video autoplay muted loop playsinline poster="Images/서울우유 광고.png">
+              <source src="Videos/서울우유광고.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#08111c] pb-24 text-white sm:pb-28 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div id="category-summary"></div>
+      </div>
+    </section>
+
+    <section class="bg-[#f7faf8] py-24 text-brand-text sm:py-28 lg:py-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal" data-reveal>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Portfolio</p>
+            <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">광고 포트폴리오</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">광고 캠페인 톤의 프로젝트만 모아 브랜드 임팩트 중심으로 배치했습니다.</p>
+        </div>
+        <div id="category-works" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
+      </div>
+    </section>
+
+    <section class="bg-[#f7faf8] pb-24 text-brand-text sm:pb-28 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-8 reveal" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Explore more</p>
+          <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">다른 메뉴도 이어서 보기</h2>
+        </div>
+        <div id="related-pages" class="grid gap-6 md:grid-cols-3"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <div id="site-modal"></div>
+
+  <script src="scripts/site.js"></script>
+  <script>
+    window.FrushSite.initPage({
+      pageKey: 'ads',
+      collectionKey: 'ads',
+      collectionTargetId: 'category-works',
+      categorySummaryTargetId: 'category-summary',
+      relatedTargetId: 'related-pages'
+    });
+  </script>
+</body>
+</html>
