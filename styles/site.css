@@ -37,6 +37,15 @@ body {
     linear-gradient(180deg, #07111e 0%, #081a2a 20%, #eef8f3 20%, #f7faf8 100%);
 }
 
+.subpage-hero-shell {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 2rem;
+  background:
+    linear-gradient(135deg, rgba(7, 17, 30, 0.96), rgba(8, 26, 42, 0.92)),
+    rgba(7, 17, 30, 0.94);
+  box-shadow: 0 30px 90px rgba(3, 10, 18, 0.24);
+}
+
 .glass {
   background: rgba(7, 17, 30, 0.72);
   backdrop-filter: blur(16px);
@@ -183,7 +192,7 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.08), rgba(0, 0, 0, 0.62));
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.04), rgba(0, 0, 0, 0.52));
 }
 
 .work-thumb img,
@@ -243,27 +252,22 @@ body {
   justify-content: center;
   overflow: hidden;
   border-radius: 1.25rem;
-  background: rgba(241, 245, 249, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: #edf3ef;
 }
 
-.partner-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, var(--from), var(--via), var(--to));
-  opacity: 0;
-  transform: scale(1.25);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.partner-card:hover::before {
-  opacity: 1;
-  transform: scale(1);
+.partner-card__inner {
+  display: flex;
+  height: calc(100% - 1.1rem);
+  width: calc(100% - 1.1rem);
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+  background: #ffffff;
+  box-shadow: inset 0 0 0 1px rgba(226, 232, 240, 0.7);
 }
 
 .partner-card img {
-  position: relative;
-  z-index: 1;
   max-height: 64%;
   width: auto;
   max-width: 74%;
