@@ -194,24 +194,6 @@ window.FrushSite = (() => {
 
   const featuredWorkIds = ['frush-showreel', 'najin-1', 'boxing', 'lg', 'seoul-milk', 'hera', 'ny-space', 'labrac-1'];
 
-  const categoryMeta = {
-    vertical: {
-      title: '세로형 영상',
-      description: '브랜드 메시지를 가장 빠르게 소비되는 포맷에 맞춰 밀도 있게 압축합니다.',
-      highlight: '광고처럼 강하고 숏폼처럼 빠르게, 전환 효율까지 고려한 세로형 영상.'
-    },
-    ads: {
-      title: '광고 영상',
-      description: 'TVCF 톤의 무드, 브랜드 문법, 메시지 집중도를 하나의 화면으로 완성합니다.',
-      highlight: '브랜드 인지와 캠페인 임팩트를 함께 노리는 광고형 영상.'
-    },
-    others: {
-      title: '기타 영상',
-      description: '브랜드 필름, 소개 영상, 무드 콘텐츠까지 장면의 밀도를 중심으로 설계합니다.',
-      highlight: '브랜드 세계관을 오래 남기는 필름형 콘텐츠.'
-    }
-  };
-
   const assetPath = (path) => encodeURI(path);
 
   function renderHeader(pageKey) {
@@ -283,7 +265,7 @@ window.FrushSite = (() => {
               </div>
             </div>
           </div>
-        </div> 
+        </div>
       </footer>
     `;
   }
@@ -450,47 +432,6 @@ window.FrushSite = (() => {
     `;
   }
 
-  function renderRelatedPages(targetId, currentPage) {
-    const target = document.getElementById(targetId);
-    if (!target) return;
-
-    const items = Object.entries(pages).filter(([key]) => key !== currentPage && key !== 'contact');
-    target.innerHTML = items.map(([key, page]) => `
-      <a href="${page.href}" class="related-card reveal rounded-[1.75rem] border border-slate-200/80 bg-white p-6 shadow-sm transition hover:border-brand-main/30" data-reveal>
-        <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-main">Browse</p>
-        <h3 class="mt-3 text-2xl font-semibold text-brand-text">${page.label}</h3>
-        <p class="mt-3 text-sm leading-6 text-slate-500">${key === 'home' ? '메인 페이지에서 Frush의 전체 방향과 대표작을 먼저 확인하세요.' : categoryMeta[key]?.description || ''}</p>
-        <span class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-dark">이동하기 <i class="fas fa-arrow-right text-xs"></i></span>
-      </a>
-    `).join('');
-  }
-
-  function renderCategorySummary(targetId, category) {
-    const target = document.getElementById(targetId);
-    const meta = categoryMeta[category];
-    if (!target || !meta) return;
-
-    target.innerHTML = `
-      <div class="grid gap-5 md:grid-cols-3">
-        <article class="category-card rounded-[2rem] border border-white/10 bg-white/5 p-6 text-white shadow-soft">
-          <p class="text-sm font-semibold text-brand-main">FORMAT</p>
-          <h3 class="mt-4 text-2xl font-semibold">${meta.title}</h3>
-          <p class="mt-3 text-sm leading-6 text-white/70">${meta.highlight}</p>
-        </article>
-        <article class="category-card rounded-[2rem] border border-white/10 bg-white/5 p-6 text-white shadow-soft">
-          <p class="text-sm font-semibold text-brand-main">DELIVERY</p>
-          <h3 class="mt-4 text-2xl font-semibold">즉시 활용 가능한 납품</h3>
-          <p class="mt-3 text-sm leading-6 text-white/70">세로형, 가로형, 광고 컷다운 등 채널별 운영을 고려해 결과물을 정리합니다.</p>
-        </article>
-        <article class="category-card rounded-[2rem] border border-white/10 bg-white/5 p-6 text-white shadow-soft">
-          <p class="text-sm font-semibold text-brand-main">COMMUNICATION</p>
-          <h3 class="mt-4 text-2xl font-semibold">기획과 제작이 한 흐름으로</h3>
-          <p class="mt-3 text-sm leading-6 text-white/70">대표와 기획팀이 브랜드 메시지의 우선순위를 먼저 정리한 뒤 장면을 설계합니다.</p>
-        </article>
-      </div>
-    `;
-  }
-
   function setupRevealObserver() {
     const elements = document.querySelectorAll('[data-reveal]');
     if (!elements.length) return;
@@ -607,8 +548,6 @@ window.FrushSite = (() => {
     if (config.featuredTargetId) renderWorks(config.featuredTargetId, featuredWorkIds);
     if (config.awardsProcessTargetId) renderAwardsAndProcess(config.awardsProcessTargetId);
     if (config.collectionTargetId && config.collectionKey) renderWorks(config.collectionTargetId, config.collectionKey, { dark: config.collectionKey === 'ads' });
-    if (config.categorySummaryTargetId && config.collectionKey) renderCategorySummary(config.categorySummaryTargetId, config.collectionKey);
-    if (config.relatedTargetId) renderRelatedPages(config.relatedTargetId, config.pageKey);
 
     setupNavbar();
     setupModal();
