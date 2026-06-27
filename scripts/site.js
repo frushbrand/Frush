@@ -323,6 +323,9 @@ window.FrushSite = (() => {
               <p class="mt-5 text-sm font-semibold uppercase tracking-[0.24em] text-brand-main">업체 정보</p>
               <div class="mt-4 space-y-2 text-sm leading-6 text-white/72">
                 <p><span class="font-semibold text-white">업체명</span> 프러쉬 스튜디오</p>
+                <p><span class="font-semibold text-white">대표자</span> 서보훈</p>
+                <p><span class="font-semibold text-white">사업자 등록번호</span> 310-72-00689</p>
+                <p><span class="font-semibold text-white">주소</span> 서울특별시 강남구 논현로 10길 30 5층</p>
                 <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
               </div>
             </div>
@@ -380,14 +383,15 @@ window.FrushSite = (() => {
     if (!target) return;
 
     target.innerHTML = `
-      <section class="section-shell rounded-[2rem] p-6 md:p-8 lg:p-10 shadow-soft reveal" data-reveal>
-        <div class="grid grid-cols-1 gap-6 border-b border-slate-200/80 pb-6 md:pb-8 lg:grid-cols-[3fr_2fr] lg:gap-8">
-          <div>
+      <section class="reveal" data-reveal>
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="border-b border-slate-200/80 pb-6 md:pb-8">
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Partners</p>
             <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">협력 업체와 브랜드가 Frush와 함께 움직입니다</h2>
+            <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">프러쉬는 업종과 포맷이 다른 협력사들과 함께 장면의 목적을 설계하고 결과물의 완성도까지 끌어올립니다.</p>
           </div>
         </div>
-        <div class="partner-marquee mt-6">
+        <div class="partner-marquee mt-8">
           <div class="partner-track">
             ${[...partners, ...partners].map(createPartnerCard).join('')}
           </div>
@@ -401,7 +405,6 @@ window.FrushSite = (() => {
     const cardBg = darkSurface ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200/80';
     const textColor = darkSurface ? 'text-white' : 'text-brand-text';
     const subColor = darkSurface ? 'text-white/65' : 'text-slate-500';
-    const chipBg = darkSurface ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark';
     const poster = getWorkPoster(work);
     const playback = getWorkPlayback(work);
     return `
@@ -416,19 +419,11 @@ window.FrushSite = (() => {
         >
           <div class="work-thumb relative aspect-[4/3]">
             <img src="${poster}" alt="${work.title} 썸네일" loading="lazy">
-            <div class="absolute inset-x-0 bottom-0 z-[1] flex items-end justify-end p-5">
-              <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-brand-text shadow-lg">
-                <i class="fas fa-play text-sm"></i>
-              </span>
-            </div>
           </div>
           <div class="p-6">
             <p class="text-lg font-semibold ${textColor}">${work.title}</p>
             <div class="mt-4 space-y-2 text-sm ${subColor}">
               <p><span class="font-semibold ${textColor}">종류</span> ${work.format}</p>
-            </div>
-            <div class="mt-5 inline-flex items-center gap-2 rounded-full ${chipBg} px-4 py-2 text-sm font-semibold">
-              영상 보기
             </div>
           </div>
         </button>
@@ -478,10 +473,6 @@ window.FrushSite = (() => {
           </div>
           <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
             <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
-          </div>
-          <div class="strength-highlight-card mt-8 rounded-[1.75rem] p-5">
-            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-light">Team Snapshot</p>
-            <p class="mt-3 text-sm leading-7 text-white/72 sm:text-base">브랜드 방향을 잡는 대표, 구조를 설계하는 기획자, 완성도를 만드는 제작팀이 처음 상담부터 납품까지 같은 호흡으로 움직입니다.</p>
           </div>
         </article>
         <article class="strength-card strength-card--awards rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
@@ -536,44 +527,48 @@ window.FrushSite = (() => {
     const getDimensions = () => {
       const width = window.innerWidth;
       if (width < 640) {
-        return { radius: 240, cardWidth: 88, cardHeight: 124, baseTilt: -10 };
+        return { radius: 260, cardWidth: 90, cardHeight: 132, arcLift: -14 };
       }
       if (width < 1024) {
-        return { radius: 360, cardWidth: 108, cardHeight: 152, baseTilt: -14 };
+        return { radius: 390, cardWidth: 116, cardHeight: 168, arcLift: -18 };
       }
-      return { radius: 500, cardWidth: 132, cardHeight: 186, baseTilt: -18 };
+      return { radius: 520, cardWidth: 142, cardHeight: 208, arcLift: -24 };
     };
 
     const updatePanels = () => {
-      const { radius, cardWidth, cardHeight, baseTilt } = getDimensions();
-      const startAngle = 18;
-      const endAngle = 158;
+      const { radius, cardWidth, cardHeight, arcLift } = getDimensions();
+      const startAngle = 202;
+      const endAngle = 338;
       const step = (endAngle - startAngle) / Math.max(PANEL_COUNT - 1, 1);
-      const sceneShiftX = currentPointerX * 24;
-      const sceneShiftY = currentPointerY * -18;
+      const sceneShiftX = currentPointerX * 28;
+      const sceneShiftY = currentPointerY * -20;
+      const sceneRotateX = currentPointerY * -10;
+      const sceneRotateY = currentPointerX * 14;
 
-      container.style.transform = `translate3d(${sceneShiftX}px, ${sceneShiftY}px, 0)`;
+      container.style.transform = `translate3d(${sceneShiftX}px, ${sceneShiftY}px, 0) rotateX(${sceneRotateX}deg) rotateY(${sceneRotateY}deg)`;
 
       panels.forEach(({ panel, index }) => {
         const angle = startAngle + step * index;
         const angleRad = (angle * Math.PI) / 180;
-        const depth = (PANEL_COUNT - index) * -28;
         const x = Math.cos(angleRad) * radius;
-        const y = Math.sin(angleRad) * radius;
+        const y = Math.sin(angleRad) * radius + arcLift;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
-        const depthOffset = currentPointerX * (28 + spread * 30);
-        const lift = currentPointerY * (20 + spread * 18);
-        const tilt = currentPointerX * (10 + spread * 8) + currentPointerY * 4;
-        const scale = 0.84 + spread * 0.2 + Math.abs(currentPointerY) * 0.02;
-        const rotate = baseTilt + angle / 6 + tilt;
+        const centerDistance = Math.abs(spread - 0.5);
+        const depth = (0.5 - centerDistance) * 240 - 110;
+        const depthOffset = currentPointerX * (18 + spread * 26);
+        const lift = currentPointerY * (18 + (1 - centerDistance) * 18);
+        const scale = 0.82 + (1 - centerDistance) * 0.28 + Math.abs(currentPointerY) * 0.03;
+        const rotateZ = (spread - 0.5) * 26 + currentPointerX * 8 + currentPointerY * 4;
+        const rotateX = currentPointerY * -12 + (0.5 - centerDistance) * 4;
+        const rotateY = currentPointerX * 14 + (spread - 0.5) * 18;
 
         panel.style.width = `${cardWidth}px`;
         panel.style.height = `${cardHeight}px`;
         panel.style.marginLeft = `${-cardWidth / 2}px`;
-        panel.style.marginBottom = `${-cardHeight / 2}px`;
-        panel.style.opacity = `${0.24 + spread * 0.76}`;
-        panel.style.zIndex = `${PANEL_COUNT - index}`;
-        panel.style.transform = `translate3d(${x - depthOffset}px, ${-y + lift}px, ${depth + currentPointerX * 18}px) rotate(${rotate}deg) scale(${scale})`;
+        panel.style.marginTop = `${-cardHeight / 2}px`;
+        panel.style.opacity = `${0.28 + (1 - centerDistance) * 0.62}`;
+        panel.style.zIndex = `${Math.round((1 - centerDistance) * 100)}`;
+        panel.style.transform = `translate3d(${x - depthOffset}px, ${y + lift}px, ${depth + currentPointerX * 22 - currentPointerY * 10}px) rotateZ(${rotateZ}deg) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(${scale})`;
       });
     };
 
