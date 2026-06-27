@@ -1,6 +1,6 @@
 window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
-  const TEAM_PHOTO_URL = 'https://github.com/user-attachments/assets/84ce4c93-fcb5-440a-95a8-0fe036529b57';
+  const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 22;
   const PANEL_IMAGES = [
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
@@ -426,7 +426,6 @@ window.FrushSite = (() => {
             <p class="text-lg font-semibold ${textColor}">${work.title}</p>
             <div class="mt-4 space-y-2 text-sm ${subColor}">
               <p><span class="font-semibold ${textColor}">종류</span> ${work.format}</p>
-              <p><span class="font-semibold ${textColor}">연도</span> ${work.year}</p>
             </div>
             <div class="mt-5 inline-flex items-center gap-2 rounded-full ${chipBg} px-4 py-2 text-sm font-semibold">
               영상 보기
@@ -463,19 +462,29 @@ window.FrushSite = (() => {
 
     target.innerHTML = `
       <section class="grid gap-6 lg:grid-cols-[1fr_1.05fr]">
-        <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
+        <article class="strength-card strength-card--team rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
-          <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">전략과 실행, 그리고 신뢰를 한 팀으로 연결합니다</h2>
-          <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
-          <div class="mt-8 overflow-hidden rounded-[1.75rem]">
-            <img src="${TEAM_PHOTO_URL}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
+          <h2 class="mt-3 text-3xl font-semibold text-white sm:text-4xl">전략과 실행, 그리고 신뢰를 한 팀으로 연결합니다</h2>
+          <p class="mt-5 max-w-2xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
+          <div class="strength-point-list mt-7">
+            <div class="strength-point-item">
+              <span class="strength-point-item__label">Strategy</span>
+              <p>초기 상담에서 브랜드 목적과 메시지를 먼저 정리합니다.</p>
+            </div>
+            <div class="strength-point-item">
+              <span class="strength-point-item__label">Production</span>
+              <p>기획, 촬영, 편집까지 필요한 제작 흐름을 한 팀으로 이어갑니다.</p>
+            </div>
           </div>
-          <div class="mt-8 rounded-[1.75rem] bg-brand-light/70 p-5">
-            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-dark">Team Snapshot</p>
-            <p class="mt-3 text-sm leading-7 text-slate-600 sm:text-base">브랜드 방향을 잡는 대표, 구조를 설계하는 기획자, 완성도를 만드는 제작팀이 처음 상담부터 납품까지 같은 호흡으로 움직입니다.</p>
+          <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
+            <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
+          </div>
+          <div class="strength-highlight-card mt-8 rounded-[1.75rem] p-5">
+            <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-light">Team Snapshot</p>
+            <p class="mt-3 text-sm leading-7 text-white/72 sm:text-base">브랜드 방향을 잡는 대표, 구조를 설계하는 기획자, 완성도를 만드는 제작팀이 처음 상담부터 납품까지 같은 호흡으로 움직입니다.</p>
           </div>
         </article>
-        <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
+        <article class="strength-card strength-card--awards rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
           <div class="flex items-start justify-between gap-4">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
@@ -507,8 +516,10 @@ window.FrushSite = (() => {
     const container = document.getElementById('stacked-panels-container');
     if (!stage || !container) return;
 
-    let pointerX = 0;
-    let pointerY = 0;
+    let targetPointerX = 0;
+    let targetPointerY = 0;
+    let currentPointerX = 0;
+    let currentPointerY = 0;
     const panels = Array.from({ length: PANEL_COUNT }, (_, index) => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
@@ -535,12 +546,11 @@ window.FrushSite = (() => {
 
     const updatePanels = () => {
       const { radius, cardWidth, cardHeight, baseTilt } = getDimensions();
-      const scrollProgress = Math.min((window.scrollY || 0) / Math.max(stage.offsetHeight, 1), 1.4);
       const startAngle = 18;
       const endAngle = 158;
       const step = (endAngle - startAngle) / Math.max(PANEL_COUNT - 1, 1);
-      const sceneShiftX = pointerX * 18;
-      const sceneShiftY = scrollProgress * 70 + pointerY * -14;
+      const sceneShiftX = currentPointerX * 24;
+      const sceneShiftY = currentPointerY * -18;
 
       container.style.transform = `translate3d(${sceneShiftX}px, ${sceneShiftY}px, 0)`;
 
@@ -551,10 +561,11 @@ window.FrushSite = (() => {
         const x = Math.cos(angleRad) * radius;
         const y = Math.sin(angleRad) * radius;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
-        const swing = scrollProgress * 26 * (0.25 + spread * 0.9);
-        const lift = Math.sin(scrollProgress * Math.PI + spread * 1.8) * 18;
-        const rotate = baseTilt + angle / 6 + scrollProgress * 10 + pointerX * 12;
-        const scale = 0.84 + spread * 0.2 - scrollProgress * 0.02;
+        const depthOffset = currentPointerX * (28 + spread * 30);
+        const lift = currentPointerY * (20 + spread * 18);
+        const tilt = currentPointerX * (10 + spread * 8) + currentPointerY * 4;
+        const scale = 0.84 + spread * 0.2 + Math.abs(currentPointerY) * 0.02;
+        const rotate = baseTilt + angle / 6 + tilt;
 
         panel.style.width = `${cardWidth}px`;
         panel.style.height = `${cardHeight}px`;
@@ -562,26 +573,31 @@ window.FrushSite = (() => {
         panel.style.marginBottom = `${-cardHeight / 2}px`;
         panel.style.opacity = `${0.24 + spread * 0.76}`;
         panel.style.zIndex = `${PANEL_COUNT - index}`;
-        panel.style.transform = `translate3d(${x - swing}px, ${-y + lift}px, ${depth}px) rotate(${rotate}deg) scale(${scale})`;
+        panel.style.transform = `translate3d(${x - depthOffset}px, ${-y + lift}px, ${depth + currentPointerX * 18}px) rotate(${rotate}deg) scale(${scale})`;
       });
     };
 
+    const animatePanels = () => {
+      currentPointerX += (targetPointerX - currentPointerX) * 0.08;
+      currentPointerY += (targetPointerY - currentPointerY) * 0.08;
+      updatePanels();
+      window.requestAnimationFrame(animatePanels);
+    };
+
     updatePanels();
+    animatePanels();
 
     stage.addEventListener('mousemove', (event) => {
       const rect = stage.getBoundingClientRect();
-      pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
-      pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
-      updatePanels();
+      targetPointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      targetPointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
     });
 
     stage.addEventListener('mouseleave', () => {
-      pointerX = 0;
-      pointerY = 0;
-      updatePanels();
+      targetPointerX = 0;
+      targetPointerY = 0;
     });
 
-    window.addEventListener('scroll', updatePanels, { passive: true });
     window.addEventListener('resize', updatePanels);
   }
 

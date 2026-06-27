@@ -121,6 +121,12 @@ body {
   max-width: 41rem;
 }
 
+.hero-layout {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+}
+
 .hero-cta-row {
   display: flex;
   flex-direction: column;
@@ -281,6 +287,131 @@ body {
   animation: pulse-dot 2.6s infinite;
 }
 
+.hero-showcase {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-showcase-frame {
+  position: relative;
+  width: min(100%, 32rem);
+  border-radius: 2.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.04));
+  padding: 1.25rem;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 38px 110px rgba(0, 0, 0, 0.28);
+}
+
+.hero-showcase-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(0.5px);
+  opacity: 0.9;
+}
+
+.hero-showcase-orb-top {
+  top: -1rem;
+  right: -0.5rem;
+  width: 9rem;
+  height: 9rem;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.42) 0%, rgba(16, 185, 129, 0) 70%);
+}
+
+.hero-showcase-orb-bottom {
+  bottom: 1rem;
+  left: -1.25rem;
+  width: 10rem;
+  height: 10rem;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.3) 0%, rgba(245, 158, 11, 0) 72%);
+}
+
+.hero-main-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.8rem;
+  min-height: 30rem;
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.34);
+}
+
+.hero-main-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(7, 17, 30, 0.04) 10%, rgba(7, 17, 30, 0.12) 35%, rgba(7, 17, 30, 0.82) 100%);
+}
+
+.hero-main-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-main-card__overlay {
+  position: absolute;
+  inset: auto 1.4rem 1.4rem 1.4rem;
+  z-index: 1;
+  border-radius: 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(7, 17, 30, 0.58);
+  padding: 1.2rem 1.25rem;
+  backdrop-filter: blur(12px);
+}
+
+.hero-main-card__eyebrow {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: rgba(236, 253, 245, 0.72);
+}
+
+.hero-main-card__title {
+  margin-top: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.hero-floating-badge {
+  position: absolute;
+  z-index: 2;
+  max-width: 14rem;
+  border-radius: 1.3rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.86);
+  padding: 1rem 1.05rem;
+  box-shadow: 0 18px 42px rgba(8, 15, 28, 0.18);
+}
+
+.hero-floating-badge-top {
+  top: 1.8rem;
+  left: -1.4rem;
+}
+
+.hero-floating-badge-bottom {
+  right: -1.2rem;
+  bottom: 2rem;
+}
+
+.hero-floating-badge__label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brand-main);
+}
+
+.hero-floating-badge__value {
+  margin-top: 0.55rem;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--brand-text);
+}
+
 .brand-mark {
   display: inline-flex;
   align-items: center;
@@ -330,6 +461,25 @@ body {
 .related-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+.strength-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.strength-card--team {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.22), transparent 34%),
+    linear-gradient(145deg, rgba(7, 17, 30, 0.98), rgba(8, 26, 42, 0.96));
+}
+
+.strength-card--awards {
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background:
+    radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent 28%),
+    rgba(255, 255, 255, 0.94);
 }
 
 .work-thumb {
@@ -423,6 +573,50 @@ body {
   object-fit: contain;
 }
 
+.strength-point-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.strength-point-item {
+  border-radius: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.1rem;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.65;
+}
+
+.strength-point-item__label {
+  display: block;
+  margin-bottom: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--brand-light);
+}
+
+.team-photo-frame {
+  position: relative;
+  min-height: 18rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 24px 60px rgba(2, 6, 23, 0.28);
+}
+
+.team-photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 42%, rgba(7, 17, 30, 0.16) 100%);
+}
+
+.strength-highlight-card {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(236, 253, 245, 0.1);
+  backdrop-filter: blur(14px);
+}
+
 .video-modal {
   position: fixed;
   inset: 0;
@@ -501,6 +695,13 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.82fr);
+    gap: 3rem;
+  }
+}
+
 @media (max-width: 1023px) {
   .mesh-bg {
     background:
@@ -512,6 +713,11 @@ body {
   .hero-surface,
   .hero-content-shell {
     min-height: auto;
+  }
+
+  .hero-showcase {
+    max-width: 36rem;
+    margin: 0 auto;
   }
 }
 
@@ -526,6 +732,24 @@ body {
 
   .hero-content-shell {
     min-height: 34rem;
+  }
+
+  .hero-showcase-frame {
+    padding: 0.9rem;
+  }
+
+  .hero-main-card {
+    min-height: 22rem;
+  }
+
+  .hero-main-card__overlay {
+    inset: auto 1rem 1rem 1rem;
+  }
+
+  .hero-floating-badge {
+    position: static;
+    max-width: none;
+    margin-top: 0.75rem;
   }
 
   .stacked-panels-stage {
