@@ -3,30 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="naver-site-verification" content="9b6288ef73331303024b44f68df636dbb66790ce" />
-    
-    <title>프러쉬(Frush) | 기업·기관·프랜차이즈를 위한 AI 영상 광고 제작 솔루션</title>
-    <meta name="description" content="기업 홍보, 정책 안내, 브랜드 광고까지. AI 기술로 비용은 50% 낮추고 퀄리티는 극대화하는 올인원 영상 제작 파트너.">
-    <meta name="keywords" content="프러쉬, Frush, AI영상제작, 기업홍보영상, 관공서홍보영상, 프랜차이즈광고, 숏폼제작, AI광고, 마케팅영상, 마케팅대행, AI영상, 영상제작, 광고영상, 광고제작, 영상광고, 홍보영상, 홍보, 영상외주, 스튜디오, 프리윌루젼, aikive, 크몽">
+    <meta name="naver-site-verification" content="9b6288ef73331303024b44f68df636dbb66790ce" />
+    <title>프러쉬(Frush) | AI 영상 제작 스튜디오</title>
+    <meta name="description" content="프러쉬는 기업·기관·브랜드를 위한 AI 영상 제작 스튜디오입니다. 세로형, 광고, 기타 영상까지 완전 반응형 공식 홈페이지에서 대표 작업과 제작 프로세스를 확인하세요.">
+    <meta name="keywords" content="프러쉬, Frush, AI영상제작, AI광고, 브랜드영상, 세로형영상, 광고영상, 기업홍보영상, 기관홍보영상, 유튜브광고">
     <meta name="author" content="Frush (프러쉬)">
-    
     <meta name="robots" content="index, follow">
-
     <meta property="og:type" content="website">
-    <meta property="og:title" content="프러쉬(Frush) - All-in-One AI 크리에이티브 파트너">
-    <meta property="og:description" content="복잡하고 비싼 영상 제작은 그만. 기업, 공공기관, 프랜차이즈를 위한 가장 합리적인 고퀄리티 AI 영상 솔루션.">
-    <meta property="og:image" content="Images/Frush_v2.png"> <meta property="og:url" content="https://www.frush.co.kr"> <link rel="icon" href="Images/ms-icon-150x150_v1.png" type="image/png">
+    <meta property="og:title" content="프러쉬(Frush) | AI 영상 제작 스튜디오">
+    <meta property="og:description" content="AI 영상 제작 회사 Frush의 공식 홈페이지. 대표작, 강점, 수상 이력, 제작 프로세스, 영상 카테고리를 확인해보세요.">
+    <meta property="og:image" content="Images/Frush_v2.png">
+    <meta property="og:url" content="https://www.myfrush.com">
+    <link rel="icon" href="Images/ms-icon-150x150_v1.png" type="image/png">
 
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
-    
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <script>
@@ -35,1112 +26,663 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: '#064E3B',   // Deep Green
-                            main: '#10B981',   // Emerald 500
-                            light: '#ECFDF5',  // Emerald 50
-                            accent: '#F59E0B', // Amber 500
+                            dark: '#064E3B',
+                            main: '#10B981',
+                            light: '#ECFDF5',
+                            accent: '#F59E0B',
                             text: '#1F2937'
                         }
                     },
-                    fontFamily: {
-                        sans: ['Pretendard', 'sans-serif'],
+                    boxShadow: {
+                        soft: '0 30px 80px rgba(0, 0, 0, 0.18)',
+                        glow: '0 0 0 1px rgba(16, 185, 129, 0.18), 0 18px 60px rgba(16, 185, 129, 0.18)'
                     },
-                    keyframes: {
-                        scroll: {
-                            '0%': { transform: 'translateX(0)' },
-                            '100%': { transform: 'translateX(-50%)' },
-                        }
-                    },
-                    animation: {
-                        scroll: 'scroll 30s linear infinite',
+                    backgroundImage: {
+                        grid: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)'
                     }
                 }
             }
-        }
+        };
     </script>
 
     <style>
         body {
             font-family: 'Pretendard', sans-serif;
+            background: #06111d;
+            color: #e5eef5;
             overflow-x: hidden;
             word-break: keep-all;
-            line-height: 1.6;
         }
-        
-        /* 스크롤바 커스텀 */
+
         ::-webkit-scrollbar { width: 0.6rem; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 0.3rem; }
+        ::-webkit-scrollbar-track { background: #e5e7eb; }
+        ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 9999px; }
         ::-webkit-scrollbar-thumb:hover { background: #064E3B; }
 
-        /* 비디오 스타일 */
-        video {
-            object-fit: cover;
+        .mesh-bg {
+            background:
+                radial-gradient(circle at top left, rgba(16, 185, 129, 0.25), transparent 28%),
+                radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 24%),
+                radial-gradient(circle at bottom, rgba(6, 78, 59, 0.34), transparent 38%),
+                linear-gradient(180deg, #07111e 0%, #081a2a 42%, #f6fbf9 42%, #f6fbf9 100%);
+        }
+
+        .glass {
+            background: rgba(7, 17, 30, 0.72);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .section-shell {
+            border: 1px solid rgba(15, 23, 42, 0.06);
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+        }
+
+        .hero-grid {
+            background-size: 48px 48px;
+        }
+
+        .video-thumb {
+            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(8, 26, 42, 0.72));
+        }
+
+        .video-thumb img {
             width: 100%;
             height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
         }
 
-        /* 소셜 바 */
-        .social-bar {
-            position: fixed;
-            left: 1.5rem;
-            top: 50%;
-            transform: translateY(-50%);
-            z-index: 50;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        .social-icon {
-            width: 3.5rem;
-            height: 3.5rem;
-            background: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 0.25rem 0.5rem rgba(0,0,0,0.15);
-            transition: all 0.3s;
-            font-size: 1.5rem;
-            color: #333;
-            border: 2px solid transparent;
-        }
-        .social-icon:hover {
-            transform: scale(1.1);
-            border-color: #10B981;
-            color: #10B981;
+        .video-card:hover .video-thumb img {
+            transform: scale(1.06);
         }
 
-        @media (max-width: 768px) {
-            .social-bar {
-                flex-direction: row;
-                left: 50%;
-                top: auto;
-                bottom: 1.5rem;
-                transform: translateX(-50%);
-                background: rgba(255,255,255,0.95);
-                padding: 0.8rem 1.5rem;
-                border-radius: 9999px;
-                backdrop-filter: blur(5px);
-                box-shadow: 0 -0.25rem 1rem rgba(0,0,0,0.1);
-                gap: 1.5rem;
-            }
-            .social-icon {
-                width: 2.8rem;
-                height: 2.8rem;
-                font-size: 1.2rem;
-                box-shadow: none;
-                background: transparent;
-            }
-        }
-
-        /* 파트너사 무한 롤링 */
-        .slider-wrap {
+        .modal-open {
             overflow: hidden;
-            white-space: nowrap;
-            width: 100%;
-            position: relative;
         }
-        .slider-track {
-            display: flex;
-            width: max-content;
+
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            left: 1rem;
+            top: 2rem;
+            bottom: -2rem;
+            width: 1px;
+            background: linear-gradient(180deg, rgba(16, 185, 129, 0.55), rgba(16, 185, 129, 0));
         }
-        .partner-item {
-            width: 12rem;
-            margin: 0 2rem;
-            flex-shrink: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .partner-item img {
-            max-width: 100%;
-            max-height: 5rem;
-            object-fit: contain;
-            filter: grayscale(100%);
-            opacity: 0.6;
-            transition: 0.3s;
-        }
-        .partner-item img:hover {
-            filter: grayscale(0%);
-            opacity: 1;
+
+        @media (max-width: 767px) {
+            .timeline-line::before {
+                left: 0.9rem;
+            }
         }
     </style>
 </head>
-<body class="text-gray-800 bg-white">
-
-    <nav class="fixed w-full z-40 top-0 left-0 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 cursor-pointer" onclick="window.scrollTo(0,0)">
-                    <img src="Images/Frush_v2.png" alt="프러쉬(Frush) 로고 - AI 브랜드 콘텐츠 파트너" class="h-10 w-auto"> 
-                </div>
-                <div class="hidden lg:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Home</a>
-                        <a href="#problems" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Why Frush</a>
-                        <a href="#targets" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Clients</a>
-                        <a href="#portfolio" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Portfolio</a>
-                        <a href="#process" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Process</a>
-                        <a href="#pricing" class="hover:text-brand-main px-3 py-2 rounded-md text-sm font-medium transition">Pricing</a>
-                        <a href="#contact-form" class="bg-brand-main text-white px-6 py-2.5 rounded-full font-bold hover:bg-brand-dark transition shadow-lg transform hover:-translate-y-0.5 text-sm">문의하기</a>
+<body class="mesh-bg">
+    <nav id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
+            <div class="glass rounded-full px-4 sm:px-6 py-3 shadow-soft">
+                <div class="flex items-center justify-between gap-4">
+                    <a href="#home" class="flex items-center gap-3">
+                        <img src="Images/Frush_v2.png" alt="프러쉬 로고" class="h-9 w-auto">
+                        <span class="hidden sm:block text-sm font-semibold tracking-[0.2em] text-white/70">FRUSH STUDIO</span>
+                    </a>
+                    <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/78">
+                        <a href="#home" class="hover:text-brand-main transition">홈</a>
+                        <a href="#vertical" class="hover:text-brand-main transition">세로형</a>
+                        <a href="#ads" class="hover:text-brand-main transition">광고</a>
+                        <a href="#others" class="hover:text-brand-main transition">기타 영상</a>
+                        <a href="#contact" class="rounded-full bg-brand-main px-5 py-2 text-white shadow-lg transition hover:bg-brand-dark">Contact</a>
                     </div>
-                </div>
-                <div class="-mr-2 flex lg:hidden">
-                    <button type="button" onclick="toggleMenu()" class="inline-flex items-center justify-center p-2 rounded-md text-gray-700 hover:text-brand-main focus:outline-none" aria-label="메뉴 열기">
-                        <i class="fas fa-bars text-2xl"></i>
+                    <button id="menuButton" type="button" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white" aria-label="메뉴 열기">
+                        <i class="fas fa-bars"></i>
                     </button>
                 </div>
-            </div>
-        </div>
-        <div class="lg:hidden hidden bg-white border-t absolute w-full" id="mobile-menu">
-            <div class="px-4 pt-2 pb-4 space-y-1 text-center shadow-xl">
-                <a href="#home" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Home</a>
-                <a href="#problems" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Why Frush</a>
-                <a href="#targets" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Clients</a>
-                <a href="#portfolio" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Portfolio</a>
-                <a href="#process" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Process</a>
-                <a href="#pricing" onclick="toggleMenu()" class="text-gray-700 hover:text-brand-main block px-3 py-3 rounded-md text-base font-medium">Pricing</a>
-                <a href="#contact-form" onclick="toggleMenu()" class="text-brand-main font-bold block px-3 py-3 rounded-md text-base mt-2 bg-gray-50">문의하기</a>
+                <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 mt-4 pt-4 pb-1">
+                    <div class="flex flex-col gap-2 text-sm font-semibold text-white/80">
+                        <a href="#home" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">홈</a>
+                        <a href="#vertical" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">세로형</a>
+                        <a href="#ads" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">광고</a>
+                        <a href="#others" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">기타 영상</a>
+                        <a href="#contact" class="rounded-2xl bg-brand-main px-4 py-3 text-white transition hover:bg-brand-dark">Contact</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
 
-    <div class="social-bar">
-        <a href="https://www.instagram.com/frush.brand_best/" target="_blank" class="social-icon" title="Instagram" aria-label="프러쉬 인스타그램 방문하기">
-            <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://kmong.com/gig/730460" target="_blank" class="social-icon" title="Kmong" aria-label="프러쉬 크몽 서비스 보기">
-            <span class="font-bold text-sm">Km</span>
-        </a>
-        <a href="https://www.youtube.com/@%ED%94%84%EB%9F%AC%EC%89%AC_AI%EA%B4%91%EA%B3%A0" target="_blank" class="social-icon" title="YouTube" aria-label="프러쉬 유튜브 채널 방문하기">
-            <i class="fab fa-youtube"></i>
-        </a>
-    </div>
-
-    <header id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 w-full h-full z-0">
-            <video autoplay muted loop playsinline preload="metadata" class="w-full h-full object-cover">
-                <source src="Videos/표지.mp4" type="video/mp4">
-                브라우저가 비디오를 지원하지 않습니다.
-            </video>
-            <div class="absolute inset-0 bg-black/60"></div>
-        </div>
-
-        <div class="container mx-auto px-4 relative z-10 text-center flex flex-col items-center justify-center h-full pt-32 md:pt-40" data-aos="zoom-in" data-aos-duration="1000">
-            
-            <span class="inline-block py-1.5 px-5 rounded-full bg-brand-main text-white text-xl md:text-xl font-bold mb-8 tracking-widest uppercase shadow-lg">
-                AI 광고 영상 제작 전문 에이전시
-            </span>
-            
-            <div class="mb-8 w-40 md:w-60">
-                <img src="Images/Frush_v2.png" alt="프러쉬(Frush) 메인 로고" class="w-full h-auto object-contain mx-auto filter drop-shadow-2xl brightness-0 invert">
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-light text-green-50 mb-10 leading-tight break-keep">
-                당신의 모든 이야기.<br>
-                <span class="font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-main to-brand-light">가장 강력한 AI 콘텐츠</span>로 완성하세요.
-            </h1>
-            
-            <div class="mt-12 animate-bounce">
-                <a href="#problems" class="text-white opacity-70 hover:opacity-100 transition p-4 block" aria-label="아래로 스크롤">
-                    <i class="fas fa-chevron-down text-3xl md:text-4xl"></i>
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <div class="bg-white py-10 border-b border-gray-100 relative">
-        <div class="container mx-auto px-4 mb-6 text-center">
-            <p class="text-sm font-bold text-gray-400 tracking-[0.2em] uppercase">Trusted Partners</p>
-        </div>
-        <div class="slider-wrap">
-            <div class="slider-track animate-scroll hover:[animation-play-state:paused]">
-                <div class="flex">
-                    <div class="partner-item"><img src="Images/라브라크 로고.png" alt="라브라크 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/르누아르 로고.png" alt="르누아르 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/나홀로복싱 로고.png" alt="나홀로복싱 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/공간 로고.png" alt="뉴욕 Gong-Gan 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/그린비전 로고.png" alt="그린비전 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/농촌감성 로고.jpg" alt="농촌감성 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/노이다 로고.png" alt="노이다 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/하진이네 로고.jpg" alt="하진이네 버섯뜰에 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/김씨네타코 로고.png" alt="김씨네타코 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/나진국밥 로고.png" alt="나진국밥 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/참효은재가노인복지센터 로고.png" alt="참효은재가노인복지센터 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/우곱집 로고.png" alt="우곱집 파트너사 로고"></div>
-                </div>
-                <div class="flex">
-                    <div class="partner-item"><img src="Images/라브라크 로고.png" alt="라브라크 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/르누아르 로고.png" alt="르누아르 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/나홀로복싱 로고.png" alt="나홀로복싱 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/공간 로고.png" alt="뉴욕 Gong-Gan 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/그린비전 로고.png" alt="그린비전 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/농촌감성 로고.jpg" alt="농촌감성 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/노이다 로고.png" alt="노이다 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/하진이네 로고.jpg" alt="하진이네 버섯뜰에 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/김씨네타코 로고.png" alt="김씨네타코 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/나진국밥 로고.png" alt="나진국밥 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/참효은재가노인복지센터 로고.png" alt="참효은재가노인복지센터 파트너사 로고"></div>
-                    <div class="partner-item"><img src="Images/우곱집 로고.png" alt="우곱집 파트너사 로고"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="problems" class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="bg-gray-50 rounded-[2rem] md:rounded-[3rem] shadow-xl overflow-hidden flex flex-col" data-aos="fade-up">
-                
-                <div class="w-full p-8 md:p-12 lg:p-16 flex flex-col justify-center">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 text-brand-text leading-tight break-keep">
-                        영상은 필요하지만,<br>
-                        <span class="text-red-500 underline decoration-4 decoration-red-200">제작 부담</span> 때문에 포기하셨나요?
-                    </h2>
-                    <p class="text-gray-600 text-lg md:text-xl mb-10 leading-relaxed break-keep">
-                        홍보와 마케팅에 영상은 선택이 아닌 <strong class="bg-yellow-100 px-1">필수</strong>입니다.<br>
-                        하지만 높은 외주 비용, 긴 제작 기간, 관리의 어려움이 발목을 잡고 있습니다.
-                    </p>
-                    <div class="bg-white p-8 rounded-2xl border-l-8 border-brand-main shadow-lg">
-                        <p class="font-bold text-brand-dark text-lg md:text-xl break-keep">"Frush는 AI 기술로 이 모든 장벽을 허물었습니다.<br>누구나 고퀄리티 영상을 합리적으로 누릴 수 있습니다."</p>
-                    </div>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-1 gap-10 mb-6">
-                    <div class="relative rounded-3xl overflow-hidden group shadow-2xl aspect-video border-4 border-gray-100" data-aos="zoom-in">
-                        <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
-                            <source src="Videos/프러쉬_업로드용.mp4" type="video/mp4">
-                        </video>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="targets" class="py-20 md:py-28 bg-brand-light">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4 break-keep">모든 비즈니스에 <span class="text-brand-main">영상 솔루션</span>을 더하다</h2>
-                <p class="text-gray-600 text-lg md:text-xl break-keep">Frush는 다양한 분야의 파트너들과 함께 성공적인 캠페인을 만들어갑니다.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-[2rem] shadow-lg hover:-translate-y-2 transition duration-500 border border-transparent hover:border-brand-main" data-aos="fade-up" data-aos-delay="0">
-                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-3xl">🏢</div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">일반 기업 & 브랜드</h3>
-                    <div class="h-1 w-10 bg-brand-main mb-4"></div>
-                    <ul class="text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="text-brand-main mr-2">✔</span>신제품 출시 및 프로모션 광고</li>
-                        <li class="flex items-start"><span class="text-brand-main mr-2">✔</span>브랜드 인지도 확산</li>
-                        <li class="flex items-start"><span class="text-brand-main mr-2">✔</span>온라인 쇼핑몰 상세페이지 영상</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2rem] shadow-lg hover:-translate-y-2 transition duration-500 border border-transparent hover:border-brand-accent" data-aos="fade-up" data-aos-delay="100">
-                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mb-6 text-3xl">🏪</div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">프랜차이즈 본사</h3>
-                    <div class="h-1 w-10 bg-brand-accent mb-4"></div>
-                    <ul class="text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="text-brand-accent mr-2">✔</span>가맹점주 모집을 위한 홍보 영상</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2">✔</span>전국 매장 디스플레이 통일 광고</li>
-                        <li class="flex items-start"><span class="text-brand-accent mr-2">✔</span>계절별/이벤트별 메뉴 홍보</li>
-                    </ul>
-                </div>
-
-                <div class="bg-white p-10 rounded-[2rem] shadow-lg hover:-translate-y-2 transition duration-500 border border-transparent hover:border-purple-500" data-aos="fade-up" data-aos-delay="200">
-                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6 text-3xl">🏛️</div>
-                    <h3 class="text-2xl font-bold mb-3 text-gray-800">관공서 & 공공기관</h3>
-                    <div class="h-1 w-10 bg-purple-500 mb-4"></div>
-                    <ul class="text-gray-600 space-y-3">
-                        <li class="flex items-start"><span class="text-purple-500 mr-2">✔</span>정책 안내 및 홍보 캠페인</li>
-                        <li class="flex items-start"><span class="text-purple-500 mr-2">✔</span>지역 축제 및 행사 소개 영상</li>
-                        <li class="flex items-start"><span class="text-purple-500 mr-2">✔</span>기관 성과 보고 및 설명 영상</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="bg-gray-900 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 text-white shadow-2xl">
-                <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center break-keep" data-aos="fade-up">하지만 현실적인 고민이 있으시죠?</h2>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="grid grid-cols-1 gap-5" data-aos="fade-right">
-                        <div class="bg-white/5 p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start hover:bg-white/10 transition">
-                            <span class="text-3xl mr-5">💸</span>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-1">기존 영상 외주</h3>
-                                <p class="text-gray-400 text-sm md:text-base break-keep">건당 수백만원, 수정할 때마다 추가 비용 발생</p>
-                            </div>
+    <main>
+        <section id="home" class="relative overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-24 sm:pb-28 lg:pb-32">
+            <div class="absolute inset-0 bg-grid hero-grid opacity-20"></div>
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_420px]">
+                    <div>
+                        <span class="inline-flex items-center gap-2 rounded-full border border-brand-main/25 bg-brand-main/10 px-4 py-2 text-xs font-semibold tracking-[0.3em] text-brand-light uppercase">
+                            <span class="h-2 w-2 rounded-full bg-brand-main"></span>
+                            AI Video Production Company
+                        </span>
+                        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-7xl font-semibold leading-[1.05] text-white">
+                            브랜드의 다음 장면을<br>
+                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-main via-brand-light to-brand-accent">AI 영상</span>으로 설계합니다.
+                        </h1>
+                        <p class="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl leading-8 text-white/72">
+                            프러쉬는 단순 랜딩페이지가 아닌, 기업·기관·브랜드의 공식 커뮤니케이션을 위한 AI 영상 제작 스튜디오입니다. 세로형 숏폼부터 TVCF 톤의 광고, 기타 브랜드 영상까지 일관된 전략과 높은 완성도로 제공합니다.
+                        </p>
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                            <a href="#ads" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">
+                                대표 작업 보기
+                            </a>
+                            <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">
+                                Contact
+                            </a>
                         </div>
-                        <div class="bg-white/5 p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start hover:bg-white/10 transition">
-                            <span class="text-3xl mr-5">🏆</span>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-1">영상 광고 공모전</h3>
-                                <p class="text-gray-400 text-sm md:text-base break-keep">최소 500만원+ 소요, 톤앤매너 붕괴 위험</p>
+                        <div class="mt-12 grid gap-4 sm:grid-cols-3">
+                            <div class="glass rounded-3xl p-5">
+                                <p class="text-3xl font-bold text-white">50+</p>
+                                <p class="mt-2 text-sm text-white/65">영상 제작 실적</p>
                             </div>
-                        </div>
-                        <div class="bg-white/5 p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start hover:bg-white/10 transition">
-                            <span class="text-3xl mr-5">👥</span>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-1">내부 인력 고용</h3>
-                                <p class="text-gray-400 text-sm md:text-base break-keep">지속적 일감 부족, 인건비 및 관리 부담</p>
+                            <div class="glass rounded-3xl p-5">
+                                <p class="text-3xl font-bold text-white">5.0</p>
+                                <p class="mt-2 text-sm text-white/65">평균 만족도</p>
                             </div>
-                        </div>
-                        <div class="bg-white/5 p-6 rounded-2xl backdrop-blur-md border border-white/10 flex items-start hover:bg-white/10 transition">
-                            <span class="text-3xl mr-5">⏳</span>
-                            <div>
-                                <h3 class="font-bold text-white text-lg mb-1">자체 제작 (DIY)</h3>
-                                <p class="text-gray-400 text-sm md:text-base break-keep">툴 구독료 + 본업 소홀로 인한 막대한 기회비용</p>
+                            <div class="glass rounded-3xl p-5">
+                                <p class="text-3xl font-bold text-white">All Use</p>
+                                <p class="mt-2 text-sm text-white/65">TVCF 포함 모든 용도 대응</p>
                             </div>
                         </div>
                     </div>
 
-                    <div class="bg-white p-8 rounded-3xl text-gray-800 h-full flex flex-col justify-center shadow-lg min-h-[300px]" data-aos="fade-left">
-                        <h3 class="text-center font-bold text-xl mb-6">제작 비용 비교 (단위: 만원)</h3>
-                        <div class="relative w-full h-[300px]">
-                            <canvas id="costChart"></canvas>
+                    <div class="glass rounded-[2rem] p-6 sm:p-7 shadow-soft">
+                        <div class="flex items-center justify-between gap-4">
+                            <div>
+                                <p class="text-sm uppercase tracking-[0.3em] text-brand-main/90">Core profile</p>
+                                <h2 class="mt-2 text-2xl font-semibold text-white">Frush Snapshot</h2>
+                            </div>
+                            <div class="h-14 w-14 rounded-2xl bg-brand-main/15 flex items-center justify-center text-brand-main text-2xl">
+                                <i class="fas fa-film"></i>
+                            </div>
                         </div>
-                        <p class="text-center text-sm text-gray-500 mt-6 bg-gray-100 py-2 rounded-full break-keep">
-                            * 외주/고용 대비 <span class="text-brand-main font-bold">50% 이상 절감</span> 효과
-                        </p>
+                        <div class="mt-8 space-y-4 text-sm sm:text-base text-white/72">
+                            <div class="rounded-3xl bg-white/5 px-5 py-4">
+                                <p class="font-semibold text-white">서울대 출신 대표</p>
+                                <p class="mt-1">브랜드 전략과 제작 실행을 함께 보는 창업가형 리더십</p>
+                            </div>
+                            <div class="rounded-3xl bg-white/5 px-5 py-4">
+                                <p class="font-semibold text-white">PD 출신 기획팀</p>
+                                <p class="mt-1">메시지 구조화, 콘티, 후반 연출까지 스토리 중심 설계</p>
+                            </div>
+                            <div class="rounded-3xl bg-white/5 px-5 py-4">
+                                <p class="font-semibold text-white">브랜드 맞춤형 제작</p>
+                                <p class="mt-1">세로형 / 광고 / 기타 영상 포맷을 동일한 톤앤매너로 운영</p>
+                            </div>
+                        </div>
+                        <div class="mt-8 rounded-[1.75rem] bg-gradient-to-br from-brand-main/20 via-white/5 to-brand-accent/20 p-5">
+                            <p class="text-xs uppercase tracking-[0.25em] text-brand-light/80">Official contact</p>
+                            <p class="mt-2 text-lg font-semibold text-white">문의는 Contact에서 바로 연결됩니다.</p>
+                            <p class="mt-2 text-sm text-white/65">별도 입력 폼 없이 카카오톡 오픈채팅과 이메일 링크만 남겨두어 빠르게 교체할 수 있게 구성했습니다.</p>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="mt-16 text-center" data-aos="zoom-in">
-                    <span class="inline-block border-2 border-brand-main text-brand-main px-8 py-3 rounded-full font-bold text-lg md:text-xl animate-pulse shadow-[0_0_15px_rgba(16,185,129,0.5)] break-keep">
-                        "Frush는 이 모든 비효율을 해결하기 위해 탄생했습니다."
-                    </span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section class="py-20 md:py-28 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">압도적인 퍼포먼스 차이</h2>
-            
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-white p-8 md:p-16 rounded-[2rem] md:rounded-[3rem] shadow-xl border border-gray-100" data-aos="fade-up">
-                <div class="w-full min-h-[250px]">
-                    <h3 class="text-center font-bold text-gray-700 mb-6 text-xl">제작 소요 기간 (단위: 주)</h3>
-                    <div class="relative w-full h-[250px]">
-                        <canvas id="timeChart"></canvas>
+                <div class="mt-16 section-shell rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-soft">
+                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Trusted by brands</p>
+                            <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-brand-text">다양한 업종의 브랜드가 Frush와 함께합니다</h2>
+                        </div>
+                        <p class="max-w-2xl text-sm sm:text-base leading-7 text-slate-500">기존 에셋을 유지하면서도 기업 홈페이지다운 신뢰감을 주기 위해 로고와 실적 포인트를 정리했습니다.</p>
                     </div>
-                </div>
-                
-                <div class="space-y-8">
-                    <div class="bg-brand-light p-8 rounded-2xl shadow-sm border-l-8 border-brand-main hover:bg-green-50 transition">
-                        <h3 class="text-2xl font-bold text-brand-dark mb-3">⏱ 제작 기간 50% 단축</h3>
-                        <p class="text-gray-700 text-lg break-keep">
-                            기존 4주 이상 걸리던 과정을 <strong>2주 이내</strong>로 끝냅니다.<br>
-                            빠르게 변하는 시장 트렌드에 즉각 반응할 수 있습니다.
-                        </p>
-                    </div>
-                    <div class="bg-brand-light p-8 rounded-2xl shadow-sm border-l-8 border-brand-main hover:bg-green-50 transition">
-                        <h3 class="text-2xl font-bold text-brand-dark mb-3">💰 비용 가성비 극대화</h3>
-                        <p class="text-gray-700 text-lg break-keep">
-                            촬영장, 모델, 스튜디오가 필요 없습니다.<br>
-                            불필요한 거품을 뺀 가격으로 고퀄리티 결과물을 제공합니다.
-                        </p>
+                    <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/라브라크 로고.png" alt="라브라크 로고" class="max-h-10 w-auto object-contain"></div>
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/르누아르 로고.png" alt="르누아르 로고" class="max-h-10 w-auto object-contain"></div>
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/나홀로복싱 로고.png" alt="나홀로복싱 로고" class="max-h-10 w-auto object-contain"></div>
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/공간 로고.png" alt="공간 로고" class="max-h-10 w-auto object-contain"></div>
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/서울우유 광고.png" alt="서울우유 광고 썸네일" class="max-h-10 w-auto object-contain"></div>
+                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/우곱집 로고.png" alt="우곱집 로고" class="max-h-10 w-auto object-contain"></div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 md:py-28 bg-gray-900 text-white relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
-        
-        <div class="container mx-auto px-4 md:px-8 relative z-10">
-            <div class="text-center mb-16" data-aos="fade-down">
-                <span class="bg-brand-main text-white text-xs font-bold px-4 py-1.5 rounded-full uppercase tracking-widest mb-6 inline-block shadow-lg">Science of Video Marketing</span>
-                <h2 class="text-3xl md:text-5xl font-bold mb-6 break-keep">왜 <span class="text-brand-main">영상 콘텐츠</span>여야 할까요?</h2>
-                <p class="text-gray-400 text-xl break-keep">단순한 트렌드가 아닙니다. <strong>뇌과학과 통계</strong>가 증명하는 생존 전략입니다.</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-gray-800/80 p-8 rounded-3xl border border-gray-700 hover:border-brand-main transition-all duration-300 hover:-translate-y-2 flex flex-col h-full group" data-aos="flip-left" data-aos-delay="0">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">🧠</div>
-                        <div class="text-xs text-brand-main font-bold border border-brand-main px-2 py-1 rounded">Insivia Report</div>
+        <section class="relative bg-[#f6fbf9] py-24 sm:py-28 lg:py-32 text-brand-text">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
+                <div>
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why us</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">Frush를 선택하는 이유</h2>
+                        </div>
+                        <p class="max-w-2xl text-slate-500 leading-7">기존 홈페이지의 그린 팔레트를 유지하면서도, AI 영상 제작 회사다운 프리미엄 카드 레이아웃으로 강점을 재구성했습니다.</p>
                     </div>
-                    <div class="text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-brand-main transition">95<span class="text-2xl text-brand-main">%</span></div>
-                    <h3 class="font-bold text-gray-200 text-xl mb-4">메시지 기억률</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6 break-keep flex-grow">
-                        텍스트(10%) 대비 9.5배의 각인 효과. 
-                        <strong>'이중 부호화 이론'</strong>에 따르면 뇌는 시각과 청각을 동시에 자극할 때 정보를 장기 기억으로 저장합니다.
-                    </p>
-                    <div class="border-t border-gray-700 pt-3"><p class="text-xs text-gray-500">* Source: Insivia, SaaS Marketing Report</p></div>
-                </div>
-                <div class="bg-gray-800/80 p-8 rounded-3xl border border-gray-700 hover:border-brand-accent transition-all duration-300 hover:-translate-y-2 flex flex-col h-full group" data-aos="flip-left" data-aos-delay="100">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">🛒</div>
-                        <div class="text-xs text-brand-accent font-bold border border-brand-accent px-2 py-1 rounded text-brand-accent">EyeView Digital</div>
-                    </div>
-                    <div class="text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-brand-accent transition">80<span class="text-2xl text-brand-accent">%</span></div>
-                    <h3 class="font-bold text-gray-200 text-xl mb-4">구매 전환 상승</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6 break-keep flex-grow">
-                        <strong>'거울 뉴런(Mirror Neurons)'</strong> 효과로 소비자는 영상을 보는 것만으로도 제품을 대리 체험하며, 이는 불확실성을 제거하고 구매 욕구를 자극합니다.
-                    </p>
-                    <div class="border-t border-gray-700 pt-3"><p class="text-xs text-gray-500">* Source: EyeView / Unbounce Study</p></div>
-                </div>
-                <div class="bg-gray-800/80 p-8 rounded-3xl border border-gray-700 hover:border-blue-400 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full group" data-aos="flip-left" data-aos-delay="200">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">👀</div>
-                        <div class="text-xs text-blue-400 font-bold border border-blue-400 px-2 py-1 rounded text-blue-400">Mist Media</div>
-                    </div>
-                    <div class="text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-blue-400 transition">88<span class="text-2xl text-blue-400">%</span></div>
-                    <h3 class="font-bold text-gray-200 text-xl mb-4">체류 시간 증가</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6 break-keep flex-grow">
-                        영상은 스캔하는 텍스트와 달리 <strong>선형적(Linear) 소비</strong>를 유도합니다. 체류 시간 증가는 구글 SEO 점수 상승과 상위 노출로 직결됩니다.
-                    </p>
-                    <div class="border-t border-gray-700 pt-3"><p class="text-xs text-gray-500">* Source: Mist Media / Comscore</p></div>
-                </div>
-                <div class="bg-gray-800/80 p-8 rounded-3xl border border-gray-700 hover:border-purple-400 transition-all duration-300 hover:-translate-y-2 flex flex-col h-full group" data-aos="flip-left" data-aos-delay="300">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">🚀</div>
-                        <div class="text-xs text-purple-400 font-bold border border-purple-400 px-2 py-1 rounded text-purple-400">SmallBiz Trends</div>
-                    </div>
-                    <div class="text-5xl font-black text-white mb-4 tracking-tighter group-hover:text-purple-400 transition">12<span class="text-2xl text-purple-400">배</span></div>
-                    <h3 class="font-bold text-gray-200 text-xl mb-4">공유 확산도</h3>
-                    <p class="text-sm text-gray-400 leading-relaxed mb-6 break-keep flex-grow">
-                        텍스트+이미지 합산 대비 1200% 더 많이 공유됩니다. 영상은 감정을 즉각적으로 전이시키는 <strong>'사회적 화폐(Social Currency)'</strong>로 작용합니다.
-                    </p>
-                    <div class="border-t border-gray-700 pt-3"><p class="text-xs text-gray-500">* Source: SmallBiz Trends / Brightcove</p></div>
-                </div>
-            </div>
-            
-            <div class="mt-16 text-center" data-aos="fade-up">
-                 <p class="text-2xl text-gray-300 font-light italic break-keep">"2025년, 영상은 선택이 아니라 <span class="text-brand-main font-bold">생존의 필수 조건</span>입니다."</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-                        
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-6 break-keep" data-aos="fade-up">이미 대기업들은 시작했습니다</h2>
-            <p class="text-center text-red-500 font-bold mb-16 animate-bounce text-lg break-keep">"남들도 다 하는데, 우리 브랜드만 뒤처질 수는 없습니다."</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-6">
-                <div class="relative rounded-3xl overflow-hidden group shadow-2xl aspect-video border-4 border-gray-100" data-aos="zoom-in">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
-                        <source src="Videos/LG광고.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-2">LG 유플러스 '익시'</h3>
-                        <p class="text-sm opacity-90 break-keep">100% 생성형 AI 광고로 MZ세대 타겟팅 성공</p>
-                    </div>
-                </div>
-                <div class="relative rounded-3xl overflow-hidden group shadow-2xl aspect-video border-4 border-gray-100" data-aos="zoom-in" data-aos-delay="200">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transform group-hover:scale-105 transition duration-700">
-                        <source src="Videos/서울우유광고.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute bottom-0 w-full bg-gradient-to-t from-black/90 to-transparent p-8 text-white">
-                        <h3 class="text-2xl font-bold mb-2">서울우유 '박은빈'</h3>
-                        <p class="text-sm opacity-90 break-keep">AI 기술로 배우 대체 및 화제성 확보</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<section id="pricing" class="py-20 md:py-28 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-5xl font-bold text-center text-brand-text mb-4" data-aos="fade-up">합리적인 제작 플랜</h2>
-            <p class="text-center text-gray-500 mb-16 text-lg" data-aos="fade-up">목적과 예산에 딱 맞는 패키지를 선택하세요. (VAT 포함)</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch max-w-6xl mx-auto">
-                
-                <div class="bg-white p-8 rounded-[2rem] shadow-[0_25px_60px_-15px_rgba(16,185,129,0.25)] relative transform md:-translate-y-6 border-2 border-brand-main flex flex-col z-10" data-aos="fade-up" data-aos-delay="0">
-
-                    <div class="absolute -top-5 left-1/2 transform -translate-x-1/2">
-                        <span class="bg-brand-accent text-white text-sm font-bold px-6 py-2 rounded-full shadow-lg tracking-wider">BEST CHOICE</span>
-                    </div>
-
-                    <h3 class="text-2xl font-bold text-gray-500 mb-2 mt-4">숏폼 (Short-form)</h3>
-
-                    <div class="flex items-center mb-2">
-                        <span class="text-4xl font-bold text-brand-dark">15만원</span>
-                    </div>
-
-                    <p class="text-sm text-brand-accent mb-1">기본 15초 / 초당 1만원 추가</p>
-                    <p class="text-sm text-brand-accent mb-6">최다 구매 상품</p>
-                    <div class="border-t border-brand-accent opacity-30 mb-6"></div>
-
-                    <ul class="text-base text-gray-700 space-y-4 mb-8 flex-grow font-medium">
-                        <li class="flex items-center"><i class="fas fa-check text-brand-main mr-3 text-lg"></i> <strong>고품질 AI 영상 1건(15초)</strong></li>
-                        <li class="flex items-center"><i class="fas fa-check text-brand-main mr-3 text-lg"></i> 기획 및 수정 2회 포함</li>
-                        <li class="flex items-center"><i class="fas fa-check text-brand-main mr-3 text-lg"></i> 송출 가이드 제공</li>
-                    </ul>
-
-                    <a href="#contact-form" class="w-full py-5 bg-brand-main text-white text-center font-bold rounded-xl text-lg hover:bg-green-600 transition shadow-lg transform hover:-translate-y-1 relative overflow-hidden group">
-                        <span class="relative z-10">지금 선택하기</span>
-                        <div class="absolute inset-0 bg-white/20 transform -translate-x-full group-hover:translate-x-full transition-transform duration-500 skew-x-12"></div>
-                    </a>
-                </div>
-
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-200 flex flex-col hover:shadow-xl transition" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="text-xl font-bold text-gray-500 mb-2">롱폼 (Long-form)</h3>
-                    <div class="text-4xl font-bold text-gray-800 mb-2">72만원</div>
-                    <p class="text-sm text-gray-500 mb-6">기본 60초 / 초당 1만2,000원 추가</p>
-                    <div class="border-t border-gray-100 mb-6"></div>
-                    <ul class="text-base text-gray-600 space-y-4 mb-8 flex-grow font-medium">
-                        <li>• 고품질 AI 영상 1건(60초)</li>
-                        <li>• 서비스 보조 컨텐츠 제공</li>
-                        <li>• 기획 및 수정 2회 포함</li>
-                        <li>• 송출 가이드 제공</li>
-                    </ul>
-                    <a href="#contact-form" class="w-full py-4 border border-gray-300 rounded-xl text-center text-gray-500 hover:bg-gray-50 transition font-bold">선택하기</a>
-                </div>
-
-                <div class="bg-brand-dark p-8 rounded-3xl shadow-2xl border-2 border-brand-accent relative text-white transform md:-translate-y-8 flex flex-col" data-aos="fade-up" data-aos-delay="200">
-                    <div class="absolute top-0 left-1/2 transform -translate-x-1/2 bg-brand-main text-white text-xs px-8 py-1.5 rounded-b-xl font-bold shadow-md w-max">통합 패키지</div>
-                    <h3 class="text-xl font-bold text-brand-light mb-2 mt-4">통합 마케팅 패키지</h3>
-                    
-                    <div class="flex items-center mb-2">
-                        <span class="text-4xl font-bold text-white">견적 후 결정</span>
-                    </div>
-                    
-                    <p class="text-sm text-brand-main mb-6">대규모 캠페인 최적화</p>
-                    <div class="border-t border-brand-main opacity-30 mb-6"></div>
-                    
-                    <div class="bg-white/10 p-5 rounded-xl mb-6 text-sm flex-grow backdrop-blur-sm">
-                        <p class="font-bold text-white mb-3 text-base">[패키지 구성]</p>
-                        <ul class="space-y-2 text-gray-100">
-                            <li>🎬 고품질 AI 영상 3건(30초)</li>
-                            <li>⚡ 고품질 영상 포스터 3건</li>
-                            <li>🎨 브랜드 이미지 2건</li>
-                            <li>🎵 브랜드 로고송 1개</li>
-                        </ul>
-                    </div>
-
-                    <ul class="text-sm text-gray-300 space-y-3 mb-8">
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">★</span> <strong>온/오프라인 통합 마케팅 소스 제공</strong></li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">★</span> 시리즈물 제작 가능</li>
-                        <li class="flex items-center"><span class="text-brand-accent mr-2">★</span> 송출 가이드 및 기술 지원</li>
-                    </ul>
-                    <a href="#contact-form" class="w-full py-4 bg-brand-main text-white text-center font-bold rounded-xl hover:bg-brand-accent transition shadow-lg">상담 문의하기</a>
-                </div>
-            </div>
-            
-            <div class="mt-12 text-center bg-gray-100 p-4 rounded-xl text-sm text-gray-500 max-w-4xl mx-auto">
-                <span class="font-bold text-red-500">환불 규정:</span> 결제 후 7일 이내 100% 환불 가능합니다. (단, 작업 진행 단계에 따라 차등 공제될 수 있습니다.)
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-
-	    <div class="text-center mb-10" data-aos="fade-down">
-                <span class="bg-red-600 text-white text-lg md:text-2xl font-black px-8 py-3 rounded-full shadow-[0_0_25px_rgba(220,38,38,0.6)] uppercase tracking-wider border-2 border-red-400 animate-pulse">
-                    🔥 모든 스타일 영상 제작 가능
-                </span>
-            </div>
-
-            <h2 class="text-4xl md:text-5xl font-bold mb-16 text-center text-brand-text" data-aos="fade-up">Frush Portfolio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/헤라 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">HERA 레퍼런스</span>
+                    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
+                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
+                            <p class="text-sm font-semibold text-brand-main">TRACK RECORD</p>
+                            <h3 class="mt-4 text-4xl font-bold">50+</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">누적 영상 제작 실적을 기반으로 다양한 업종의 결과물을 안정적으로 제작합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
+                            <p class="text-sm font-semibold text-brand-main">SATISFACTION</p>
+                            <h3 class="mt-4 text-4xl font-bold">5.0</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">기획부터 납품까지 커뮤니케이션 품질을 포함한 평균 만족도 기준입니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
+                            <p class="text-sm font-semibold text-brand-main">FOUNDER</p>
+                            <h3 class="mt-4 text-2xl font-bold leading-snug">서울대 출신 대표</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">전략적 사고와 실행력을 모두 갖춘 대표가 프로젝트 방향을 직접 점검합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
+                            <p class="text-sm font-semibold text-brand-main">PLANNING</p>
+                            <h3 class="mt-4 text-2xl font-bold leading-snug">PD 출신 기획팀</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">광고 문법에 익숙한 팀이 스토리보드와 씬 구조를 설계합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] border border-brand-main/10 bg-gradient-to-br from-brand-dark to-slate-900 p-6 text-white shadow-soft">
+                            <p class="text-sm font-semibold text-brand-main">FORMAT RANGE</p>
+                            <h3 class="mt-4 text-2xl font-bold leading-snug">TVCF 포함<br>모든 용도 대응</h3>
+                            <p class="mt-3 text-sm leading-6 text-white/70">세로형, 광고, 기타 브랜드 영상까지 하나의 스튜디오 체계에서 제작합니다.</p>
+                        </article>
                     </div>
                 </div>
 
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="100">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/라브라크 레퍼런스1_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">라브라크 레퍼런스 A</span>
+                <div>
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">수상 이력</h2>
+                        </div>
+                        <p class="max-w-2xl text-slate-500 leading-7">기존 수상 이력과 새로 요청한 4건을 한 번에 확인할 수 있도록 타임라인 리스트로 통합했습니다.</p>
+                    </div>
+                    <div id="awardsList" class="grid gap-5 lg:grid-cols-2"></div>
+                </div>
+
+                <div>
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Featured works</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">대표작</h2>
+                        </div>
+                        <p class="max-w-2xl text-slate-500 leading-7">홈에서도 바로 대표 영상을 열어볼 수 있도록 썸네일 그리드와 동일한 모달 재생 방식을 재사용합니다.</p>
+                    </div>
+                    <div id="featuredVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
+                </div>
+
+                <div>
+                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Process</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">작업 프로세스</h2>
+                        </div>
+                        <p class="max-w-2xl text-slate-500 leading-7">문의부터 납품까지의 흐름을 반응형 스텝 카드로 시각화했습니다.</p>
+                    </div>
+                    <div class="grid gap-5 lg:grid-cols-4">
+                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">01</div>
+                            <h3 class="mt-6 text-xl font-semibold">문의</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">브랜드 상황, 목표, 매체를 확인하고 상담 채널에서 빠르게 요구사항을 정리합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">02</div>
+                            <h3 class="mt-6 text-xl font-semibold">기획</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">콘셉트, 톤앤매너, 컷 구성, 포맷 전략을 맞춤형으로 설계합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">03</div>
+                            <h3 class="mt-6 text-xl font-semibold">제작</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">AI 생성과 후반 연출을 결합해 브랜드에 맞는 최종 컷을 완성합니다.</p>
+                        </article>
+                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
+                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">04</div>
+                            <h3 class="mt-6 text-xl font-semibold">납품</h3>
+                            <p class="mt-3 text-sm leading-6 text-slate-500">세로형·가로형 등 필요한 포맷으로 정리해 실사용 가능한 결과물을 전달합니다.</p>
+                        </article>
                     </div>
                 </div>
 
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="150">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/라브라크 레퍼런스2_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">라브라크 레퍼런스 B</span>
-                    </div>
-                </div>
-
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/뉴욕공간 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">뉴욕 Gong-Gan 레퍼런스</span>
-                    </div>
-                </div>
-
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/정담 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">(주)정담 농산물</span>
-                    </div>
-                </div>
-
-				<div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/맥도날드 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">MCDONALDS 레퍼런스</span>
-                    </div>
-                </div>
-
-				<div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/우곱집 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">우곱집 레퍼런스</span>
-                    </div>
-                </div>
-
-				<div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/나진국밥 레퍼런스_업로드용1.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">나진국밥 가맹 모집</span>
-                    </div>
-                </div>
-
-				<div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/나진국밥 레퍼런스_업로드용2.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">나진국밥 브랜드 스토리_A</span>
-                    </div>
-                </div>
-
-				<div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="200">
-                     <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/나진국밥 레퍼런스_업로드용3.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">나진국밥 브랜드 스토리_B</span>
-                    </div>
-                </div>
-
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/르누아르 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">르 누아르 레퍼런스</span>
-                    </div>
-                </div>
-
-                <div class="aspect-[16/9] md:aspect-video lg:aspect-[16/9] bg-gray-200 rounded-2xl relative group overflow-hidden shadow-xl" data-aos="zoom-in" data-aos-delay="300">
-                    <video data-lazy-video muted loop playsinline preload="none" class="w-full h-full object-cover transition transform group-hover:scale-105 duration-700">
-                        <source src="Videos/나홀로복싱 레퍼런스_업로드용.mp4" type="video/mp4">
-                    </video>
-                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
-                        <span class="text-white font-bold text-xl border-2 border-white px-6 py-2">나홀로복싱 레퍼런스</span>
+                <div class="rounded-[2.25rem] bg-gradient-to-r from-brand-dark via-slate-900 to-brand-dark px-6 py-10 sm:px-10 sm:py-12 text-white shadow-soft">
+                    <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8">
+                        <div>
+                            <p class="text-sm uppercase tracking-[0.28em] text-brand-main">Ready to start</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">다음 캠페인을 Frush와 함께 시작해보세요.</h2>
+                            <p class="mt-4 text-white/70 leading-7 max-w-2xl">카카오톡 오픈채팅과 이메일 링크를 동일하게 연결해, CTA와 Contact가 자연스럽게 이어지도록 구성했습니다.</p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white transition hover:bg-brand-dark">Contact 열기</a>
+                            <a href="#vertical" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">영상 카테고리 보기</a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 md:py-28 bg-gray-900 text-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl font-bold text-center mb-16">About Frush</h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                <div class="bg-gray-800 p-10 rounded-[2rem] flex flex-col items-center text-center shadow-xl border border-gray-700" data-aos="fade-right">
-                    <div class="w-40 h-40 rounded-full mb-8 overflow-hidden border-4 border-brand-main bg-gray-100 shadow-lg">
-                        <img src="Images/서보훈_v1.png" alt="서보훈 프러쉬(Frush) 대표 CEO" class="w-full h-full object-cover">
+        <section id="vertical" class="bg-white py-24 sm:py-28 lg:py-32 text-brand-text">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                    <div>
+                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
+                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">세로형</h2>
                     </div>
-                    
-                    <h3 class="text-3xl font-bold mb-3">서보훈 <span class="text-lg font-normal text-gray-400 block sm:inline">CEO & Founder</span></h3>
-                    <p class="text-brand-main font-bold mb-6 text-lg">서울대학교 농업생명과학대학 졸업</p>
-                    <p class="text-gray-300 text-lg leading-relaxed mb-8 break-keep">
-                        "데이터 분석 역량과 브랜딩 노하우를 결합하여 가장 합리적이고 효과적인 AI 콘텐츠 솔루션을 제공합니다."
-                    </p>
-                    <div class="text-left w-full bg-gray-700/50 p-6 rounded-2xl text-sm space-y-3">
-                        <p class="font-bold text-gray-200 border-b border-gray-600 pb-2 mb-2 text-base">History & Experience</p>
-                        <p>• 2023 Tridge Data & Intelligence 인턴</p>
-                        <p>• 2022 우야지막창 동대구역점 점장</p>
-                        <p class="text-gray-400 italic mt-2">
-                            - The Role of Public Food Delivery Mobile Applications... (1저자)<br>
-                            - Smart Agriculture and Regional Development... (1저자)
-                        </p>
-                    </div>
+                    <p class="max-w-2xl text-slate-500 leading-7">모든 영상은 데이터 배열로 관리되며, 썸네일 클릭 시 유튜브 페이지 이동 없이 홈페이지 오버레이 안에서 재생됩니다.</p>
                 </div>
-
-                <div class="space-y-8 flex flex-col justify-center" data-aos="fade-left">
-                    <div class="bg-gray-800 p-10 rounded-[2rem] border-l-8 border-brand-main shadow-xl">
-                        <h3 class="text-xl font-bold mb-4 text-gray-400 text-center">Company Vision</h3>
-                        <p class="text-2xl sm:text-3xl text-white font-bold mb-6 break-keep text-center">소비자에게 도달하는 가장 완벽한 방식</p>
-                        <ul class="space-y-3 text-gray-300 text-lg">
-                            <li><span class="font-bold text-white">설립일:</span> 2025년 3월 24일</li>
-                            <li><span class="font-bold text-white">26년 목표:</span></li>
-                            <li class="pl-4 text-brand-main flex items-center"><i class="fas fa-check mr-2"></i> 법인 사업자 전환</li>
-                            <li class="pl-4 text-brand-main flex items-center"><i class="fas fa-check mr-2"></i> 브랜드 광고 송출 시스템 구축</li>
-                        </ul>
-                    </div>
-                    <div class="bg-brand-dark p-10 rounded-[2rem] relative overflow-hidden shadow-xl border border-gray-700">
-                        <div class="absolute top-0 right-0 p-6 opacity-10 text-8xl">🏆</div>
-                        <h3 class="text-xl font-bold mb-6 text-white">Awards & Recognition</h3>
-                        <ul class="space-y-4 text-brand-light text-lg">
-                            <li class="flex items-start"><span class="mr-4 text-2xl">🥇</span> 2025 농림축산식품부 장관상 수상</li>
-                            <li class="flex items-start"><span class="mr-4 text-2xl">🏆</span> 2024 서울대학교 CALS 창업경진대회 대상</li>
-                            <li class="flex items-start"><span class="mr-4 text-2xl">🌱</span> 2024 NH 애그테크 청년 창업 캠퍼스 SEED 우수상</li>
-                        </ul>
-                    </div>
-                </div>
+                <div id="verticalVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="text-3xl font-bold text-brand-dark mb-4">Frush Brand Content Partner</h2>
-                <div class="inline-block bg-gray-50 p-6 rounded-r-2xl border-l-8 border-brand-main shadow-sm">
-                    <p class="text-gray-600 text-xl break-keep">
-                        "우리는 단순한 편집자가 아닙니다.<br>
-                        <strong>브랜드의 가치를 가장 잘 전달하는 크리에이티브 파트너</strong>입니다."
-                    </p>
-                </div>
-            </div>
-            <div class="flex flex-col md:flex-row gap-8 items-stretch justify-center">
-                <div class="md:w-5/12 bg-white border border-gray-200 rounded-[2rem] p-10 relative shadow-xl z-10" data-aos="fade-right">
-                    <div class="bg-gray-800 text-white px-5 py-1.5 rounded-full text-sm font-bold inline-block mb-8">NOW</div>
-                    <h3 class="text-3xl font-bold text-brand-text mb-6 break-keep">타겟 맞춤형 콘텐츠 제작</h3>
-                    <ul class="text-left space-y-6 text-lg">
-                        <li class="flex items-start"><span class="mr-4 text-2xl">🎯</span> <span>소비자 심리를 파고드는 영상/이미지 기획</span></li>
-                        <li class="flex items-start"><span class="mr-4 text-2xl">🚀</span> <span>빠르고 저렴한 고품질 AI 제작</span></li>
-                        <li class="flex items-start"><span class="mr-4 text-2xl">📺</span> <span>SNS, 유튜브, 디스플레이 등 전 매체 최적화</span></li>
-                    </ul>
-                </div>
-                <div class="md:w-5/12 bg-brand-light border-2 border-brand-main rounded-[2rem] p-10 relative opacity-90 shadow-none hover:shadow-xl hover:opacity-100 transition" data-aos="fade-left">
-                    <div class="bg-brand-main text-white px-5 py-1.5 rounded-full text-sm font-bold inline-block mb-8">FUTURE (확장 예정)</div>
-                    <h3 class="text-3xl font-bold text-brand-dark mb-2 break-keep">미디어 플랫폼 확장</h3>
-                    <p class="text-sm text-brand-main font-bold mb-6">* 콘텐츠 파트너사 대상 확장</p>
-                    <ul class="text-left space-y-6 text-lg">
-                        <li class="flex items-start"><span class="mr-4 text-2xl">📡</span> <span>통합 송출 시스템(CMS) 구축 지원</span></li>
-                        <li class="flex items-start"><span class="mr-4 text-2xl">🎥</span> <span>기업/브랜드 유튜브 채널 운영 대행</span></li>
-                        <li class="flex items-start"><span class="mr-4 text-2xl">💰</span> <span>영상 자산을 활용한 추가 수익 모델 발굴</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="process" class="py-20 md:py-28 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-brand-text mb-4" data-aos="fade-up">Frush 작업 프로세스</h2>
-            <div class="flex justify-center items-center mb-16" data-aos="fade-up">
-                <span class="bg-brand-main text-white px-8 py-2 rounded-full text-lg font-bold shadow-lg">Total: 약 8일 소요</span>
-            </div>
-            
-            <div class="relative py-10">
-                <div class="hidden lg:block absolute top-1/2 left-0 w-full h-1 bg-gray-100 -z-0 transform -translate-y-1/2 rounded-full"></div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="0">
-                        <div class="w-16 h-16 bg-gray-800 text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">1</div>
-                        <h3 class="font-bold text-xl mb-3">상담 & 기획</h3>
-                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 2일</p>
-                        <p class="text-base text-gray-600">설문 조사 & 미팅</p>
-                        <div class="mt-4 text-sm font-bold text-brand-accent">↺ 니즈 파악</div>
+        <section id="ads" class="bg-slate-950 py-24 sm:py-28 lg:py-32 text-white">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                    <div>
+                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
+                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">광고</h2>
                     </div>
+                    <p class="max-w-2xl text-white/70 leading-7">브랜드 광고 톤의 작업과 레퍼런스를 한곳에 모아, 공식 홈페이지다운 쇼케이스 섹션으로 재구성했습니다.</p>
+                </div>
+                <div id="adVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+            </div>
+        </section>
 
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
-                        <div class="w-16 h-16 bg-white border-2 border-brand-main text-brand-main rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">2</div>
-                        <h3 class="font-bold text-xl mb-3">스토리 & 디자인</h3>
-                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 3일</p>
-                        <p class="text-base text-gray-600">키 이미지 & 스토리보드</p>
-                        <div class="mt-4 text-sm font-bold text-brand-accent">↺ 컨펌 & 피드백</div>
+        <section id="others" class="bg-[#f6fbf9] py-24 sm:py-28 lg:py-32 text-brand-text">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
+                    <div>
+                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
+                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">기타 영상</h2>
                     </div>
+                    <p class="max-w-2xl text-slate-500 leading-7">브랜드 필름, 회사 소개, 기타 활용 영상을 같은 시스템 안에서 추가할 수 있도록 동일한 JSON 구조를 사용합니다.</p>
+                </div>
+                <div id="otherVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
+            </div>
+        </section>
 
-                    <div class="bg-white border border-gray-100 p-8 rounded-2xl shadow-lg text-center hover:shadow-2xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
-                        <div class="w-16 h-16 bg-white border-2 border-brand-main text-brand-main rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">3</div>
-                        <h3 class="font-bold text-xl mb-3">영상 제작</h3>
-                        <p class="text-xs text-gray-500 mb-2 font-bold">소요: 약 3일</p>
-                        <p class="text-base text-gray-600">AI 영상/모션/음향</p>
-                        <div class="mt-4 text-sm font-bold text-brand-accent">↺ 수정 & 확정</div>
-                    </div>
-
-                    <div class="bg-white p-8 rounded-2xl shadow-lg text-center transform scale-100 lg:scale-105 border border-gray-100" data-aos="fade-up" data-aos-delay="300">
-                        <div class="w-16 h-16 bg-brand-main text-white rounded-full flex items-center justify-center mx-auto mb-6 text-2xl font-bold shadow-lg">4</div>
-                        <h3 class="font-bold text-xl mb-3">최종 납품</h3>
-                        <p class="text-xs text-green-600 mb-2 font-bold">즉시 사용 가능</p>
-                        <p class="text-base text-gray-600">파일 전달</p>
-                        <div class="mt-4 text-xs font-bold text-brand-dark bg-green-100 px-3 py-1 rounded inline-block">✅ 송출 가이드 제공</div>
+        <section id="contact" class="bg-slate-950 py-24 sm:py-28 lg:py-32 text-white">
+            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
+                <div class="rounded-[2.5rem] border border-white/10 bg-white/5 p-8 sm:p-10 lg:p-14 shadow-soft">
+                    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Contact</p>
+                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">바로 연결되는 문의 채널</h2>
+                            <p class="mt-5 text-white/70 leading-8">별도 입력 폼 없이, 카카오톡 오픈채팅과 이메일 링크로 바로 연결되도록 구성했습니다. 아래 플레이스홀더 값만 실제 정보로 교체하면 즉시 운영 가능합니다.</p>
+                            <div class="mt-8 grid gap-4 text-sm text-white/60">
+                                <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-5">
+                                    <p class="font-semibold text-white">카카오톡 오픈채팅 URL</p>
+                                    <p class="mt-2 break-all">https://open.kakao.com/o/REPLACE_WITH_OPEN_CHAT</p>
+                                </div>
+                                <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-5">
+                                    <p class="font-semibold text-white">이메일 주소</p>
+                                    <p class="mt-2 break-all">REPLACE_WITH_EMAIL@example.com</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="rounded-[2rem] bg-white p-6 sm:p-8 text-brand-text">
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Quick actions</p>
+                            <div class="mt-6 space-y-4">
+                                <a href="https://open.kakao.com/o/REPLACE_WITH_OPEN_CHAT" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl bg-brand-main px-5 py-4 text-white font-semibold transition hover:bg-brand-dark">
+                                    <span><i class="fas fa-comment-dots mr-3"></i>카카오톡 오픈채팅</span>
+                                    <i class="fas fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                                <a href="mailto:REPLACE_WITH_EMAIL@example.com" class="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 font-semibold text-brand-text transition hover:border-brand-main hover:text-brand-main">
+                                    <span><i class="fas fa-envelope mr-3"></i>이메일 보내기</span>
+                                    <i class="fas fa-arrow-up-right-from-square text-sm"></i>
+                                </a>
+                            </div>
+                            <div class="mt-6 rounded-2xl bg-brand-light p-5 text-sm leading-6 text-slate-600">
+                                Contact 섹션과 하단 CTA는 동일한 연결 방식을 사용합니다. 실제 운영 시 링크 값만 바꾸면 됩니다.
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section class="py-20 md:py-28 bg-gray-50">
-        <div class="container mx-auto px-4 md:px-8 max-w-4xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-brand-text" data-aos="fade-up">자주 묻는 질문 (Q&A)</h2>
-            <div class="space-y-6">
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="0">
-                    <h3 class="flex items-center text-xl font-bold text-brand-dark mb-4">
-                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
-                        <span class="break-keep">Frush는 AI 에이전트(챗봇)를 제공하는 회사인가요?</span>
-                    </h3>
-                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-lg break-keep">
-                        A. 아닙니다. 저희는 AI 기술을 활용하여 <strong>고품질의 광고 영상, 이미지, 음원을 제작하고 관리해 드리는 솔루션 에이전시</strong>입니다. 
-                        AI 툴을 직접 제공하는 것이 아니라, AI를 능숙하게 다루는 전문 팀이 결과물을 만들어 드리는 서비스이므로, 사장님께서 AI를 공부하실 필요가 전혀 없습니다.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="100">
-                    <h3 class="flex items-center text-xl font-bold text-brand-dark mb-4">
-                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
-                        <span class="break-keep">납품받은 영상은 어디에 사용할 수 있나요?</span>
-                    </h3>
-                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-lg break-keep">
-                        A. Frush가 제작한 영상은 유튜브, 인스타그램, 틱톡 등 SNS는 물론, 매장 내 디스플레이(TV, 키오스크)나 옥외 전광판 등 <strong>원하시는 모든 매체에서 자유롭게 사용</strong>하실 수 있습니다. 사용 목적에 맞춰 최적화된 파일 포맷으로 전달해 드립니다.
-                    </p>
-                </div>
-                <div class="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition" data-aos="fade-up" data-aos-delay="200">
-                    <h3 class="flex items-center text-xl font-bold text-brand-dark mb-4">
-                        <span class="bg-brand-main text-white px-3 py-1 rounded mr-4 text-sm flex-shrink-0">Q</span>
-                        <span class="break-keep">AI로 만들면 퀄리티가 어색하지 않나요?</span>
-                    </h3>
-                    <p class="text-gray-600 pl-0 md:pl-14 leading-relaxed text-lg break-keep">
-                        A. Frush는 100% 자동 생성에 맡기지 않습니다. 전문 디렉터가 검수하고 리터칭하는 
-                        <strong>'Human-in-the-loop'</strong> 방식을 사용하여 기업이나 관공서에서 즉시 사용 가능한 상업적 퀄리티를 보장합니다.
-                    </p>
-                </div>
+    <footer class="border-t border-white/8 bg-[#07111e] py-10 text-white/60">
+        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 lg:px-8 md:flex-row md:items-center md:justify-between">
+            <div class="flex items-center gap-3">
+                <img src="Images/Frush_v2.png" alt="프러쉬 로고" class="h-8 w-auto opacity-90">
+                <span class="text-sm tracking-[0.24em]">FRUSH STUDIO</span>
             </div>
-        </div>
-    </section>
-
-<section id="contact-form" class="py-20 md:py-28 bg-brand-light">
-        <div class="container mx-auto px-4 md:px-8 max-w-3xl">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-brand-dark" data-aos="fade-up">간편 상담 신청</h2>
-            <p class="text-center text-gray-600 mb-10 text-lg" data-aos="fade-up">연락처를 남겨주시면 담당자가 실시간으로 확인 후 빠르게 연락드리겠습니다.</p>
-
-            <form id="contact-form-el" class="bg-white p-8 md:p-12 rounded-[2rem] shadow-xl border border-brand-main/20" data-aos="zoom-in">
-                <!-- Web3Forms: https://web3forms.com 에서 무료 access key 발급 후 아래 값을 교체하세요 -->
-                <input type="hidden" name="access_key" value="ddc967d2-bb3c-4569-889d-492c068fde87">
-                <input type="hidden" name="subject" content="[프러쉬] 새 상담 신청이 도착했습니다">
-                <input type="hidden" name="from_name" value="프러쉬 홈페이지">
-                <input type="checkbox" name="botcheck" class="hidden" style="display:none">
-
-                <div class="mb-6">
-                    <label for="name" class="block text-gray-700 font-bold mb-2">이름 (담당자명/기업명)</label>
-                    <input type="text" id="name" name="name" placeholder="성함 또는 기업명을 입력해주세요" required
-                           class="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brand-main focus:ring-2 focus:ring-brand-main/20 focus:bg-white focus:outline-none transition text-lg placeholder-gray-400">
-                </div>
-
-                <div class="mb-6">
-                    <label for="phone" class="block text-gray-700 font-bold mb-2">전화번호</label>
-                    <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" required
-                           class="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brand-main focus:ring-2 focus:ring-brand-main/20 focus:bg-white focus:outline-none transition text-lg placeholder-gray-400">
-                </div>
-
-                <div class="mb-8">
-                    <label for="message" class="block text-gray-700 font-bold mb-2">상담 내용</label>
-                    <textarea id="message" name="message" rows="4" placeholder="제작 목적(기업홍보/정책안내/프랜차이즈 등)이나 궁금하신 점을 적어주세요." required
-                              class="w-full px-5 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:border-brand-main focus:ring-2 focus:ring-brand-main/20 focus:bg-white focus:outline-none transition text-lg resize-none placeholder-gray-400"></textarea>
-                </div>
-
-                <button type="submit" id="submit-btn" class="w-full bg-brand-main text-white font-bold py-5 rounded-xl text-xl hover:bg-brand-dark transition shadow-lg transform hover:-translate-y-1 flex justify-center items-center">
-                    <i class="fas fa-paper-plane mr-3"></i> 상담 신청하기
-                </button>
-                <p id="form-status" class="text-center text-gray-400 text-sm mt-4">신청 시 담당자에게 즉시 알림이 전송됩니다.</p>
-            </form>
-        </div>
-    </section>
-
-    <footer class="bg-black text-white text-center py-20 relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-main opacity-5 pointer-events-none"></div>
-        <div class="container mx-auto px-6 relative z-10">
-            <img src="Images/Frush_v2.png" alt="프러쉬 하단 로고" class="h-20 mx-auto mb-10 filter brightness-0 invert opacity-80">
-            
-            <h2 class="text-3xl md:text-5xl font-black mb-8 leading-tight break-keep">
-                지금, 당신의 <span class="text-brand-main">스토리</span>를<br>
-                <span class="text-brand-main">영상</span>으로 완성하세요.
-            </h2>
-            <p class="text-xl text-gray-400 mb-16 break-keep">
-                가장 합리적이고 스마트한 AI 브랜드 콘텐츠 파트너,<br>
-                <strong>Frush</strong>가 당신의 성공을 돕겠습니다.
-            </p>
-            
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 mb-20">
-                <a href="tel:010-9998-5893" class="bg-white text-black px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:bg-gray-200 transition transform hover:-translate-y-1 w-full md:w-auto">
-                    <i class="fas fa-phone-alt mr-2"></i> 010-9998-5893
-                </a>
-                <a href="mailto:frush.brand@gmail.com" class="bg-gray-800 text-white border border-gray-600 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1 w-full md:w-auto break-word-all">
-                    <i class="fas fa-envelope mr-2"></i> frush.brand@gmail.com
-                </a>
-                <a href="#contact-form" class="bg-brand-main text-white px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:bg-green-600 transition transform hover:-translate-y-1 w-full md:w-auto">
-                    <i class="fas fa-paper-plane mr-2"></i> 문의하기 / 플랜 선택
-                </a>
-            </div>
-
-            <div class="text-sm text-gray-500 border-t border-gray-800 pt-10 w-full max-w-2xl mx-auto">
-                <p class="mb-2">🏢 서울특별시 관악구 신림로 134, 오성벤처빌딩 3층</p>
-                <p>Copyright © 2025 Frush. All rights reserved.</p>
-            </div>
+            <p class="text-sm">Copyright © 2026 Frush. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Init AOS
-        AOS.init({
-            once: true,
-            duration: 800,
-            offset: 100
-        });
+    <div id="videoModal" class="fixed inset-0 z-[70] hidden bg-black/80 px-4 py-6 sm:px-6 lg:px-8">
+        <div class="flex min-h-full items-center justify-center">
+            <div class="w-full max-w-5xl rounded-[2rem] bg-[#08111c] p-4 sm:p-5 shadow-soft border border-white/10">
+                <div class="mb-4 flex items-center justify-between gap-4">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.28em] text-brand-main">Now playing</p>
+                        <h3 id="modalTitle" class="mt-2 text-lg sm:text-xl font-semibold text-white">영상 재생</h3>
+                    </div>
+                    <button id="closeModalButton" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white" aria-label="영상 닫기">
+                        <i class="fas fa-xmark text-lg"></i>
+                    </button>
+                </div>
+                <div id="modalContent" class="overflow-hidden rounded-[1.5rem] bg-black"></div>
+            </div>
+        </div>
+    </div>
 
-        // Mobile Menu
-        function toggleMenu() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
+    <script>
+        const awards = [
+            { title: '2025 제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF', date: '2025.10' },
+            { title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단', date: '2025.07' },
+            { title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원', date: '2025.12' },
+            { title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단', date: '2025.12' },
+            { title: '농림축산식품부 장관상 수상', org: '기존 수상 이력', date: '2025' },
+            { title: '서울대학교 CALS 창업경진대회 대상', org: '기존 수상 이력', date: '2024' },
+            { title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: '기존 수상 이력', date: '2024' }
+        ];
+
+        const videoCollections = {
+            vertical: [
+                {
+                    thumbnail: 'Image_Storage/프러쉬_썸네일.png',
+                    title: '브랜드 메시지 세로형 샘플',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=7dKvkS6uYQ8'
+                },
+                {
+                    thumbnail: 'Image_Storage/나진국밥_썸네일.png',
+                    title: '매장 홍보 세로형 샘플',
+                    youtubeUrl: 'REPLACE_WITH_VERTICAL_VIDEO_URL_01'
+                },
+                {
+                    thumbnail: 'Images/프러쉬매장.png',
+                    title: '제품/서비스 숏폼 샘플',
+                    youtubeUrl: 'REPLACE_WITH_VERTICAL_VIDEO_URL_02'
+                }
+            ],
+            ads: [
+                {
+                    thumbnail: 'https://i.ytimg.com/vi/TwY-2-ioT9s/hqdefault.jpg',
+                    title: 'LG유플러스 AX Company 광고 레퍼런스',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=TwY-2-ioT9s'
+                },
+                {
+                    thumbnail: 'https://i.ytimg.com/vi/FqJo6yRacrc/hqdefault.jpg',
+                    title: '서울우유 브랜딩 광고 레퍼런스',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=FqJo6yRacrc'
+                },
+                {
+                    thumbnail: 'https://i.ytimg.com/vi/MZdGr8RPcT0/hqdefault.jpg',
+                    title: 'HERA 브랜드 필름 레퍼런스',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=MZdGr8RPcT0'
+                }
+            ],
+            others: [
+                {
+                    thumbnail: 'Images/Frush_v2.png',
+                    title: 'Frush 스튜디오 소개 영상',
+                    youtubeUrl: 'https://www.youtube.com/watch?v=7dKvkS6uYQ8'
+                },
+                {
+                    thumbnail: 'Images/서울우유 광고.png',
+                    title: '캠페인/브랜드 필름 샘플',
+                    youtubeUrl: 'REPLACE_WITH_OTHER_VIDEO_URL_01'
+                },
+                {
+                    thumbnail: 'Images/서보훈_v1.png',
+                    title: '대표 인터뷰/회사 소개 샘플',
+                    youtubeUrl: 'REPLACE_WITH_OTHER_VIDEO_URL_02'
+                }
+            ]
+        };
+
+        const featuredVideos = [
+            videoCollections.vertical[0],
+            videoCollections.ads[0],
+            videoCollections.ads[1],
+            videoCollections.others[0]
+        ];
+
+        const modal = document.getElementById('videoModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalContent = document.getElementById('modalContent');
+        const menuButton = document.getElementById('menuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeModalButton = document.getElementById('closeModalButton');
+        const navbar = document.getElementById('navbar');
+
+        function extractYouTubeId(url) {
+            if (!url) return '';
+            const patterns = [
+                /(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{11})/,
+                /[?&]v=([A-Za-z0-9_-]{11})/
+            ];
+            for (const pattern of patterns) {
+                const match = url.match(pattern);
+                if (match) return match[1];
+            }
+            return '';
         }
 
-        // Navbar Effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-md');
-                navbar.classList.remove('py-4');
+        function createVideoCard(video, darkMode = false) {
+            const textColor = darkMode ? 'text-white' : 'text-brand-text';
+            const subColor = darkMode ? 'text-white/65' : 'text-slate-500';
+            const cardBg = darkMode ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200/80';
+            const youtubeId = extractYouTubeId(video.youtubeUrl);
+            const buttonLabel = youtubeId ? '영상 보기' : '링크 교체 필요';
+
+            return `
+                <article class="video-card overflow-hidden rounded-[2rem] ${cardBg} shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
+                    <button type="button" class="w-full text-left" data-video-title="${video.title}" data-video-url="${video.youtubeUrl}">
+                        <div class="video-thumb relative aspect-[16/10] overflow-hidden">
+                            <img src="${video.thumbnail}" alt="${video.title} 썸네일" loading="lazy">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
+                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4">
+                                <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
+                                    <i class="fas fa-play text-[0.65rem]"></i>
+                                    YouTube Modal
+                                </div>
+                                <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-brand-text shadow-lg">
+                                    <i class="fas fa-play text-sm"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold ${textColor}">${video.title}</h3>
+                            <p class="mt-3 text-sm leading-6 ${subColor}">${youtubeId ? '홈페이지 안에서 바로 재생할 수 있도록 유튜브 임베드 모달과 연결됩니다.' : '실제 영상 링크만 교체하면 동일한 모달 재생 방식으로 바로 운영할 수 있습니다.'}</p>
+                            <div class="mt-5 inline-flex items-center gap-2 rounded-full ${darkMode ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark'} px-4 py-2 text-sm font-semibold">
+                                ${buttonLabel}
+                            </div>
+                        </div>
+                    </button>
+                </article>
+            `;
+        }
+
+        function renderAwards() {
+            document.getElementById('awardsList').innerHTML = awards.map((award, index) => `
+                <article class="timeline-line relative rounded-[2rem] border border-slate-200/80 bg-white p-6 sm:p-7 shadow-sm ${index === awards.length - 1 ? '' : ''}">
+                    <div class="flex gap-4">
+                        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark">
+                            <i class="fas fa-award text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-sm font-semibold text-brand-main">${award.org} · ${award.date}</p>
+                            <h3 class="mt-2 text-lg font-semibold text-brand-text leading-7">${award.title}</h3>
+                        </div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderVideos(targetId, videos, darkMode = false) {
+            document.getElementById(targetId).innerHTML = videos.map((video) => createVideoCard(video, darkMode)).join('');
+        }
+
+        function openModal(title, url) {
+            const youtubeId = extractYouTubeId(url);
+            modalTitle.textContent = title;
+            if (youtubeId) {
+                modalContent.innerHTML = `
+                    <div class="aspect-video w-full overflow-hidden rounded-[1.5rem]">
+                        <iframe
+                            class="h-full w-full"
+                            src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0"
+                            title="${title}"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                `;
             } else {
-                navbar.classList.remove('shadow-md');
+                modalContent.innerHTML = `
+                    <div class="flex aspect-video items-center justify-center rounded-[1.5rem] bg-slate-900 px-6 text-center">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Placeholder</p>
+                            <h4 class="mt-3 text-2xl font-semibold text-white">유튜브 링크를 교체해주세요.</h4>
+                            <p class="mt-4 text-white/65 leading-7">현재 카드는 향후 추가를 위한 플레이스홀더입니다. 데이터 배열의 youtubeUrl 값만 실제 링크로 바꾸면 모달 임베드 재생이 바로 동작합니다.</p>
+                        </div>
+                    </div>
+                `;
+            }
+            modal.classList.remove('hidden');
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modalContent.innerHTML = '';
+            document.body.classList.remove('modal-open');
+        }
+
+        renderAwards();
+        renderVideos('featuredVideos', featuredVideos, false);
+        renderVideos('verticalVideos', videoCollections.vertical, false);
+        renderVideos('adVideos', videoCollections.ads, true);
+        renderVideos('otherVideos', videoCollections.others, false);
+
+        document.addEventListener('click', (event) => {
+            const button = event.target.closest('button[data-video-url]');
+            if (button) {
+                openModal(button.dataset.videoTitle, button.dataset.videoUrl);
+                return;
+            }
+
+            if (event.target === modal) {
+                closeModal();
             }
         });
 
-        // Charts
-        Chart.register(ChartDataLabels);
-        Chart.defaults.font.family = 'Pretendard';
-        Chart.defaults.color = '#6B7280';
-        Chart.defaults.responsive = true;
-        Chart.defaults.maintainAspectRatio = false;
-
-        // Cost Chart
-        const ctxCost = document.getElementById('costChart').getContext('2d');
-        new Chart(ctxCost, {
-            type: 'bar',
-            data: {
-                labels: ['외주 제작', '디자인팀 고용', 'DIY(기회비용)', 'Frush 영상'],
-                datasets: [{
-                    label: '제작 비용 (만원)',
-                    data: [300, 250, 200, 30], 
-                    backgroundColor: ['#E5E7EB', '#FECACA', '#FED7AA', '#10B981'],
-                    borderRadius: 12,
-                    barPercentage: 0.6,
-                    hoverBackgroundColor: '#059669'
-                }]
-            },
-            options: {
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: false },
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'top',
-                        formatter: (value) => value + '만',
-                        font: { weight: 'bold', size: 12 },
-                        color: '#374151'
-                    }
-                },
-                scales: {
-                    y: { beginAtZero: true, grid: { display: false }, max: 350, display: false },
-                    x: { grid: { display: false }, ticks: { font: { weight: 'bold', size: 11 } } }
-                }
+        closeModalButton.addEventListener('click', closeModal);
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
             }
         });
 
-        // Contact Form: Web3Forms (instant email delivery)
-        const form = document.getElementById('contact-form-el');
-        const submitBtn = document.getElementById('submit-btn');
-        const formStatus = document.getElementById('form-status');
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-3"></i> 전송 중...';
-            try {
-                const res = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(Object.fromEntries(new FormData(form)))
-                });
-                const data = await res.json();
-                if (data.success) {
-                    formStatus.textContent = '상담 신청이 완료되었습니다! 빠르게 연락드리겠습니다.';
-                    formStatus.className = 'text-center text-brand-main font-bold text-sm mt-4';
-                    form.reset();
-                } else {
-                    formStatus.textContent = '전송에 실패했습니다. 전화로 문의해주세요.';
-                    formStatus.className = 'text-center text-red-500 font-bold text-sm mt-4';
-                }
-            } catch {
-                formStatus.textContent = '네트워크 오류가 발생했습니다. 전화로 문의해주세요.';
-                formStatus.className = 'text-center text-red-500 font-bold text-sm mt-4';
-            }
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fas fa-paper-plane mr-3"></i> 상담 신청하기';
+        menuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Lazy Video: play only when visible, pause when out of view
-        const lazyVideos = document.querySelectorAll('video[data-lazy-video]');
-        const videoObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.play().catch(() => {});
-                } else {
-                    entry.target.pause();
-                }
-            });
-        }, { rootMargin: '200px' });
-        lazyVideos.forEach(video => videoObserver.observe(video));
+        document.querySelectorAll('#mobileMenu a').forEach((link) => {
+            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        });
 
-        // Time Chart
-        const ctxTime = document.getElementById('timeChart').getContext('2d');
-        new Chart(ctxTime, {
-            type: 'bar',
-            data: {
-                labels: ['기존 방식', 'Frush AI'],
-                datasets: [
-                    {
-                        label: '소요 기간 (주)',
-                        data: [4, 2],
-                        backgroundColor: ['#E5E7EB', '#064E3B'],
-                        borderRadius: 8,
-                        barPercentage: 0.5
-                    }
-                ]
-            },
-            options: {
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: { enabled: false },
-                    datalabels: {
-                        anchor: 'end',
-                        align: 'end',
-                        formatter: (value) => value + '주',
-                        font: { weight: 'bold', size: 14 },
-                        color: '#1F2937'
-                    }
-                },
-                scales: {
-                    x: { display: false, max: 5 }, 
-                    y: { 
-                        grid: { display: false },
-                        ticks: { font: { weight: 'bold', size: 14 } }
-                    }
-                }
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 12) {
+                navbar.classList.add('backdrop-blur-md');
+            } else {
+                navbar.classList.remove('backdrop-blur-md');
             }
         });
     </script>
