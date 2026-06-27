@@ -1,690 +1,200 @@
 <!DOCTYPE html>
 <html lang="ko" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="naver-site-verification" content="9b6288ef73331303024b44f68df636dbb66790ce" />
-    <title>프러쉬(Frush) | AI 영상 제작 스튜디오</title>
-    <meta name="description" content="프러쉬는 기업·기관·브랜드를 위한 AI 영상 제작 스튜디오입니다. 세로형, 광고, 기타 영상까지 완전 반응형 공식 홈페이지에서 대표 작업과 제작 프로세스를 확인하세요.">
-    <meta name="keywords" content="프러쉬, Frush, AI영상제작, AI광고, 브랜드영상, 세로형영상, 광고영상, 기업홍보영상, 기관홍보영상, 유튜브광고">
-    <meta name="author" content="Frush (프러쉬)">
-    <meta name="robots" content="index, follow">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="프러쉬(Frush) | AI 영상 제작 스튜디오">
-    <meta property="og:description" content="AI 영상 제작 회사 Frush의 공식 홈페이지. 대표작, 강점, 수상 이력, 제작 프로세스, 영상 카테고리를 확인해보세요.">
-    <meta property="og:image" content="Images/Frush_v2.png">
-    <meta property="og:url" content="https://www.myfrush.com">
-    <link rel="icon" href="Images/ms-icon-150x150_v1.png" type="image/png">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: '#064E3B',
-                            main: '#10B981',
-                            light: '#ECFDF5',
-                            accent: '#F59E0B',
-                            text: '#1F2937'
-                        }
-                    },
-                    boxShadow: {
-                        soft: '0 30px 80px rgba(0, 0, 0, 0.18)',
-                        glow: '0 0 0 1px rgba(16, 185, 129, 0.18), 0 18px 60px rgba(16, 185, 129, 0.18)'
-                    },
-                    backgroundImage: {
-                        grid: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)'
-                    }
-                }
-            }
-        };
-    </script>
-
-    <style>
-        body {
-            font-family: 'Pretendard', sans-serif;
-            background: #06111d;
-            color: #e5eef5;
-            overflow-x: hidden;
-            word-break: keep-all;
-        }
-
-        ::-webkit-scrollbar { width: 0.6rem; }
-        ::-webkit-scrollbar-track { background: #e5e7eb; }
-        ::-webkit-scrollbar-thumb { background: #10B981; border-radius: 9999px; }
-        ::-webkit-scrollbar-thumb:hover { background: #064E3B; }
-
-        .mesh-bg {
-            background:
-                radial-gradient(circle at top left, rgba(16, 185, 129, 0.25), transparent 28%),
-                radial-gradient(circle at top right, rgba(245, 158, 11, 0.16), transparent 24%),
-                radial-gradient(circle at bottom, rgba(6, 78, 59, 0.34), transparent 38%),
-                linear-gradient(180deg, #07111e 0%, #081a2a 42%, #f6fbf9 42%, #f6fbf9 100%);
-        }
-
-        .glass {
-            background: rgba(7, 17, 30, 0.72);
-            backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .section-shell {
-            border: 1px solid rgba(15, 23, 42, 0.06);
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: blur(14px);
-        }
-
-        .hero-grid {
-            background-size: 48px 48px;
-        }
-
-        .video-thumb {
-            background: linear-gradient(135deg, rgba(6, 78, 59, 0.95), rgba(8, 26, 42, 0.72));
-        }
-
-        .video-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .video-card:hover .video-thumb img {
-            transform: scale(1.06);
-        }
-
-        .modal-open {
-            overflow: hidden;
-        }
-
-        .timeline-line::before {
-            content: '';
-            position: absolute;
-            left: 1rem;
-            top: 2rem;
-            bottom: -2rem;
-            width: 1px;
-            background: linear-gradient(180deg, rgba(16, 185, 129, 0.55), rgba(16, 185, 129, 0));
-        }
-
-        @media (max-width: 767px) {
-            .timeline-line::before {
-                left: 0.9rem;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="naver-site-verification" content="9b6288ef73331303024b44f68df636dbb66790ce">
+  <title>프러쉬(Frush) | AI 영상 제작 스튜디오</title>
+  <meta name="description" content="프러쉬는 브랜드의 다음 장면을 설계하는 AI 영상 제작 스튜디오입니다. 대표작, 협력 브랜드, 제작 방식, 문의 채널을 확인해보세요.">
+  <meta name="keywords" content="프러쉬, Frush, AI영상제작, 브랜드영상, 광고영상, 세로형영상, 브랜드필름">
+  <meta name="author" content="Frush (프러쉬)">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="프러쉬(Frush) | AI 영상 제작 스튜디오">
+  <meta property="og:description" content="브랜드를 움직이는 AI 영상 제작 스튜디오 Frush의 공식 홈페이지입니다.">
+  <meta property="og:image" content="Images/Frush_v2.png">
+  <meta property="og:url" content="https://www.myfrush.com">
+  <link rel="icon" href="Images/ms-icon-150x150_v1.png" type="image/png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="scripts/tailwind-config.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/site.css">
 </head>
 <body class="mesh-bg">
-    <nav id="navbar" class="fixed inset-x-0 top-0 z-50 transition-all duration-300">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4">
-            <div class="glass rounded-full px-4 sm:px-6 py-3 shadow-soft">
-                <div class="flex items-center justify-between gap-4">
-                    <a href="#home" class="flex items-center gap-3">
-                        <img src="Images/Frush_v2.png" alt="프러쉬 로고" class="h-9 w-auto">
-                        <span class="hidden sm:block text-sm font-semibold tracking-[0.2em] text-white/70">FRUSH STUDIO</span>
-                    </a>
-                    <div class="hidden md:flex items-center gap-6 text-sm font-semibold text-white/78">
-                        <a href="#home" class="hover:text-brand-main transition">홈</a>
-                        <a href="#vertical" class="hover:text-brand-main transition">세로형</a>
-                        <a href="#ads" class="hover:text-brand-main transition">광고</a>
-                        <a href="#others" class="hover:text-brand-main transition">기타 영상</a>
-                        <a href="#contact" class="rounded-full bg-brand-main px-5 py-2 text-white shadow-lg transition hover:bg-brand-dark">Contact</a>
-                    </div>
-                    <button id="menuButton" type="button" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white" aria-label="메뉴 열기">
-                        <i class="fas fa-bars"></i>
-                    </button>
+  <div id="site-header"></div>
+
+  <main>
+    <section class="relative overflow-hidden px-4 pb-24 pt-32 sm:px-6 sm:pb-28 sm:pt-36 lg:px-8 lg:pb-32 lg:pt-40">
+      <div class="absolute inset-0 bg-grid hero-grid opacity-20"></div>
+      <div class="relative mx-auto max-w-7xl">
+        <div class="hero-stage">
+          <div class="hero-side-label hero-side-label-left">Proof by Frush</div>
+          <div class="hero-side-label hero-side-label-right">Portfolio Motion</div>
+          <div class="hero-frame h-[72vh] min-h-[540px] w-full" data-parallax="0.08">
+            <video autoplay muted loop playsinline poster="Image_Storage/프러쉬_썸네일.png">
+              <source src="Videos/표지.mp4" type="video/mp4">
+            </video>
+            <div class="hero-copy flex flex-col justify-center px-6 py-8 sm:px-10 lg:px-16">
+              <div class="max-w-4xl" data-parallax="0.04">
+                <div class="hero-badge">
+                  <span></span>
+                  Cinematic AI Video Studio
                 </div>
-                <div id="mobileMenu" class="hidden md:hidden border-t border-white/10 mt-4 pt-4 pb-1">
-                    <div class="flex flex-col gap-2 text-sm font-semibold text-white/80">
-                        <a href="#home" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">홈</a>
-                        <a href="#vertical" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">세로형</a>
-                        <a href="#ads" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">광고</a>
-                        <a href="#others" class="rounded-2xl px-4 py-3 hover:bg-white/5 transition">기타 영상</a>
-                        <a href="#contact" class="rounded-2xl bg-brand-main px-4 py-3 text-white transition hover:bg-brand-dark">Contact</a>
-                    </div>
+                <div class="mt-8 max-w-3xl">
+                  <p class="kicker-line text-xs font-semibold uppercase tracking-[0.45em]">FRUSH SHOWREEL</p>
+                  <h1 class="mt-6 text-4xl font-semibold leading-[1.03] text-white sm:text-6xl lg:text-[6rem]">
+                    브랜드가<br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-main via-brand-light to-brand-accent">스크롤을 멈추는</span><br>
+                    장면을 만듭니다.
+                  </h1>
+                  <p class="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg lg:text-xl">
+                    Frush는 세로형 숏폼부터 광고, 브랜드 필름까지 한 흐름으로 설계하는 AI 영상 제작 스튜디오입니다. 메인 장면부터 대표작, 협력 브랜드, 제작 방식까지 실제 홈페이지답게 정리했습니다.
+                  </p>
                 </div>
+                <div class="mt-10 flex flex-col gap-4 sm:flex-row">
+                  <a href="#featured" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">
+                    대표작 보기
+                  </a>
+                  <a href="contact.html" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">
+                    Contact
+                  </a>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </nav>
 
-    <main>
-        <section id="home" class="relative overflow-hidden pt-32 sm:pt-36 lg:pt-40 pb-24 sm:pb-28 lg:pb-32">
-            <div class="absolute inset-0 bg-grid hero-grid opacity-20"></div>
-            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="grid items-start gap-12 lg:grid-cols-[minmax(0,1.1fr)_420px]">
-                    <div>
-                        <span class="inline-flex items-center gap-2 rounded-full border border-brand-main/25 bg-brand-main/10 px-4 py-2 text-xs font-semibold tracking-[0.3em] text-brand-light uppercase">
-                            <span class="h-2 w-2 rounded-full bg-brand-main"></span>
-                            AI Video Production Company
-                        </span>
-                        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-7xl font-semibold leading-[1.05] text-white">
-                            브랜드의 다음 장면을<br>
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-main via-brand-light to-brand-accent">AI 영상</span>으로 설계합니다.
-                        </h1>
-                        <p class="mt-6 max-w-2xl text-base sm:text-lg lg:text-xl leading-8 text-white/72">
-                            프러쉬는 단순 랜딩페이지가 아닌, 기업·기관·브랜드의 공식 커뮤니케이션을 위한 AI 영상 제작 스튜디오입니다. 세로형 숏폼부터 TVCF 톤의 광고, 기타 브랜드 영상까지 일관된 전략과 높은 완성도로 제공합니다.
-                        </p>
-                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
-                            <a href="#ads" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">
-                                대표 작업 보기
-                            </a>
-                            <a href="#contact" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">
-                                Contact
-                            </a>
-                        </div>
-                        <div class="mt-12 grid gap-4 sm:grid-cols-3">
-                            <div class="glass rounded-3xl p-5">
-                                <p class="text-3xl font-bold text-white">50+</p>
-                                <p class="mt-2 text-sm text-white/65">영상 제작 실적</p>
-                            </div>
-                            <div class="glass rounded-3xl p-5">
-                                <p class="text-3xl font-bold text-white">5.0</p>
-                                <p class="mt-2 text-sm text-white/65">평균 만족도</p>
-                            </div>
-                            <div class="glass rounded-3xl p-5">
-                                <p class="text-3xl font-bold text-white">All Use</p>
-                                <p class="mt-2 text-sm text-white/65">TVCF 포함 모든 용도 대응</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="glass rounded-[2rem] p-6 sm:p-7 shadow-soft">
-                        <div class="flex items-center justify-between gap-4">
-                            <div>
-                                <p class="text-sm uppercase tracking-[0.3em] text-brand-main/90">Core profile</p>
-                                <h2 class="mt-2 text-2xl font-semibold text-white">Frush Snapshot</h2>
-                            </div>
-                            <div class="h-14 w-14 rounded-2xl bg-brand-main/15 flex items-center justify-center text-brand-main text-2xl">
-                                <i class="fas fa-film"></i>
-                            </div>
-                        </div>
-                        <div class="mt-8 space-y-4 text-sm sm:text-base text-white/72">
-                            <div class="rounded-3xl bg-white/5 px-5 py-4">
-                                <p class="font-semibold text-white">서울대 출신 대표</p>
-                                <p class="mt-1">브랜드 전략과 제작 실행을 함께 보는 창업가형 리더십</p>
-                            </div>
-                            <div class="rounded-3xl bg-white/5 px-5 py-4">
-                                <p class="font-semibold text-white">PD 출신 기획팀</p>
-                                <p class="mt-1">메시지 구조화, 콘티, 후반 연출까지 스토리 중심 설계</p>
-                            </div>
-                            <div class="rounded-3xl bg-white/5 px-5 py-4">
-                                <p class="font-semibold text-white">브랜드 맞춤형 제작</p>
-                                <p class="mt-1">세로형 / 광고 / 기타 영상 포맷을 동일한 톤앤매너로 운영</p>
-                            </div>
-                        </div>
-                        <div class="mt-8 rounded-[1.75rem] bg-gradient-to-br from-brand-main/20 via-white/5 to-brand-accent/20 p-5">
-                            <p class="text-xs uppercase tracking-[0.25em] text-brand-light/80">Official contact</p>
-                            <p class="mt-2 text-lg font-semibold text-white">문의는 Contact에서 바로 연결됩니다.</p>
-                            <p class="mt-2 text-sm text-white/65">별도 입력 폼 없이 카카오톡 오픈채팅과 이메일 링크만 남겨두어 빠르게 교체할 수 있게 구성했습니다.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-16 section-shell rounded-[2rem] p-6 sm:p-8 lg:p-10 shadow-soft">
-                    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Trusted by brands</p>
-                            <h2 class="mt-3 text-2xl sm:text-3xl font-semibold text-brand-text">다양한 업종의 브랜드가 Frush와 함께합니다</h2>
-                        </div>
-                        <p class="max-w-2xl text-sm sm:text-base leading-7 text-slate-500">기존 에셋을 유지하면서도 기업 홈페이지다운 신뢰감을 주기 위해 로고와 실적 포인트를 정리했습니다.</p>
-                    </div>
-                    <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/라브라크 로고.png" alt="라브라크 로고" class="max-h-10 w-auto object-contain"></div>
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/르누아르 로고.png" alt="르누아르 로고" class="max-h-10 w-auto object-contain"></div>
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/나홀로복싱 로고.png" alt="나홀로복싱 로고" class="max-h-10 w-auto object-contain"></div>
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/공간 로고.png" alt="공간 로고" class="max-h-10 w-auto object-contain"></div>
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/서울우유 광고.png" alt="서울우유 광고 썸네일" class="max-h-10 w-auto object-contain"></div>
-                        <div class="flex items-center justify-center rounded-3xl border border-slate-200/80 bg-white p-5"><img src="Images/우곱집 로고.png" alt="우곱집 로고" class="max-h-10 w-auto object-contain"></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="relative bg-[#f6fbf9] py-24 sm:py-28 lg:py-32 text-brand-text">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 space-y-24">
-                <div>
-                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why us</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">Frush를 선택하는 이유</h2>
-                        </div>
-                        <p class="max-w-2xl text-slate-500 leading-7">기존 홈페이지의 그린 팔레트를 유지하면서도, AI 영상 제작 회사다운 프리미엄 카드 레이아웃으로 강점을 재구성했습니다.</p>
-                    </div>
-                    <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
-                            <p class="text-sm font-semibold text-brand-main">TRACK RECORD</p>
-                            <h3 class="mt-4 text-4xl font-bold">50+</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">누적 영상 제작 실적을 기반으로 다양한 업종의 결과물을 안정적으로 제작합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
-                            <p class="text-sm font-semibold text-brand-main">SATISFACTION</p>
-                            <h3 class="mt-4 text-4xl font-bold">5.0</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">기획부터 납품까지 커뮤니케이션 품질을 포함한 평균 만족도 기준입니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
-                            <p class="text-sm font-semibold text-brand-main">FOUNDER</p>
-                            <h3 class="mt-4 text-2xl font-bold leading-snug">서울대 출신 대표</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">전략적 사고와 실행력을 모두 갖춘 대표가 프로젝트 방향을 직접 점검합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] border border-brand-main/10 bg-white p-6 shadow-sm">
-                            <p class="text-sm font-semibold text-brand-main">PLANNING</p>
-                            <h3 class="mt-4 text-2xl font-bold leading-snug">PD 출신 기획팀</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">광고 문법에 익숙한 팀이 스토리보드와 씬 구조를 설계합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] border border-brand-main/10 bg-gradient-to-br from-brand-dark to-slate-900 p-6 text-white shadow-soft">
-                            <p class="text-sm font-semibold text-brand-main">FORMAT RANGE</p>
-                            <h3 class="mt-4 text-2xl font-bold leading-snug">TVCF 포함<br>모든 용도 대응</h3>
-                            <p class="mt-3 text-sm leading-6 text-white/70">세로형, 광고, 기타 브랜드 영상까지 하나의 스튜디오 체계에서 제작합니다.</p>
-                        </article>
-                    </div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">수상 이력</h2>
-                        </div>
-                        <p class="max-w-2xl text-slate-500 leading-7">기존 수상 이력과 새로 요청한 4건을 한 번에 확인할 수 있도록 타임라인 리스트로 통합했습니다.</p>
-                    </div>
-                    <div id="awardsList" class="grid gap-5 lg:grid-cols-2"></div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Featured works</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">대표작</h2>
-                        </div>
-                        <p class="max-w-2xl text-slate-500 leading-7">홈에서도 바로 대표 영상을 열어볼 수 있도록 썸네일 그리드와 동일한 모달 재생 방식을 재사용합니다.</p>
-                    </div>
-                    <div id="featuredVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
-                </div>
-
-                <div>
-                    <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Process</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">작업 프로세스</h2>
-                        </div>
-                        <p class="max-w-2xl text-slate-500 leading-7">문의부터 납품까지의 흐름을 반응형 스텝 카드로 시각화했습니다.</p>
-                    </div>
-                    <div class="grid gap-5 lg:grid-cols-4">
-                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">01</div>
-                            <h3 class="mt-6 text-xl font-semibold">문의</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">브랜드 상황, 목표, 매체를 확인하고 상담 채널에서 빠르게 요구사항을 정리합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">02</div>
-                            <h3 class="mt-6 text-xl font-semibold">기획</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">콘셉트, 톤앤매너, 컷 구성, 포맷 전략을 맞춤형으로 설계합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">03</div>
-                            <h3 class="mt-6 text-xl font-semibold">제작</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">AI 생성과 후반 연출을 결합해 브랜드에 맞는 최종 컷을 완성합니다.</p>
-                        </article>
-                        <article class="rounded-[2rem] bg-white p-6 shadow-sm border border-slate-200/80">
-                            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-light text-brand-dark font-bold">04</div>
-                            <h3 class="mt-6 text-xl font-semibold">납품</h3>
-                            <p class="mt-3 text-sm leading-6 text-slate-500">세로형·가로형 등 필요한 포맷으로 정리해 실사용 가능한 결과물을 전달합니다.</p>
-                        </article>
-                    </div>
-                </div>
-
-                <div class="rounded-[2.25rem] bg-gradient-to-r from-brand-dark via-slate-900 to-brand-dark px-6 py-10 sm:px-10 sm:py-12 text-white shadow-soft">
-                    <div class="flex flex-col xl:flex-row xl:items-center xl:justify-between gap-8">
-                        <div>
-                            <p class="text-sm uppercase tracking-[0.28em] text-brand-main">Ready to start</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">다음 캠페인을 Frush와 함께 시작해보세요.</h2>
-                            <p class="mt-4 text-white/70 leading-7 max-w-2xl">카카오톡 오픈채팅과 이메일 링크를 동일하게 연결해, CTA와 Contact가 자연스럽게 이어지도록 구성했습니다.</p>
-                        </div>
-                        <div class="flex flex-col sm:flex-row gap-4">
-                            <a href="#contact" class="inline-flex items-center justify-center rounded-full bg-brand-main px-7 py-4 text-base font-semibold text-white transition hover:bg-brand-dark">Contact 열기</a>
-                            <a href="#vertical" class="inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-7 py-4 text-base font-semibold text-white transition hover:bg-white/10">영상 카테고리 보기</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="vertical" class="bg-white py-24 sm:py-28 lg:py-32 text-brand-text">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                    <div>
-                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
-                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">세로형</h2>
-                    </div>
-                    <p class="max-w-2xl text-slate-500 leading-7">모든 영상은 데이터 배열로 관리되며, 썸네일 클릭 시 유튜브 페이지 이동 없이 홈페이지 오버레이 안에서 재생됩니다.</p>
-                </div>
-                <div id="verticalVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
-            </div>
-        </section>
-
-        <section id="ads" class="bg-slate-950 py-24 sm:py-28 lg:py-32 text-white">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                    <div>
-                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
-                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">광고</h2>
-                    </div>
-                    <p class="max-w-2xl text-white/70 leading-7">브랜드 광고 톤의 작업과 레퍼런스를 한곳에 모아, 공식 홈페이지다운 쇼케이스 섹션으로 재구성했습니다.</p>
-                </div>
-                <div id="adVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
-            </div>
-        </section>
-
-        <section id="others" class="bg-[#f6fbf9] py-24 sm:py-28 lg:py-32 text-brand-text">
-            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-10">
-                    <div>
-                        <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Video menu</p>
-                        <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">기타 영상</h2>
-                    </div>
-                    <p class="max-w-2xl text-slate-500 leading-7">브랜드 필름, 회사 소개, 기타 활용 영상을 같은 시스템 안에서 추가할 수 있도록 동일한 JSON 구조를 사용합니다.</p>
-                </div>
-                <div id="otherVideos" class="grid gap-6 md:grid-cols-2 xl:grid-cols-3"></div>
-            </div>
-        </section>
-
-        <section id="contact" class="bg-slate-950 py-24 sm:py-28 lg:py-32 text-white">
-            <div class="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-                <div class="rounded-[2.5rem] border border-white/10 bg-white/5 p-8 sm:p-10 lg:p-14 shadow-soft">
-                    <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-center">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Contact</p>
-                            <h2 class="mt-3 text-3xl sm:text-4xl font-semibold">바로 연결되는 문의 채널</h2>
-                            <p class="mt-5 text-white/70 leading-8">별도 입력 폼 없이, 카카오톡 오픈채팅과 이메일 링크로 바로 연결되도록 구성했습니다. 아래 플레이스홀더 값만 실제 정보로 교체하면 즉시 운영 가능합니다.</p>
-                            <div class="mt-8 grid gap-4 text-sm text-white/60">
-                                <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-5">
-                                    <p class="font-semibold text-white">카카오톡 오픈채팅 URL</p>
-                                    <p class="mt-2 break-all">https://open.kakao.com/o/REPLACE_WITH_OPEN_CHAT</p>
-                                </div>
-                                <div class="rounded-3xl border border-white/10 bg-slate-900/60 p-5">
-                                    <p class="font-semibold text-white">이메일 주소</p>
-                                    <p class="mt-2 break-all">REPLACE_WITH_EMAIL@example.com</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="rounded-[2rem] bg-white p-6 sm:p-8 text-brand-text">
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Quick actions</p>
-                            <div class="mt-6 space-y-4">
-                                <a href="https://open.kakao.com/o/REPLACE_WITH_OPEN_CHAT" target="_blank" rel="noreferrer" class="flex items-center justify-between rounded-2xl bg-brand-main px-5 py-4 text-white font-semibold transition hover:bg-brand-dark">
-                                    <span><i class="fas fa-comment-dots mr-3"></i>카카오톡 오픈채팅</span>
-                                    <i class="fas fa-arrow-up-right-from-square text-sm"></i>
-                                </a>
-                                <a href="mailto:REPLACE_WITH_EMAIL@example.com" class="flex items-center justify-between rounded-2xl border border-slate-200 px-5 py-4 font-semibold text-brand-text transition hover:border-brand-main hover:text-brand-main">
-                                    <span><i class="fas fa-envelope mr-3"></i>이메일 보내기</span>
-                                    <i class="fas fa-arrow-up-right-from-square text-sm"></i>
-                                </a>
-                            </div>
-                            <div class="mt-6 rounded-2xl bg-brand-light p-5 text-sm leading-6 text-slate-600">
-                                Contact 섹션과 하단 CTA는 동일한 연결 방식을 사용합니다. 실제 운영 시 링크 값만 바꾸면 됩니다.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="border-t border-white/8 bg-[#07111e] py-10 text-white/60">
-        <div class="mx-auto flex max-w-7xl flex-col gap-4 px-4 sm:px-6 lg:px-8 md:flex-row md:items-center md:justify-between">
-            <div class="flex items-center gap-3">
-                <img src="Images/Frush_v2.png" alt="프러쉬 로고" class="h-8 w-auto opacity-90">
-                <span class="text-sm tracking-[0.24em]">FRUSH STUDIO</span>
-            </div>
-            <p class="text-sm">Copyright © 2026 Frush. All rights reserved.</p>
+        <div class="relative z-10 -mt-14 grid gap-4 sm:grid-cols-3 lg:-mt-20">
+          <div class="metric-card glass rounded-[1.75rem] p-5 reveal" data-reveal>
+            <p class="text-3xl font-bold text-white">50+</p>
+            <p class="mt-2 text-sm text-white/65">누적 제작 실적</p>
+          </div>
+          <div class="metric-card glass rounded-[1.75rem] p-5 reveal" data-reveal>
+            <p class="text-3xl font-bold text-white">5.0</p>
+            <p class="mt-2 text-sm text-white/65">프로젝트 만족도</p>
+          </div>
+          <div class="metric-card glass rounded-[1.75rem] p-5 reveal" data-reveal>
+            <p class="text-3xl font-bold text-white">All Format</p>
+            <p class="mt-2 text-sm text-white/65">세로형 · 광고 · 브랜드 필름 대응</p>
+          </div>
         </div>
-    </footer>
+      </div>
+    </section>
 
-    <div id="videoModal" class="fixed inset-0 z-[70] hidden bg-black/80 px-4 py-6 sm:px-6 lg:px-8">
-        <div class="flex min-h-full items-center justify-center">
-            <div class="w-full max-w-5xl rounded-[2rem] bg-[#08111c] p-4 sm:p-5 shadow-soft border border-white/10">
-                <div class="mb-4 flex items-center justify-between gap-4">
-                    <div>
-                        <p class="text-xs uppercase tracking-[0.28em] text-brand-main">Now playing</p>
-                        <h3 id="modalTitle" class="mt-2 text-lg sm:text-xl font-semibold text-white">영상 재생</h3>
-                    </div>
-                    <button id="closeModalButton" type="button" class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-white" aria-label="영상 닫기">
-                        <i class="fas fa-xmark text-lg"></i>
-                    </button>
-                </div>
-                <div id="modalContent" class="overflow-hidden rounded-[1.5rem] bg-black"></div>
+    <section class="relative bg-[#f7faf8] py-24 text-brand-text sm:py-28 lg:py-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+          <article class="section-shell rounded-[2rem] p-6 shadow-soft md:p-8 reveal" data-reveal>
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
+            <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">전략과 무드를 한 팀에서 완성합니다</h2>
+            <p class="mt-5 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">서울대 출신 대표와 PD 출신 기획팀이 함께 브랜드 메시지를 정리하고, AI 기반 제작과 후반 연출을 연결해 한층 밀도 있는 결과물을 만듭니다.</p>
+            <div class="mt-8 grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-5">
+                <p class="text-sm font-semibold text-brand-main">Strategy</p>
+                <h3 class="mt-3 text-xl font-semibold text-brand-text">기획이 먼저 보이는 구조</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">메시지 우선순위를 정리한 뒤 장면과 컷의 리듬을 설계합니다.</p>
+              </div>
+              <div class="rounded-[1.5rem] border border-slate-200/80 bg-white p-5">
+                <p class="text-sm font-semibold text-brand-main">Execution</p>
+                <h3 class="mt-3 text-xl font-semibold text-brand-text">빠른 제작, 높은 완성도</h3>
+                <p class="mt-3 text-sm leading-6 text-slate-500">숏폼과 광고 문법을 모두 이해한 팀이 제작 밀도를 끌어올립니다.</p>
+              </div>
             </div>
+          </article>
+          <article class="glass rounded-[2rem] p-6 shadow-soft md:p-8 reveal" data-reveal>
+            <div class="flex items-center justify-between gap-4">
+              <div>
+                <p class="text-sm uppercase tracking-[0.28em] text-brand-main">Core profile</p>
+                <h2 class="mt-3 text-3xl font-semibold text-white">Frush Snapshot</h2>
+              </div>
+              <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-main/15 text-2xl text-brand-main">
+                <i class="fas fa-film"></i>
+              </div>
+            </div>
+            <div class="mt-8 space-y-4 text-sm text-white/72 sm:text-base">
+              <div class="rounded-[1.5rem] bg-white/5 px-5 py-4">
+                <p class="font-semibold text-white">대표 직접 디렉션</p>
+                <p class="mt-1">브랜드 목표와 실행 사이의 간극을 빠르게 줄입니다.</p>
+              </div>
+              <div class="rounded-[1.5rem] bg-white/5 px-5 py-4">
+                <p class="font-semibold text-white">PD 출신 기획팀</p>
+                <p class="mt-1">스토리 구조와 편집 리듬을 동시에 챙깁니다.</p>
+              </div>
+              <div class="rounded-[1.5rem] bg-white/5 px-5 py-4">
+                <p class="font-semibold text-white">채널 맞춤 납품</p>
+                <p class="mt-1">광고, 숏폼, 브랜드 필름까지 목적에 맞는 결과물로 마감합니다.</p>
+              </div>
+            </div>
+            <div class="mt-8 rounded-[1.75rem] bg-gradient-to-br from-brand-main/20 via-white/5 to-brand-accent/20 p-5">
+              <p class="text-xs uppercase tracking-[0.25em] text-brand-light/80">Direct channel</p>
+              <p class="mt-2 text-lg font-semibold text-white">프로젝트 상담은 오픈카톡으로 바로 이어집니다.</p>
+              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="mt-5 inline-flex items-center gap-2 rounded-full bg-brand-main px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">
+                상담 바로가기 <i class="fas fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+            </div>
+          </article>
         </div>
-    </div>
+      </div>
+    </section>
 
-    <script>
-        const awards = [
-            { title: '2025 제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF', date: '2025.10' },
-            { title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단', date: '2025.07' },
-            { title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원', date: '2025.12' },
-            { title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단', date: '2025.12' },
-            { title: '농림축산식품부 장관상 수상', org: '기존 수상 이력', date: '2025' },
-            { title: '서울대학교 CALS 창업경진대회 대상', org: '기존 수상 이력', date: '2024' },
-            { title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: '기존 수상 이력', date: '2024' }
-        ];
+    <section class="bg-[#f7faf8] pb-24 text-brand-text sm:pb-28 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div id="partners-section"></div>
+      </div>
+    </section>
 
-        const videoCollections = {
-            vertical: [
-                {
-                    thumbnail: 'Image_Storage/프러쉬_썸네일.png',
-                    title: '브랜드 메시지 세로형 샘플',
-                    youtubeUrl: 'https://www.youtube.com/watch?v=7dKvkS6uYQ8'
-                },
-                {
-                    thumbnail: 'Image_Storage/나진국밥_썸네일.png',
-                    title: '매장 홍보 세로형 샘플',
-                    youtubeUrl: 'REPLACE_WITH_VERTICAL_VIDEO_URL_01'
-                },
-                {
-                    thumbnail: 'Images/프러쉬매장.png',
-                    title: '제품/서비스 숏폼 샘플',
-                    youtubeUrl: 'REPLACE_WITH_VERTICAL_VIDEO_URL_02'
-                }
-            ],
-            ads: [
-                {
-                    thumbnail: 'https://i.ytimg.com/vi/TwY-2-ioT9s/hqdefault.jpg',
-                    title: 'LG유플러스 AX Company 광고 레퍼런스',
-                    youtubeUrl: 'https://www.youtube.com/watch?v=TwY-2-ioT9s'
-                },
-                {
-                    thumbnail: 'https://i.ytimg.com/vi/FqJo6yRacrc/hqdefault.jpg',
-                    title: '서울우유 브랜딩 광고 레퍼런스',
-                    youtubeUrl: 'https://www.youtube.com/watch?v=FqJo6yRacrc'
-                },
-                {
-                    thumbnail: 'https://i.ytimg.com/vi/MZdGr8RPcT0/hqdefault.jpg',
-                    title: 'HERA 브랜드 필름 레퍼런스',
-                    youtubeUrl: 'https://www.youtube.com/watch?v=MZdGr8RPcT0'
-                }
-            ],
-            others: [
-                {
-                    thumbnail: 'Images/Frush_v2.png',
-                    title: 'Frush 스튜디오 소개 영상',
-                    youtubeUrl: 'https://www.youtube.com/watch?v=7dKvkS6uYQ8'
-                },
-                {
-                    thumbnail: 'Images/서울우유 광고.png',
-                    title: '캠페인/브랜드 필름 샘플',
-                    youtubeUrl: 'REPLACE_WITH_OTHER_VIDEO_URL_01'
-                },
-                {
-                    thumbnail: 'Images/서보훈_v1.png',
-                    title: '대표 인터뷰/회사 소개 샘플',
-                    youtubeUrl: 'REPLACE_WITH_OTHER_VIDEO_URL_02'
-                }
-            ]
-        };
+    <section class="bg-[#f7faf8] pb-24 text-brand-text sm:pb-28 lg:pb-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div id="awards-process-section"></div>
+      </div>
+    </section>
 
-        const featuredVideos = [
-            videoCollections.vertical[0],
-            videoCollections.ads[0],
-            videoCollections.ads[1],
-            videoCollections.others[0]
-        ];
+    <section id="featured" class="bg-[#08111c] py-24 text-white sm:py-28 lg:py-32">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between reveal" data-reveal>
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Featured works</p>
+            <h2 class="mt-3 text-3xl font-semibold sm:text-4xl">대표작 8선</h2>
+          </div>
+          <p class="max-w-2xl text-sm leading-7 text-white/70 sm:text-base">브랜드 톤이 다른 프로젝트를 한 흐름으로 보여주되, 각 메뉴는 별도 페이지에서 더 깊게 볼 수 있도록 구성했습니다.</p>
+        </div>
+        <div id="featured-works" class="grid gap-6 md:grid-cols-2 xl:grid-cols-4"></div>
+      </div>
+    </section>
 
-        const modal = document.getElementById('videoModal');
-        const modalTitle = document.getElementById('modalTitle');
-        const modalContent = document.getElementById('modalContent');
-        const menuButton = document.getElementById('menuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const closeModalButton = document.getElementById('closeModalButton');
-        const navbar = document.getElementById('navbar');
+    <section class="bg-[#f7faf8] py-24 text-brand-text sm:py-28 lg:py-32">
+      <div class="mx-auto grid max-w-7xl gap-6 px-4 sm:px-6 lg:grid-cols-3 lg:px-8">
+        <a href="vertical.html" class="related-card section-shell rounded-[2rem] p-6 shadow-soft reveal" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-main">Menu</p>
+          <h3 class="mt-3 text-2xl font-semibold">세로형</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-500">빠른 전환을 만드는 숏폼 포맷을 별도 페이지에서 정리했습니다.</p>
+        </a>
+        <a href="ads.html" class="related-card section-shell rounded-[2rem] p-6 shadow-soft reveal" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-main">Menu</p>
+          <h3 class="mt-3 text-2xl font-semibold">광고</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-500">광고형 무드와 캠페인 톤의 작업을 모아 볼 수 있습니다.</p>
+        </a>
+        <a href="others.html" class="related-card section-shell rounded-[2rem] p-6 shadow-soft reveal" data-reveal>
+          <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-main">Menu</p>
+          <h3 class="mt-3 text-2xl font-semibold">기타 영상</h3>
+          <p class="mt-3 text-sm leading-6 text-slate-500">브랜드 필름과 스토리텔링 중심의 영상은 따로 모았습니다.</p>
+        </a>
+      </div>
+    </section>
+  </main>
 
-        function extractYouTubeId(url) {
-            if (!url) return '';
-            const patterns = [
-                /(?:youtube\.com\/watch\?v=|youtube\.com\/embed\/|youtu\.be\/|youtube\.com\/shorts\/)([A-Za-z0-9_-]{11})/,
-                /[?&]v=([A-Za-z0-9_-]{11})/
-            ];
-            for (const pattern of patterns) {
-                const match = url.match(pattern);
-                if (match) return match[1];
-            }
-            return '';
-        }
+  <div id="site-footer"></div>
+  <div id="site-modal"></div>
 
-        function createVideoCard(video, darkMode = false) {
-            const textColor = darkMode ? 'text-white' : 'text-brand-text';
-            const subColor = darkMode ? 'text-white/65' : 'text-slate-500';
-            const cardBg = darkMode ? 'bg-white/5 border border-white/10' : 'bg-white border border-slate-200/80';
-            const youtubeId = extractYouTubeId(video.youtubeUrl);
-            const buttonLabel = youtubeId ? '영상 보기' : '링크 교체 필요';
-
-            return `
-                <article class="video-card overflow-hidden rounded-[2rem] ${cardBg} shadow-sm transition hover:-translate-y-1 hover:shadow-soft">
-                    <button type="button" class="w-full text-left" data-video-title="${video.title}" data-video-url="${video.youtubeUrl}">
-                        <div class="video-thumb relative aspect-[16/10] overflow-hidden">
-                            <img src="${video.thumbnail}" alt="${video.title} 썸네일" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent"></div>
-                            <div class="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-4">
-                                <div class="inline-flex items-center gap-2 rounded-full bg-white/15 px-3 py-1.5 text-xs font-semibold text-white backdrop-blur-sm">
-                                    <i class="fas fa-play text-[0.65rem]"></i>
-                                    YouTube Modal
-                                </div>
-                                <span class="inline-flex h-11 w-11 items-center justify-center rounded-full bg-white text-brand-text shadow-lg">
-                                    <i class="fas fa-play text-sm"></i>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-semibold ${textColor}">${video.title}</h3>
-                            <p class="mt-3 text-sm leading-6 ${subColor}">${youtubeId ? '홈페이지 안에서 바로 재생할 수 있도록 유튜브 임베드 모달과 연결됩니다.' : '실제 영상 링크만 교체하면 동일한 모달 재생 방식으로 바로 운영할 수 있습니다.'}</p>
-                            <div class="mt-5 inline-flex items-center gap-2 rounded-full ${darkMode ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark'} px-4 py-2 text-sm font-semibold">
-                                ${buttonLabel}
-                            </div>
-                        </div>
-                    </button>
-                </article>
-            `;
-        }
-
-        function renderAwards() {
-            document.getElementById('awardsList').innerHTML = awards.map((award, index) => `
-                <article class="timeline-line relative rounded-[2rem] border border-slate-200/80 bg-white p-6 sm:p-7 shadow-sm ${index === awards.length - 1 ? '' : ''}">
-                    <div class="flex gap-4">
-                        <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-light text-brand-dark">
-                            <i class="fas fa-award text-sm"></i>
-                        </div>
-                        <div>
-                            <p class="text-sm font-semibold text-brand-main">${award.org} · ${award.date}</p>
-                            <h3 class="mt-2 text-lg font-semibold text-brand-text leading-7">${award.title}</h3>
-                        </div>
-                    </div>
-                </article>
-            `).join('');
-        }
-
-        function renderVideos(targetId, videos, darkMode = false) {
-            document.getElementById(targetId).innerHTML = videos.map((video) => createVideoCard(video, darkMode)).join('');
-        }
-
-        function openModal(title, url) {
-            const youtubeId = extractYouTubeId(url);
-            modalTitle.textContent = title;
-            if (youtubeId) {
-                modalContent.innerHTML = `
-                    <div class="aspect-video w-full overflow-hidden rounded-[1.5rem]">
-                        <iframe
-                            class="h-full w-full"
-                            src="https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0"
-                            title="${title}"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen>
-                        </iframe>
-                    </div>
-                `;
-            } else {
-                modalContent.innerHTML = `
-                    <div class="flex aspect-video items-center justify-center rounded-[1.5rem] bg-slate-900 px-6 text-center">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Placeholder</p>
-                            <h4 class="mt-3 text-2xl font-semibold text-white">유튜브 링크를 교체해주세요.</h4>
-                            <p class="mt-4 text-white/65 leading-7">현재 카드는 향후 추가를 위한 플레이스홀더입니다. 데이터 배열의 youtubeUrl 값만 실제 링크로 바꾸면 모달 임베드 재생이 바로 동작합니다.</p>
-                        </div>
-                    </div>
-                `;
-            }
-            modal.classList.remove('hidden');
-            document.body.classList.add('modal-open');
-        }
-
-        function closeModal() {
-            modal.classList.add('hidden');
-            modalContent.innerHTML = '';
-            document.body.classList.remove('modal-open');
-        }
-
-        renderAwards();
-        renderVideos('featuredVideos', featuredVideos, false);
-        renderVideos('verticalVideos', videoCollections.vertical, false);
-        renderVideos('adVideos', videoCollections.ads, true);
-        renderVideos('otherVideos', videoCollections.others, false);
-
-        document.addEventListener('click', (event) => {
-            const button = event.target.closest('button[data-video-url]');
-            if (button) {
-                openModal(button.dataset.videoTitle, button.dataset.videoUrl);
-                return;
-            }
-
-            if (event.target === modal) {
-                closeModal();
-            }
-        });
-
-        closeModalButton.addEventListener('click', closeModal);
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape' && !modal.classList.contains('hidden')) {
-                closeModal();
-            }
-        });
-
-        menuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        document.querySelectorAll('#mobileMenu a').forEach((link) => {
-            link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
-        });
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 12) {
-                navbar.classList.add('backdrop-blur-md');
-            } else {
-                navbar.classList.remove('backdrop-blur-md');
-            }
-        });
-    </script>
+  <script src="scripts/site.js"></script>
+  <script>
+    window.FrushSite.initPage({
+      pageKey: 'home',
+      partnerTargetId: 'partners-section',
+      awardsProcessTargetId: 'awards-process-section',
+      featuredTargetId: 'featured-works'
+    });
+  </script>
 </body>
 </html>
