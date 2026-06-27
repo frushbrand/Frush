@@ -75,3 +75,31 @@ Frush/
 ## 개발 메모
 
 이 저장소는 별도의 빌드 시스템이나 패키지 매니저 없이 동작하는 정적 사이트입니다. 배포는 HTML, CSS, JS, 에셋 변경만으로 진행됩니다.
+
+## 포트폴리오 영상 추가 방법
+
+유튜브 링크만 있으면 `scripts/site.js`의 `works` 배열에 항목 하나만 추가해서 포트폴리오를 늘릴 수 있습니다.
+
+```js
+{
+  id: 'sample-youtube-work',
+  category: 'ads', // vertical | ads | others
+  categoryLabel: '광고',
+  title: '샘플 포트폴리오 제목',
+  year: '2026',
+  format: '브랜딩 광고',
+  youtubeUrl: 'https://www.youtube.com/watch?v=VIDEO_ID'
+}
+```
+
+- `youtubeUrl`를 넣으면 썸네일은 자동으로 유튜브 썸네일을 사용합니다.
+- 대표작에도 노출하려면 같은 파일의 `featuredWorkIds` 배열에 `id`를 추가하면 됩니다.
+- 로컬 mp4를 계속 쓸 경우에는 기존처럼 `src`와 `poster`를 유지하면 됩니다.
+
+### GitHub에서 바로 추가하는 가장 쉬운 방법
+
+1. GitHub 저장소에서 `scripts/site.js`를 엽니다.
+2. 연필 아이콘(Edit this file)로 편집 모드에 들어갑니다.
+3. `works` 배열에 위 형식의 객체를 붙여 넣습니다.
+4. 필요하면 `featuredWorkIds`에도 같은 `id`를 추가합니다.
+5. Commit changes로 저장하면 사이트 데이터가 바로 갱신됩니다.

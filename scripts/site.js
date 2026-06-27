@@ -2,8 +2,6 @@ window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
   const TEAM_PHOTO_URL = 'https://github.com/user-attachments/assets/84ce4c93-fcb5-440a-95a8-0fe036529b57';
   const PANEL_COUNT = 22;
-  const Z_SPREAD = 42;
-  const SIGMA = 2.8;
   const PANEL_IMAGES = [
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
     'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
@@ -73,16 +71,13 @@ window.FrushSite = (() => {
   ];
 
   const awards = [
-    { year: '2025', title: '서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
-    { year: '2025', title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단' },
-    { year: '2025', title: '대전 AI영상 콘텐츠 공모전 우수상', org: '대전정보문화산업진흥원' },
-    { year: '2024', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' }
-  ];
-
-  const strengths = [
-    { label: 'Strength 01', title: '서울대 출신 대표의 직접 디렉션', description: '브랜드 목표를 먼저 정리하고 장면과 메시지의 우선순위를 빠르게 맞춥니다.' },
-    { label: 'Strength 02', title: 'PD 출신 기획자의 스토리 설계', description: '영상 리듬과 전달 포인트를 동시에 챙겨 완성도 높은 구조를 만듭니다.' },
-    { label: 'Strength 03', title: '전문 영상 작업자 팀의 실행력', description: '세로형, 광고, 기타 영상까지 포맷별 제작 경험을 바탕으로 결과물을 정교하게 마감합니다.' }
+    { year: '2025.10', title: '제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
+    { year: '2025.07', title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단' },
+    { year: '2025.12', title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원' },
+    { year: '2025.12', title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단' },
+    { year: '2025', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' },
+    { year: '2024', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' },
+    { year: '2024', title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: 'NH 애그테크 청년 창업 캠퍼스' }
   ];
 
   const works = [
@@ -91,10 +86,8 @@ window.FrushSite = (() => {
       category: 'vertical',
       categoryLabel: '세로형',
       title: 'Frush 브랜드 쇼릴',
-      client: 'Frush',
       year: '2026',
-      format: 'Vertical / Showreel',
-      summary: '브랜드의 리듬과 무드를 숏폼 템포로 압축한 시그니처 오프닝 필름입니다.',
+      format: '브랜드 쇼릴',
       src: 'Videos/프러쉬_업로드용.mp4',
       poster: 'Image_Storage/프러쉬_썸네일.png',
       theme: 'light'
@@ -104,10 +97,8 @@ window.FrushSite = (() => {
       category: 'vertical',
       categoryLabel: '세로형',
       title: '나진국밥 숏폼 캠페인 01',
-      client: '나진국밥',
       year: '2025',
-      format: 'Vertical / Store Promo',
-      summary: '매장 무드를 빠르게 각인시키는 세로형 캠페인 컷입니다.',
+      format: '매장 홍보',
       src: 'Videos/나진국밥 레퍼런스_업로드용1.mp4',
       poster: 'Image_Storage/나진국밥_썸네일.png',
       theme: 'light'
@@ -117,10 +108,8 @@ window.FrushSite = (() => {
       category: 'vertical',
       categoryLabel: '세로형',
       title: '나진국밥 숏폼 캠페인 02',
-      client: '나진국밥',
       year: '2025',
-      format: 'Vertical / Product Story',
-      summary: '메뉴 포인트와 현장감을 강하게 전달하는 숏폼 편집입니다.',
+      format: '제품 스토리',
       src: 'Videos/나진국밥 레퍼런스_업로드용2.mp4',
       poster: 'Image_Storage/나진국밥_썸네일.png',
       theme: 'light'
@@ -130,10 +119,8 @@ window.FrushSite = (() => {
       category: 'vertical',
       categoryLabel: '세로형',
       title: '나홀로복싱 퍼포먼스 숏폼',
-      client: '나홀로복싱',
       year: '2025',
-      format: 'Vertical / Performance',
-      summary: '속도감 있는 시퀀스로 운동 브랜드의 몰입도를 끌어올린 작업입니다.',
+      format: '퍼포먼스',
       src: 'Videos/나홀로복싱 레퍼런스_업로드용.mp4',
       poster: 'Images/나홀로복싱 로고.png',
       theme: 'light'
@@ -143,10 +130,8 @@ window.FrushSite = (() => {
       category: 'ads',
       categoryLabel: '광고',
       title: 'LG AX Company 레퍼런스',
-      client: 'LG',
       year: '2025',
-      format: 'Commercial / Campaign',
-      summary: '브랜드 메시지를 선명하게 보여주는 하이엔드 광고 톤의 레퍼런스입니다.',
+      format: '캠페인 광고',
       src: 'Videos/LG광고.mp4',
       poster: 'Images/프러쉬매장.png',
       theme: 'dark'
@@ -156,10 +141,8 @@ window.FrushSite = (() => {
       category: 'ads',
       categoryLabel: '광고',
       title: '서울우유 브랜드 광고',
-      client: '서울우유',
       year: '2025',
-      format: 'Commercial / Branding',
-      summary: '친숙한 브랜드 에셋을 감각적인 광고 문법으로 확장한 작업입니다.',
+      format: '브랜딩 광고',
       src: 'Videos/서울우유광고.mp4',
       poster: 'Images/서울우유 광고.png',
       theme: 'dark'
@@ -169,10 +152,8 @@ window.FrushSite = (() => {
       category: 'ads',
       categoryLabel: '광고',
       title: 'HERA 브랜드 필름',
-      client: 'HERA',
       year: '2025',
-      format: 'Commercial / Beauty',
-      summary: '프리미엄 뷰티 톤을 살린 시네마틱 무드의 브랜드 필름입니다.',
+      format: '뷰티 캠페인',
       src: 'Videos/헤라 레퍼런스_업로드용.mp4',
       poster: 'Images/헤라 로고.png',
       theme: 'dark'
@@ -182,10 +163,8 @@ window.FrushSite = (() => {
       category: 'ads',
       categoryLabel: '광고',
       title: '맥도날드 캠페인 필름',
-      client: '맥도날드',
       year: '2025',
-      format: 'Commercial / Campaign',
-      summary: '강한 컬러와 템포로 브랜드 집중도를 높인 광고형 작업입니다.',
+      format: '캠페인 필름',
       src: 'Videos/맥도날드 레퍼런스_업로드용.mp4',
       poster: 'Images/맥도날드 로고.png',
       theme: 'dark'
@@ -195,10 +174,8 @@ window.FrushSite = (() => {
       category: 'others',
       categoryLabel: '기타 영상',
       title: '공간 브랜드 필름',
-      client: '공간',
       year: '2025',
-      format: 'Brand Film / Space',
-      summary: '브랜드 공간 경험을 차분하고 세련된 무드로 풀어낸 필름입니다.',
+      format: '브랜드 필름',
       src: 'Videos/뉴욕공간 레퍼런스_업로드용.mp4',
       poster: 'Images/공간 로고.png',
       theme: 'light'
@@ -208,10 +185,8 @@ window.FrushSite = (() => {
       category: 'others',
       categoryLabel: '기타 영상',
       title: '라브라크 브랜드 스토리',
-      client: '라브라크',
       year: '2025',
-      format: 'Brand Film / Storytelling',
-      summary: '제품과 분위기를 함께 설계한 감성 중심의 브랜드 필름입니다.',
+      format: '스토리텔링',
       src: 'Videos/라브라크 레퍼런스1_업로드용.mp4',
       poster: 'Images/라브라크 로고.png',
       theme: 'light'
@@ -221,10 +196,8 @@ window.FrushSite = (() => {
       category: 'others',
       categoryLabel: '기타 영상',
       title: '르누아르 캠페인 무드 필름',
-      client: '르누아르',
       year: '2025',
-      format: 'Brand Film / Mood',
-      summary: '브랜드 무드를 강조하며 메시지를 자연스럽게 전달하는 콘텐츠입니다.',
+      format: '무드 필름',
       src: 'Videos/르누아르 레퍼런스_업로드용.mp4',
       poster: 'Images/르누아르 로고.png',
       theme: 'light'
@@ -234,10 +207,8 @@ window.FrushSite = (() => {
       category: 'others',
       categoryLabel: '기타 영상',
       title: '우곱집 프로모션 필름',
-      client: '우곱집',
       year: '2025',
-      format: 'Brand Film / Promo',
-      summary: '브랜드 특징을 선명하게 남기는 프로모션 중심의 필름입니다.',
+      format: '프로모션',
       src: 'Videos/우곱집 레퍼런스_업로드용.mp4',
       poster: 'Images/우곱집 로고.png',
       theme: 'light'
@@ -247,6 +218,59 @@ window.FrushSite = (() => {
   const featuredWorkIds = ['frush-showreel', 'najin-1', 'boxing', 'lg', 'seoul-milk', 'hera', 'ny-space', 'labrac-1'];
 
   const assetPath = (path) => encodeURI(path);
+  const YOUTUBE_EMBED_BASE = 'https://www.youtube.com/embed/';
+
+  function getYoutubeVideoId(url = '') {
+    if (!url) return '';
+
+    try {
+      const parsed = new URL(url);
+      if (parsed.hostname.includes('youtu.be')) {
+        return parsed.pathname.replace('/', '');
+      }
+      if (parsed.searchParams.get('v')) {
+        return parsed.searchParams.get('v');
+      }
+      const segments = parsed.pathname.split('/').filter(Boolean);
+      const embedIndex = segments.findIndex((segment) => segment === 'embed' || segment === 'shorts');
+      if (embedIndex !== -1 && segments[embedIndex + 1]) {
+        return segments[embedIndex + 1];
+      }
+    } catch (error) {
+      return '';
+    }
+
+    return '';
+  }
+
+  function getYoutubeEmbedUrl(url = '') {
+    const id = getYoutubeVideoId(url);
+    return id ? `${YOUTUBE_EMBED_BASE}${id}?autoplay=1&rel=0` : '';
+  }
+
+  function getYoutubePoster(url = '') {
+    const id = getYoutubeVideoId(url);
+    return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+  }
+
+  function getWorkPoster(work) {
+    if (work.poster) return assetPath(work.poster);
+    return getYoutubePoster(work.youtubeUrl);
+  }
+
+  function getWorkPlayback(work) {
+    if (work.youtubeUrl) {
+      return {
+        type: 'youtube',
+        src: getYoutubeEmbedUrl(work.youtubeUrl)
+      };
+    }
+
+    return {
+      type: 'local',
+      src: assetPath(work.src)
+    };
+  }
 
   function renderHeader(pageKey) {
     const navItems = Object.entries(pages).map(([key, page]) => `
@@ -362,7 +386,6 @@ window.FrushSite = (() => {
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Partners</p>
             <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">협력 업체와 브랜드가 Frush와 함께 움직입니다</h2>
           </div>
-          <p class="text-sm leading-7 text-slate-500 sm:text-base">콘텐츠의 완성도뿐 아니라 브랜드 커뮤니케이션의 흐름까지 맞춰 온 파트너십을 한눈에 보여주는 구간입니다.</p>
         </div>
         <div class="partner-marquee mt-6">
           <div class="partner-track">
@@ -379,31 +402,32 @@ window.FrushSite = (() => {
     const textColor = darkSurface ? 'text-white' : 'text-brand-text';
     const subColor = darkSurface ? 'text-white/65' : 'text-slate-500';
     const chipBg = darkSurface ? 'bg-white/10 text-white' : 'bg-brand-light text-brand-dark';
+    const poster = getWorkPoster(work);
+    const playback = getWorkPlayback(work);
     return `
       <article class="work-card reveal overflow-hidden rounded-[2rem] ${cardBg} shadow-sm" data-reveal>
-        <button type="button" class="block w-full text-left" data-video-title="${work.title}" data-video-src="${assetPath(work.src)}" data-video-poster="${assetPath(work.poster)}">
+        <button
+          type="button"
+          class="block w-full text-left"
+          data-video-title="${work.title}"
+          data-video-src="${playback.src}"
+          data-video-poster="${poster}"
+          data-video-type="${playback.type}"
+        >
           <div class="work-thumb relative aspect-[4/3]">
-            <img src="${assetPath(work.poster)}" alt="${work.title} 썸네일" loading="lazy">
-            <div class="absolute inset-x-0 bottom-0 z-[1] flex items-end justify-between gap-3 p-5">
-              <div>
-                <p class="text-xs font-semibold uppercase tracking-[0.24em] text-brand-light/90">${work.client}</p>
-                <p class="mt-2 text-lg font-semibold text-white">${work.title}</p>
-              </div>
+            <img src="${poster}" alt="${work.title} 썸네일" loading="lazy">
+            <div class="absolute inset-x-0 bottom-0 z-[1] flex items-end justify-end p-5">
               <span class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-white text-brand-text shadow-lg">
                 <i class="fas fa-play text-sm"></i>
               </span>
             </div>
           </div>
           <div class="p-6">
-            <div class="flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.22em] ${subColor}">
-              <span>${work.categoryLabel}</span>
-              <span>•</span>
-              <span>${work.format}</span>
-              <span>•</span>
-              <span>${work.year}</span>
+            <p class="text-lg font-semibold ${textColor}">${work.title}</p>
+            <div class="mt-4 space-y-2 text-sm ${subColor}">
+              <p><span class="font-semibold ${textColor}">종류</span> ${work.format}</p>
+              <p><span class="font-semibold ${textColor}">연도</span> ${work.year}</p>
             </div>
-            <p class="mt-4 text-base font-semibold ${textColor}">${work.client}</p>
-            <p class="mt-3 text-sm leading-6 ${subColor}">${work.summary}</p>
             <div class="mt-5 inline-flex items-center gap-2 rounded-full ${chipBg} px-4 py-2 text-sm font-semibold">
               영상 보기
             </div>
@@ -454,21 +478,14 @@ window.FrushSite = (() => {
         <article class="section-shell rounded-[2rem] p-6 md:p-8 shadow-soft reveal" data-reveal>
           <div class="flex items-start justify-between gap-4">
             <div>
-              <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Strengths & Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 장점과 수상 이력 7가지</h2>
+              <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 7개</h2>
             </div>
             <div class="hidden h-14 w-14 items-center justify-center rounded-2xl bg-brand-light text-brand-dark md:flex">
               <i class="fas fa-award text-xl"></i>
             </div>
           </div>
           <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            ${strengths.map((item) => `
-              <div class="award-chip rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4">
-                <p class="text-xs font-semibold uppercase tracking-[0.22em] text-brand-main">${item.label}</p>
-                <p class="mt-3 text-base font-semibold leading-7 text-brand-text">${item.title}</p>
-                <p class="mt-3 text-sm leading-6 text-slate-500">${item.description}</p>
-              </div>
-            `).join('')}
             ${awards.map((award) => `
               <div class="award-chip rounded-[1.5rem] border border-slate-200/80 bg-white px-5 py-4">
                 <div class="flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-brand-main">
@@ -490,18 +507,11 @@ window.FrushSite = (() => {
     const container = document.getElementById('stacked-panels-container');
     if (!stage || !container) return;
 
+    let pointerX = 0;
+    let pointerY = 0;
     const panels = Array.from({ length: PANEL_COUNT }, (_, index) => {
       const panel = document.createElement('div');
-      const t = index / (PANEL_COUNT - 1);
-      const width = 200 + t * 80;
-      const height = 280 + t * 120;
       panel.className = 'stacked-panel';
-      panel.style.width = `${width}px`;
-      panel.style.height = `${height}px`;
-      panel.style.marginLeft = `${-width / 2}px`;
-      panel.style.marginTop = `${-height / 2}px`;
-      panel.style.opacity = `${0.25 + t * 0.75}`;
-      panel.style.transform = `translate3d(0, 0, ${(index - (PANEL_COUNT - 1)) * Z_SPREAD}px) scaleY(1)`;
       panel.innerHTML = `
         <div class="stacked-panel-image" style="background-image:url('${PANEL_IMAGES[index % PANEL_IMAGES.length]}')"></div>
         <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
@@ -509,39 +519,70 @@ window.FrushSite = (() => {
         <div class="stacked-panel-border"></div>
       `;
       container.appendChild(panel);
-      return { panel, depth: (index - (PANEL_COUNT - 1)) * Z_SPREAD };
+      return { panel, index };
     });
 
-    const setSceneRotation = (x, y) => {
-      container.style.transform = `rotateY(${y}deg) rotateX(${x}deg)`;
+    const getDimensions = () => {
+      const width = window.innerWidth;
+      if (width < 640) {
+        return { radius: 240, cardWidth: 88, cardHeight: 124, baseTilt: -10 };
+      }
+      if (width < 1024) {
+        return { radius: 360, cardWidth: 108, cardHeight: 152, baseTilt: -14 };
+      }
+      return { radius: 500, cardWidth: 132, cardHeight: 186, baseTilt: -18 };
     };
 
-    const updatePanels = (cursorRatio) => {
-      panels.forEach(({ panel, depth }, index) => {
-        const dist = Math.abs(index - cursorRatio);
-        const influence = Math.exp(-(dist * dist) / (2 * SIGMA * SIGMA));
-        const offsetY = -influence * 70;
-        const scaleY = 0.35 + influence * 0.65;
-        panel.style.transform = `translate3d(0, ${offsetY}px, ${depth}px) scaleY(${scaleY})`;
+    const updatePanels = () => {
+      const { radius, cardWidth, cardHeight, baseTilt } = getDimensions();
+      const scrollProgress = Math.min((window.scrollY || 0) / Math.max(stage.offsetHeight, 1), 1.4);
+      const startAngle = 18;
+      const endAngle = 158;
+      const step = (endAngle - startAngle) / Math.max(PANEL_COUNT - 1, 1);
+      const sceneShiftX = pointerX * 18;
+      const sceneShiftY = scrollProgress * 70 + pointerY * -14;
+
+      container.style.transform = `translate3d(${sceneShiftX}px, ${sceneShiftY}px, 0)`;
+
+      panels.forEach(({ panel, index }) => {
+        const angle = startAngle + step * index;
+        const angleRad = (angle * Math.PI) / 180;
+        const depth = (PANEL_COUNT - index) * -28;
+        const x = Math.cos(angleRad) * radius;
+        const y = Math.sin(angleRad) * radius;
+        const spread = index / Math.max(PANEL_COUNT - 1, 1);
+        const swing = scrollProgress * 26 * (0.25 + spread * 0.9);
+        const lift = Math.sin(scrollProgress * Math.PI + spread * 1.8) * 18;
+        const rotate = baseTilt + angle / 6 + scrollProgress * 10 + pointerX * 12;
+        const scale = 0.84 + spread * 0.2 - scrollProgress * 0.02;
+
+        panel.style.width = `${cardWidth}px`;
+        panel.style.height = `${cardHeight}px`;
+        panel.style.marginLeft = `${-cardWidth / 2}px`;
+        panel.style.marginBottom = `${-cardHeight / 2}px`;
+        panel.style.opacity = `${0.24 + spread * 0.76}`;
+        panel.style.zIndex = `${PANEL_COUNT - index}`;
+        panel.style.transform = `translate3d(${x - swing}px, ${-y + lift}px, ${depth}px) rotate(${rotate}deg) scale(${scale})`;
       });
     };
 
-    setSceneRotation(18, -42);
+    updatePanels();
 
     stage.addEventListener('mousemove', (event) => {
       const rect = stage.getBoundingClientRect();
-      const cx = (event.clientX - rect.left) / rect.width;
-      const cy = (event.clientY - rect.top) / rect.height;
-      setSceneRotation(18 + (cy - 0.5) * -10, -42 + (cx - 0.5) * 14);
-      updatePanels(cx * (PANEL_COUNT - 1));
+      pointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+      pointerY = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+      updatePanels();
     });
 
     stage.addEventListener('mouseleave', () => {
-      setSceneRotation(18, -42);
-      panels.forEach(({ panel, depth }) => {
-        panel.style.transform = `translate3d(0, 0, ${depth}px) scaleY(1)`;
-      });
+      pointerX = 0;
+      pointerY = 0;
+      updatePanels();
     });
+
+    window.addEventListener('scroll', updatePanels, { passive: true });
+    window.addEventListener('resize', updatePanels);
   }
 
   function setupRevealObserver() {
@@ -619,13 +660,25 @@ window.FrushSite = (() => {
     document.addEventListener('click', (event) => {
       const button = event.target.closest('button[data-video-src]');
       if (button) {
-        const { videoTitle, videoSrc, videoPoster } = button.dataset;
+        const { videoTitle, videoSrc, videoPoster, videoType } = button.dataset;
         modalTitle.textContent = videoTitle || '영상 보기';
-        modalContent.innerHTML = `
-          <video class="h-full w-full" controls autoplay playsinline poster="${videoPoster || ''}">
-            <source src="${videoSrc || ''}" type="video/mp4">
-          </video>
-        `;
+        modalContent.innerHTML = videoType === 'youtube'
+          ? `
+            <iframe
+              class="h-full w-full"
+              src="${videoSrc || ''}"
+              title="${videoTitle || '영상 보기'}"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          `
+          : `
+            <video class="h-full w-full" controls autoplay playsinline poster="${videoPoster || ''}">
+              <source src="${videoSrc || ''}" type="video/mp4">
+            </video>
+          `;
         modal.classList.add('is-open');
         document.body.classList.add('modal-open');
         return;
