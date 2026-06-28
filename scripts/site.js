@@ -216,10 +216,113 @@ window.FrushSite = (() => {
       src: 'Videos/우곱집 레퍼런스_업로드용.mp4',
       poster: 'Images/우곱집 로고.png',
       theme: 'light'
+    },
+    {
+      id: 'yt-around-us',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '□□은 주변에 있다',
+      year: '2025',
+      format: '단편 영화',
+      youtubeUrl: 'https://www.youtube.com/watch?v=lQCfm9T8jyY',
+      theme: 'light'
+    },
+    {
+      id: 'yt-red-echo',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'RED ECHO',
+      year: '2025',
+      format: '뮤직비디오',
+      youtubeUrl: 'https://www.youtube.com/watch?v=i8zv0KtnZZ0',
+      theme: 'light'
+    },
+    {
+      id: 'yt-gotgam-festival',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '호랑이도 즐기는 곶감 축제',
+      year: '2025',
+      format: '축제 홍보',
+      youtubeUrl: 'https://www.youtube.com/watch?v=UndPL9ydZkc',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-shinramyun',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '신라면 왕국',
+      year: '2025',
+      format: '제품 광고',
+      youtubeUrl: 'https://www.youtube.com/watch?v=cN7fM_m0TAM',
+      award: { tier: '대상', contest: 'K-브랜드 콘텐츠 농심 부문' },
+      theme: 'dark'
+    },
+    {
+      id: 'yt-prompt',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'PROMPT',
+      year: '2025',
+      format: '블랙 코미디',
+      youtubeUrl: 'https://www.youtube.com/watch?v=cSMN1ACu6Qc',
+      award: { tier: '우수상', contest: '대전 AI 영상 콘텐츠 공모전' },
+      theme: 'light'
+    },
+    {
+      id: 'yt-today-korea',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '오늘의 대한민국, 내일을 향해',
+      year: '2025',
+      format: '캠페인 광고',
+      youtubeUrl: 'https://www.youtube.com/watch?v=mAIZWyQuPJ4',
+      award: { tier: '장려상', contest: '대한민국 인도적 지원 AI 홍보 공모전' },
+      theme: 'dark'
+    },
+    {
+      id: 'yt-occuloc',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: 'OCCULOC 시각·청각적 체험형 콘텐츠 영상',
+      year: '2025',
+      format: '브랜드 필름',
+      youtubeUrl: 'https://www.youtube.com/watch?v=WxhH3B0zzkE',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-weak-hero',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'WEAK HERO',
+      year: '2025',
+      format: '단편 영화',
+      youtubeUrl: 'https://www.youtube.com/watch?v=edyYgpi27xU',
+      theme: 'light'
+    },
+    {
+      id: 'yt-hoochamjal',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '후회없이 참 잘한 선택, 후참잘',
+      year: '2025',
+      format: '브랜드 광고',
+      youtubeUrl: 'https://www.youtube.com/watch?v=KOKwG5u83Bs',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-pick-my-style',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '무신사 무진장 AI 공모전, PICK MY STYLE',
+      year: '2025',
+      format: '브랜드 광고',
+      youtubeUrl: 'https://www.youtube.com/watch?v=BL73KI6sYd4',
+      theme: 'dark'
     }
   ];
 
-  const featuredWorkIds = ['frush-showreel', 'najin-1', 'boxing', 'lg', 'seoul-milk', 'hera', 'ny-space', 'labrac-1'];
+  const featuredWorkIds = ['frush-showreel', 'yt-shinramyun', 'yt-today-korea', 'yt-occuloc', 'yt-hoochamjal', 'najin-1', 'ny-space', 'labrac-1'];
 
   const assetPath = (path) => encodeURI(path);
   const YOUTUBE_EMBED_BASE = 'https://www.youtube.com/embed/';
@@ -426,6 +529,15 @@ window.FrushSite = (() => {
         >
           <div class="work-thumb relative aspect-[4/3]">
             <img src="${poster}" alt="${work.title} 썸네일" loading="lazy">
+            ${work.award ? `
+            <span class="award-ribbon">
+              <span class="award-ribbon__icon"><i class="fas fa-trophy"></i></span>
+              <span class="award-ribbon__text">
+                <span class="award-ribbon__tier">${work.award.tier}</span>
+                <span class="award-ribbon__contest">${work.award.contest}</span>
+              </span>
+            </span>
+            ` : ''}
           </div>
           <div class="p-6">
             <p class="text-lg font-semibold ${textColor}">${work.title}</p>
