@@ -2,6 +2,10 @@ window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
   const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 18;
+  // Hero arch card images. Placeholder photos for now — to use your own, drop
+  // files into Images/ (or Image_Storage/) and replace the entries below with
+  // their paths, e.g. 'Images/내 작업.png'. Local paths are URL-encoded
+  // automatically, so spaces and Korean filenames are fine.
   const PANEL_IMAGES = [
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
     'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
@@ -327,7 +331,7 @@ window.FrushSite = (() => {
                   <p><span class="font-semibold text-white">대표자</span> 서보훈</p>
                   <p><span class="font-semibold text-white">사업자 등록번호</span> 310-72-00689</p>
                   <p><span class="font-semibold text-white">주소</span> 서울특별시 강남구 논현로 10길 30 5층</p>
-                  <p><span class="font-semibold text-white">소개</span> 브랜드 목적에 맞는 영상 기획부터 제작까지 한 흐름으로 진행하는 AI 영상 제작 스튜디오</p>
+                  <p><span class="font-semibold text-white">소개</span> 원하는 모든 영상, 기획부터 제작까지 한 번에 해결하는, AI 영상 제작 스튜디오</p>
                 </div>
               </div>
               <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-6">
@@ -460,7 +464,7 @@ window.FrushSite = (() => {
     const stats = [
       { value: '50+', label: '누적 제작 실적' },
       { value: '5.0', label: '프로젝트 만족도' },
-      { value: 'All', label: '세로형·광고·필름' }
+      { value: 'ALL', label: '세로형·광고·필름 전 포맷' }
     ];
 
     target.innerHTML = `
@@ -522,7 +526,7 @@ window.FrushSite = (() => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
       panel.innerHTML = `
-        <div class="stacked-panel-image" style="background-image:url('${PANEL_IMAGES[index % PANEL_IMAGES.length]}')"></div>
+        <div class="stacked-panel-image" style="background-image:url('${assetPath(PANEL_IMAGES[index % PANEL_IMAGES.length])}')"></div>
         <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
@@ -549,6 +553,13 @@ window.FrushSite = (() => {
       const endAngle = 344;
       const step = (endAngle - startAngle) / Math.max(PANEL_COUNT - 1, 1);
 
+      // Panels are anchored to the TOP of the hero section (see .stacked-panel
+      // top:0), so this offset places the arch a fixed distance below the top —
+      // its peak always clears the fixed nav bar regardless of viewport height
+      // (previously it hid behind the nav on wide/short windows).
+      const topClearance = 140; // peak distance below section top (post-perspective)
+      const archOffsetY = topClearance + cardHeight / 2 + radius + arcLift;
+
       // The whole arch reacts to the pointer as one 3D object.
       const sceneShiftX = currentPointerX * 26;
       const sceneShiftY = currentPointerY * -16;
@@ -561,9 +572,7 @@ window.FrushSite = (() => {
         const angle = startAngle + step * index;
         const angleRad = (angle * Math.PI) / 180;
         const x = Math.cos(angleRad) * radius;
-        // Push the whole arch down so it sits centred in the hero and the top
-        // cards clear the fixed nav bar instead of being clipped behind it.
-        const y = Math.sin(angleRad) * radius + arcLift + radius * 0.4;
+        const y = Math.sin(angleRad) * radius + archOffsetY;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
         const centerDistance = Math.abs(spread - 0.5);
 
