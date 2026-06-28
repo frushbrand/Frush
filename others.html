@@ -27,24 +27,37 @@
   <main>
     <section class="relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pt-36 lg:px-8 lg:pb-24 lg:pt-40">
       <div class="mx-auto max-w-7xl">
-        <div class="subpage-hero-shell grid items-center gap-8 p-6 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-10">
+        <div class="subpage-hero-shell grid items-center gap-10 p-6 sm:p-8 lg:grid-cols-[0.95fr_1.05fr] lg:p-12">
           <div class="reveal" data-reveal>
-            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Brand Film & More</p>
-            <h1 class="mt-4 text-4xl font-semibold leading-[1.06] text-white sm:text-5xl lg:text-6xl">행사와 제품, 기술 설명까지<br>목적에 맞는 정보를 영상으로 정리합니다.</h1>
-            <p class="mt-6 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">기타 영상은 이벤트, 행사, 기술 설명, 제품 영상처럼 전달해야 할 정보와 현장감이 분명한 작업이 중심이 됩니다. 프러쉬 스튜디오는 메시지 구조를 먼저 잡고 필요한 무드와 몰입도를 더합니다.</p>
-            <div class="hero-cta-row mt-10">
-              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="hero-cta-button bg-brand-main text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">문의하기</a>
-              <a href="#portfolio" class="hero-cta-button border border-white/15 bg-white/5 text-base font-semibold text-white transition hover:bg-white/10">포트폴리오 보기</a>
+            <p class="text-sm font-semibold uppercase tracking-[0.32em] text-brand-main">Brand Film & More</p>
+            <h1 class="subhero-headline mt-5">브랜드의 분위기와 정보를<br><span class="text-brand-main">영상 언어</span>로 정리합니다.</h1>
+            <p class="mt-6 max-w-xl text-base leading-8 text-white/70 sm:text-lg">행사, 제품, 기술 소개, 인터뷰 영상은 전달해야 할 내용과 현장감이 분명해야 합니다. 프러쉬는 메시지 구조를 먼저 잡고 브랜드가 원하는 무드와 정보 밀도를 화면에 담습니다.</p>
+            <div class="tag-row mt-8">
+              <span class="tag-chip"><i class="fas fa-film"></i>브랜드 필름</span>
+              <span class="tag-chip"><i class="fas fa-calendar-day"></i>행사 영상</span>
+              <span class="tag-chip"><i class="fas fa-box-open"></i>제품 소개</span>
+              <span class="tag-chip"><i class="fas fa-microchip"></i>기술 설명</span>
+              <span class="tag-chip"><i class="fas fa-user"></i>인터뷰 영상</span>
+            </div>
+            <div class="hero-cta-row mt-9">
+              <a href="https://open.kakao.com/me/frush" target="_blank" rel="noreferrer" class="hero-cta-button gap-2 bg-brand-main text-base font-semibold text-white shadow-glow transition hover:bg-brand-dark">브랜드 영상 문의하기 <i class="fas fa-chevron-right text-xs"></i></a>
+              <a href="#portfolio" class="hero-cta-button gap-2 border border-white/15 bg-white/5 text-base font-semibold text-white transition hover:bg-white/10">작업 사례 보기 <i class="fas fa-chevron-right text-xs"></i></a>
             </div>
           </div>
-          <div class="reveal" data-reveal>
-            <p class="mb-3 text-sm font-semibold uppercase tracking-[0.28em] text-brand-light/80">대표 영상</p>
-            <div class="hero-frame h-[420px] sm:h-[520px]" data-parallax="0.06">
-              <video autoplay muted loop playsinline poster="Images/공간 로고.png">
-                <source src="Videos/뉴욕공간 레퍼런스_업로드용.mp4" type="video/mp4">
-              </video>
+          <button type="button" class="film-showcase reveal" data-reveal data-parallax="0.04" data-video-title="Frush 브랜드 필름 쇼릴" data-video-type="local" data-video-src="Videos/뉴욕공간 레퍼런스_업로드용.mp4" data-video-poster="Image_Storage/프러쉬_썸네일.png">
+            <img class="film-showcase__media" src="Image_Storage/프러쉬_썸네일.png" alt="브랜드 필름 대표 작업">
+            <span class="film-showcase__eyebrow">SELECTED WORKS</span>
+            <span class="film-showcase__meta">01:28 <span class="play-btn play-btn--sm" style="position:static;transform:none"><i class="fas fa-play"></i></span></span>
+            <div class="film-showcase__caption">
+              <strong>Frush · 공간 브랜드 필름</strong>
+              <span>BRAND FILM</span>
             </div>
-          </div>
+            <div class="film-showcase__nav">
+              <i class="fas fa-chevron-left"></i>
+              <span class="film-showcase__dots"><i class="is-active"></i><i></i><i></i><i></i></span>
+              <i class="fas fa-chevron-right"></i>
+            </div>
+          </button>
         </div>
       </div>
     </section>

@@ -561,7 +561,9 @@ window.FrushSite = (() => {
         const angle = startAngle + step * index;
         const angleRad = (angle * Math.PI) / 180;
         const x = Math.cos(angleRad) * radius;
-        const y = Math.sin(angleRad) * radius + arcLift;
+        // Push the whole arch down a touch so it sits centred in the hero
+        // (not glued to the very top) while still arching above the headline.
+        const y = Math.sin(angleRad) * radius + arcLift + radius * 0.2;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
         const centerDistance = Math.abs(spread - 0.5);
 
@@ -595,8 +597,10 @@ window.FrushSite = (() => {
     updatePanels();
     animatePanels();
 
-    // Track the pointer across the whole hero stage so the arch tilts in 3D.
-    const stageRoot = stage.closest('.hero-stage') || stage;
+    // Track the pointer across the whole hero SECTION (content sits above the
+    // backdrop in its own stacking context, so listening on the section is the
+    // only way to catch movement over the centred copy too).
+    const stageRoot = stage.closest('.hero-section') || stage.closest('section') || stage;
     stageRoot.addEventListener('mousemove', (event) => {
       const rect = stageRoot.getBoundingClientRect();
       targetPointerX = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
