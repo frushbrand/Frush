@@ -132,7 +132,7 @@ body {
 }
 
 .hero-copy-panel--center {
-  max-width: 52rem;
+  max-width: 60rem;
   text-align: center;
 }
 
@@ -1409,7 +1409,7 @@ body {
 
 @media (min-width: 1024px) {
   .hero-layout {
-    max-width: 58rem;
+    max-width: 64rem;
     gap: 3rem;
   }
 }
