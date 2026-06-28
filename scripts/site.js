@@ -341,6 +341,7 @@ window.FrushSite = (() => {
                   <p><a href="mailto:frush.brand@gmail.com" class="transition hover:text-brand-main">frush.brand@gmail.com</a></p>
                 </div>
                 <a href="${KAKAO_URL}" target="_blank" rel="noreferrer" class="mt-6 inline-flex w-full items-center justify-center rounded-full bg-brand-main px-5 py-3 text-sm font-semibold text-white transition hover:bg-brand-dark">문의하기</a>
+                <a href="https://blog.naver.com/frush_brand" target="_blank" rel="noreferrer" class="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-full border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10">블로그 보러가기 <i class="fas fa-arrow-up-right-from-square text-xs"></i></a>
               </div>
             </div>
             <div class="mt-8 flex flex-col gap-2 border-t border-white/10 pt-6 sm:flex-row sm:items-center sm:justify-between">
