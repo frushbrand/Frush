@@ -578,7 +578,13 @@ window.FrushSite = (() => {
         const centerDistance = Math.abs(spread - 0.5);
 
         // Each card sits tangent to the arc; subtle per-card parallax on hover.
-        const depth = (0.5 - centerDistance) * 200 - 80;
+        // The scene uses preserve-3d, so stacking is decided by real depth (z),
+        // not z-index. A small directional bias keeps the two apex cards from
+        // sharing the exact same depth — otherwise they z-fight and overlap
+        // messily on touch devices, where there's no pointer tilt to separate
+        // them. This makes one centre card sit cleanly on top.
+        const depthBias = (spread - 0.5) * 60;
+        const depth = (0.5 - centerDistance) * 200 - 80 + depthBias;
         const depthOffset = currentPointerX * (12 + spread * 22);
         const lift = currentPointerY * (14 + (1 - centerDistance) * 16);
         const scale = 0.9 + (1 - centerDistance) * 0.16 + Math.abs(currentPointerY) * 0.02;
