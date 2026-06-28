@@ -73,20 +73,20 @@ body {
 
 .hero-stage-home {
   position: relative;
-  min-height: calc(100vh - 7rem);
-  padding: 1rem 0 3rem;
+  min-height: auto;
+  padding: 0;
 }
 
 .hero-surface {
   position: relative;
-  min-height: calc(100vh - 10rem);
+  min-height: auto;
 }
 
 .hero-content-shell {
   position: relative;
   z-index: 2;
   display: grid;
-  min-height: calc(100vh - 12rem);
+  min-height: auto;
   align-items: center;
 }
 
@@ -223,7 +223,7 @@ body {
 .stacked-panel {
   position: absolute;
   left: 50%;
-  top: 50%;
+  top: 0;
   overflow: hidden;
   border-radius: 1.4rem;
   transform-origin: center center;
@@ -709,7 +709,19 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(2, 8, 14, 0) 35%, rgba(2, 8, 14, 0.45) 100%);
+  z-index: 0;
+  background: linear-gradient(180deg, rgba(2, 8, 14, 0.05) 35%, rgba(2, 8, 14, 0.6) 100%);
+}
+
+/* Card cover image. Drop a real file in via the matching <img class="more-card__img">
+   in index.html; the gradient + icon/title stay layered on top for legibility. */
+.more-card__img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .more-card__media--vertical {

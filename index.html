@@ -25,7 +25,7 @@
   <div id="site-header"></div>
 
   <main>
-    <section class="hero-section relative overflow-hidden px-4 pb-20 pt-32 sm:px-6 sm:pb-24 sm:pt-36 lg:px-8 lg:pb-28 lg:pt-40">
+    <section class="hero-section relative flex min-h-screen items-center overflow-hidden px-4 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-32 lg:px-8 lg:pb-24 lg:pt-36">
       <div class="absolute inset-0 bg-grid hero-grid opacity-20"></div>
       <div class="hero-backdrop hero-backdrop--full" id="stacked-panels-scene">
         <div class="hero-noise pointer-events-none absolute inset-0 z-[1] opacity-[0.08]"></div>
@@ -33,7 +33,7 @@
           <div class="stacked-panels-scene" id="stacked-panels-container"></div>
         </div>
       </div>
-      <div class="relative z-10 mx-auto max-w-7xl">
+      <div class="relative z-10 mx-auto w-full max-w-7xl">
         <div class="hero-stage hero-stage-home">
           <div class="hero-surface">
             <div class="hero-content-shell hero-content-shell--center px-6 py-8 sm:px-10 lg:px-16">
@@ -89,8 +89,7 @@
       </div>
     </section>
 
-    <section class="relative overflow-hidden border-t border-slate-200/70 bg-[linear-gradient(180deg,#f7faf8_0%,#eef7f1_100%)] py-24 text-brand-text sm:py-28 lg:py-32">
-      <div class="pointer-events-none absolute inset-x-0 top-0 h-24 bg-[radial-gradient(circle_at_top,rgba(16,185,129,0.14),transparent_68%)]"></div>
+    <section class="relative overflow-hidden bg-[#e7f0ea] py-24 text-brand-text sm:py-28 lg:py-32">
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div class="mb-10 max-w-2xl reveal" data-reveal>
           <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-main">More works</p>
@@ -100,6 +99,7 @@
         <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <a href="vertical.html" class="more-card group reveal" data-reveal>
             <div class="more-card__media more-card__media--vertical">
+              <img class="more-card__img" src="Image_Storage/나진국밥_썸네일.png" alt="세로형 영상 미리보기" loading="lazy">
               <span class="more-card__icon"><i class="fas fa-mobile-screen-button"></i></span>
               <h3 class="more-card__title">세로형</h3>
             </div>
@@ -110,6 +110,7 @@
           </a>
           <a href="ads.html" class="more-card group reveal" data-reveal>
             <div class="more-card__media more-card__media--ads">
+              <img class="more-card__img" src="Images/서울우유 광고.png" alt="광고 영상 미리보기" loading="lazy">
               <span class="more-card__icon"><i class="fas fa-bullhorn"></i></span>
               <h3 class="more-card__title">광고</h3>
             </div>
@@ -120,6 +121,7 @@
           </a>
           <a href="others.html" class="more-card group reveal" data-reveal>
             <div class="more-card__media more-card__media--others">
+              <img class="more-card__img" src="Images/프러쉬매장.png" alt="기타 영상 미리보기" loading="lazy">
               <span class="more-card__icon"><i class="fas fa-clapperboard"></i></span>
               <h3 class="more-card__title">기타 영상</h3>
             </div>
@@ -130,6 +132,7 @@
           </a>
           <a href="contact.html" class="more-card group reveal" data-reveal>
             <div class="more-card__media more-card__media--contact">
+              <img class="more-card__img" src="Images/5인 단체사진_프러쉬.png" alt="문의하기" loading="lazy">
               <span class="more-card__icon"><i class="fas fa-paper-plane"></i></span>
               <h3 class="more-card__title">문의하기</h3>
             </div>
