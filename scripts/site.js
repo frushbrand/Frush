@@ -1,5 +1,6 @@
 window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
+  const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 18;
   const PANEL_IMAGES = [
     'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
@@ -70,13 +71,13 @@ window.FrushSite = (() => {
   ];
 
   const awards = [
-    { year: '2025.10', title: '제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
+    { year: '2024.11', title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: 'NH 애그테크 청년 창업 캠퍼스' },
+    { year: '2025.01', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' },
     { year: '2025.07', title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단' },
+    { year: '2025.10', title: '제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
     { year: '2025.12', title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원' },
     { year: '2025.12', title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단' },
-    { year: '2025', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' },
-    { year: '2024', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' },
-    { year: '2024', title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: 'NH 애그테크 청년 창업 캠퍼스' }
+    { year: '2025.12', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' }
   ];
 
   const works = [
@@ -468,15 +469,8 @@ window.FrushSite = (() => {
           <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
           <h2 class="mt-4 text-3xl font-semibold leading-[1.18] text-white sm:text-[2.4rem]">전략과 실행, 그리고 신뢰를<br class="hidden sm:block"> 한 팀으로 연결합니다</h2>
           <p class="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
-          <div class="strength-point-list mt-8">
-            <div class="strength-point-item">
-              <span class="strength-point-item__label">Strategy</span>
-              <p>초기 상담에서 브랜드 목적과 메시지를 먼저 정리합니다.</p>
-            </div>
-            <div class="strength-point-item">
-              <span class="strength-point-item__label">Production</span>
-              <p>기획, 촬영, 편집까지 필요한 제작 흐름을 한 팀으로 이어갑니다.</p>
-            </div>
+          <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
+            <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
           </div>
           <div class="strength-stat-row mt-auto pt-8">
             ${stats.map((stat) => `
