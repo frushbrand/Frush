@@ -71,13 +71,13 @@ window.FrushSite = (() => {
   ];
 
   const awards = [
-    { year: '2024.11', title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: 'NH 애그테크 청년 창업 캠퍼스' },
-    { year: '2025.01', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' },
-    { year: '2025.07', title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단' },
-    { year: '2025.10', title: '제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
-    { year: '2025.12', title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원' },
+    { year: '2025.12', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' },
     { year: '2025.12', title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단' },
-    { year: '2025.12', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' }
+    { year: '2025.12', title: '대전 AI영상 콘텐츠 공모전 자유형식 부문 우수상', org: '대전정보문화산업진흥원' },
+    { year: '2025.10', title: '제1회 서울 국제 AI 필름 페스타 농심 광고 부문 대상', org: 'SGAFF' },
+    { year: '2025.07', title: 'K-AI 콘텐츠 공모전 장려상', org: 'KT그룹희망나눔재단' },
+    { year: '2025.01', title: '서울대학교 CALS 창업경진대회 대상', org: '서울대학교' },
+    { year: '2024.11', title: 'NH 애그테크 청년 창업 캠퍼스 SEED 우수상', org: 'NH 애그테크 청년 창업 캠퍼스' }
   ];
 
   const works = [
@@ -561,9 +561,9 @@ window.FrushSite = (() => {
         const angle = startAngle + step * index;
         const angleRad = (angle * Math.PI) / 180;
         const x = Math.cos(angleRad) * radius;
-        // Push the whole arch down a touch so it sits centred in the hero
-        // (not glued to the very top) while still arching above the headline.
-        const y = Math.sin(angleRad) * radius + arcLift + radius * 0.2;
+        // Push the whole arch down so it sits centred in the hero and the top
+        // cards clear the fixed nav bar instead of being clipped behind it.
+        const y = Math.sin(angleRad) * radius + arcLift + radius * 0.4;
         const spread = index / Math.max(PANEL_COUNT - 1, 1);
         const centerDistance = Math.abs(spread - 0.5);
 
@@ -613,6 +613,64 @@ window.FrushSite = (() => {
     });
 
     window.addEventListener('resize', updatePanels);
+  }
+
+  function setupShowcaseCarousel() {
+    const el = document.querySelector('[data-showcase]');
+    if (!el) return;
+
+    let slides;
+    try {
+      slides = JSON.parse(el.dataset.slides || '[]');
+    } catch (error) {
+      return;
+    }
+    if (!slides.length) return;
+
+    const media = el.querySelector('[data-showcase-media]');
+    const title = el.querySelector('[data-showcase-title]');
+    const tag = el.querySelector('[data-showcase-tag]');
+    const time = el.querySelector('[data-showcase-time]');
+    const play = el.querySelector('[data-showcase-play]');
+    const dotsWrap = el.querySelector('[data-showcase-dots]');
+    const prev = el.querySelector('[data-showcase-prev]');
+    const next = el.querySelector('[data-showcase-next]');
+
+    let index = 0;
+
+    if (dotsWrap) {
+      dotsWrap.innerHTML = slides.map((_, i) => `<i${i === 0 ? ' class="is-active"' : ''}></i>`).join('');
+    }
+    const dots = dotsWrap ? Array.from(dotsWrap.children) : [];
+
+    const render = () => {
+      const slide = slides[index];
+      if (media) {
+        media.src = assetPath(slide.img);
+        media.alt = slide.title || '';
+      }
+      if (title) title.textContent = slide.title || '';
+      if (tag) tag.textContent = slide.tag || '';
+      if (time) time.textContent = slide.time || '';
+      if (play) {
+        play.dataset.videoSrc = assetPath(slide.video);
+        play.dataset.videoPoster = assetPath(slide.img);
+        play.dataset.videoTitle = slide.title || '영상 보기';
+        play.dataset.videoType = 'local';
+      }
+      dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
+    };
+
+    const step = (delta) => {
+      index = (index + delta + slides.length) % slides.length;
+      render();
+    };
+
+    if (prev) prev.addEventListener('click', () => step(-1));
+    if (next) next.addEventListener('click', () => step(1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { index = i; render(); }));
+
+    render();
   }
 
   function setupRevealObserver() {
@@ -746,6 +804,7 @@ window.FrushSite = (() => {
 
     setupNavbar();
     setupModal();
+    setupShowcaseCarousel();
     setupRevealObserver();
     setupParallax();
     setupStackedPanels();
