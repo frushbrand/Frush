@@ -86,138 +86,6 @@ window.FrushSite = (() => {
 
   const works = [
     {
-      id: 'frush-showreel',
-      category: 'vertical',
-      categoryLabel: '세로형',
-      title: 'Frush 브랜드 쇼릴',
-      year: '2026',
-      format: '브랜드 쇼릴',
-      src: 'Videos/프러쉬_업로드용.mp4',
-      poster: 'Image_Storage/프러쉬_썸네일.png',
-      theme: 'light'
-    },
-    {
-      id: 'najin-1',
-      category: 'vertical',
-      categoryLabel: '세로형',
-      title: '나진국밥 숏폼 캠페인 01',
-      year: '2025',
-      format: '매장 홍보',
-      src: 'Videos/나진국밥 레퍼런스_업로드용1.mp4',
-      poster: 'Image_Storage/나진국밥_썸네일.png',
-      theme: 'light'
-    },
-    {
-      id: 'najin-2',
-      category: 'vertical',
-      categoryLabel: '세로형',
-      title: '나진국밥 숏폼 캠페인 02',
-      year: '2025',
-      format: '제품 스토리',
-      src: 'Videos/나진국밥 레퍼런스_업로드용2.mp4',
-      poster: 'Image_Storage/나진국밥_썸네일.png',
-      theme: 'light'
-    },
-    {
-      id: 'boxing',
-      category: 'vertical',
-      categoryLabel: '세로형',
-      title: '나홀로복싱 퍼포먼스 숏폼',
-      year: '2025',
-      format: '퍼포먼스',
-      src: 'Videos/나홀로복싱 레퍼런스_업로드용.mp4',
-      poster: 'Images/나홀로복싱 로고.png',
-      theme: 'light'
-    },
-    {
-      id: 'lg',
-      category: 'ads',
-      categoryLabel: '광고',
-      title: 'LG AX Company 레퍼런스',
-      year: '2025',
-      format: '캠페인 광고',
-      src: 'Videos/LG광고.mp4',
-      poster: 'Images/프러쉬매장.png',
-      theme: 'dark'
-    },
-    {
-      id: 'seoul-milk',
-      category: 'ads',
-      categoryLabel: '광고',
-      title: '서울우유 브랜드 광고',
-      year: '2025',
-      format: '브랜딩 광고',
-      src: 'Videos/서울우유광고.mp4',
-      poster: 'Images/서울우유 광고.png',
-      theme: 'dark'
-    },
-    {
-      id: 'hera',
-      category: 'ads',
-      categoryLabel: '광고',
-      title: 'HERA 브랜드 필름',
-      year: '2025',
-      format: '뷰티 캠페인',
-      src: 'Videos/헤라 레퍼런스_업로드용.mp4',
-      poster: 'Images/헤라 로고.png',
-      theme: 'dark'
-    },
-    {
-      id: 'mcdonalds',
-      category: 'ads',
-      categoryLabel: '광고',
-      title: '맥도날드 캠페인 필름',
-      year: '2025',
-      format: '캠페인 필름',
-      src: 'Videos/맥도날드 레퍼런스_업로드용.mp4',
-      poster: 'Images/맥도날드 로고.png',
-      theme: 'dark'
-    },
-    {
-      id: 'ny-space',
-      category: 'others',
-      categoryLabel: '기타 영상',
-      title: '공간 브랜드 필름',
-      year: '2025',
-      format: '브랜드 필름',
-      src: 'Videos/뉴욕공간 레퍼런스_업로드용.mp4',
-      poster: 'Images/공간 로고.png',
-      theme: 'light'
-    },
-    {
-      id: 'labrac-1',
-      category: 'others',
-      categoryLabel: '기타 영상',
-      title: '라브라크 브랜드 스토리',
-      year: '2025',
-      format: '스토리텔링',
-      src: 'Videos/라브라크 레퍼런스1_업로드용.mp4',
-      poster: 'Images/라브라크 로고.png',
-      theme: 'light'
-    },
-    {
-      id: 'renoir',
-      category: 'others',
-      categoryLabel: '기타 영상',
-      title: '르누아르 캠페인 무드 필름',
-      year: '2025',
-      format: '무드 필름',
-      src: 'Videos/르누아르 레퍼런스_업로드용.mp4',
-      poster: 'Images/르누아르 로고.png',
-      theme: 'light'
-    },
-    {
-      id: 'woogop',
-      category: 'others',
-      categoryLabel: '기타 영상',
-      title: '우곱집 프로모션 필름',
-      year: '2025',
-      format: '프로모션',
-      src: 'Videos/우곱집 레퍼런스_업로드용.mp4',
-      poster: 'Images/우곱집 로고.png',
-      theme: 'light'
-    },
-    {
       id: 'yt-around-us',
       category: 'others',
       categoryLabel: '기타 영상',
@@ -329,10 +197,109 @@ window.FrushSite = (() => {
       source: '무신사',
       youtubeUrl: 'https://www.youtube.com/watch?v=BL73KI6sYd4',
       theme: 'dark'
+    },
+    {
+      id: 'yt-cham-hyoeun',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '부모님의 행복한 노후',
+      year: '2025',
+      format: '브랜드 광고',
+      source: '참효은재가노인복지센터',
+      youtubeUrl: 'https://youtu.be/cFjAiNF4OkE',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-mcd-newyear-burger',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: 'Happy New Year Burger',
+      year: '2025',
+      format: '제품 광고',
+      source: '맥도날드',
+      youtubeUrl: 'https://youtu.be/TPxmf-OJ8t0',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-financier',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: 'Not a Cigar, Financier',
+      year: '2025',
+      format: '제품 광고',
+      source: 'New York Gong-Gan',
+      youtubeUrl: 'https://youtu.be/b7yobYT6gA0',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-labrac-escape',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '일상을 탈출하는 가장 완벽한 방법',
+      year: '2025',
+      format: '제품 광고',
+      source: '라브라크',
+      youtubeUrl: 'https://youtu.be/KSt0_2IU5-8',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-bellnova',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '변하지 않는 가치',
+      year: '2025',
+      format: '브랜드 광고',
+      source: '벨노바',
+      youtubeUrl: 'https://youtu.be/83RExRbz2_4',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-lifetime-trailer',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'라이프 타임' 예고편",
+      year: '2025',
+      format: '프로포즈 영상',
+      source: '개인 주문',
+      youtubeUrl: 'https://youtu.be/eySPQtTqLMI',
+      theme: 'light'
+    },
+    {
+      id: 'yt-bikemart-1',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '그냥 등록하면 되잖아',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/20BYQaWX8A0',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-bikemart-2',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '너도 어서 등록해',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/kS-V91usrL8',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-jeongdam-pyogo',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '신입사원 김표고',
+      year: '2025',
+      format: '브랜드 컨텐츠',
+      source: '농업회사법인 정담',
+      youtubeUrl: 'https://youtube.com/shorts/6MAKS66szeg',
+      theme: 'light'
     }
   ];
 
-  const featuredWorkIds = ['frush-showreel', 'yt-shinramyun', 'yt-today-korea', 'yt-occuloc', 'yt-hoochamjal', 'najin-1', 'ny-space', 'labrac-1'];
+  const featuredWorkIds = ['yt-shinramyun', 'yt-today-korea', 'yt-occuloc', 'yt-hoochamjal'];
 
   const assetPath = (path) => encodeURI(path);
   const YOUTUBE_EMBED_BASE = 'https://www.youtube.com/embed/';
