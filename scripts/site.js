@@ -224,6 +224,7 @@ window.FrushSite = (() => {
       title: '□□은 주변에 있다',
       year: '2025',
       format: '단편 영화',
+      source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=lQCfm9T8jyY',
       theme: 'light'
     },
@@ -234,6 +235,7 @@ window.FrushSite = (() => {
       title: 'RED ECHO',
       year: '2025',
       format: '뮤직비디오',
+      source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=i8zv0KtnZZ0',
       theme: 'light'
     },
@@ -244,6 +246,7 @@ window.FrushSite = (() => {
       title: '호랑이도 즐기는 곶감 축제',
       year: '2025',
       format: '축제 홍보',
+      source: '상주곶감축제',
       youtubeUrl: 'https://www.youtube.com/watch?v=UndPL9ydZkc',
       theme: 'dark'
     },
@@ -254,6 +257,7 @@ window.FrushSite = (() => {
       title: '신라면 왕국',
       year: '2025',
       format: '제품 광고',
+      source: '농심',
       youtubeUrl: 'https://www.youtube.com/watch?v=cN7fM_m0TAM',
       award: { tier: '대상', contest: 'K-브랜드 콘텐츠 농심 부문' },
       theme: 'dark'
@@ -265,6 +269,7 @@ window.FrushSite = (() => {
       title: 'PROMPT',
       year: '2025',
       format: '블랙 코미디',
+      source: '공모전',
       youtubeUrl: 'https://www.youtube.com/watch?v=cSMN1ACu6Qc',
       award: { tier: '우수상', contest: '대전 AI 영상 콘텐츠 공모전' },
       theme: 'light'
@@ -276,6 +281,7 @@ window.FrushSite = (() => {
       title: '오늘의 대한민국, 내일을 향해',
       year: '2025',
       format: '캠페인 광고',
+      source: 'KOICA',
       youtubeUrl: 'https://www.youtube.com/watch?v=mAIZWyQuPJ4',
       award: { tier: '장려상', contest: '대한민국 인도적 지원 AI 홍보 공모전' },
       theme: 'dark'
@@ -284,9 +290,10 @@ window.FrushSite = (() => {
       id: 'yt-occuloc',
       category: 'ads',
       categoryLabel: '광고',
-      title: 'OCCULOC 시각·청각적 체험형 콘텐츠 영상',
+      title: '시각·청각적 체험형 콘텐츠 영상',
       year: '2025',
       format: '브랜드 필름',
+      source: 'OCCULOC',
       youtubeUrl: 'https://www.youtube.com/watch?v=WxhH3B0zzkE',
       theme: 'dark'
     },
@@ -297,6 +304,7 @@ window.FrushSite = (() => {
       title: 'WEAK HERO',
       year: '2025',
       format: '단편 영화',
+      source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=edyYgpi27xU',
       theme: 'light'
     },
@@ -307,6 +315,7 @@ window.FrushSite = (() => {
       title: '후회없이 참 잘한 선택, 후참잘',
       year: '2025',
       format: '브랜드 광고',
+      source: '후참잘',
       youtubeUrl: 'https://www.youtube.com/watch?v=KOKwG5u83Bs',
       theme: 'dark'
     },
@@ -314,9 +323,10 @@ window.FrushSite = (() => {
       id: 'yt-pick-my-style',
       category: 'ads',
       categoryLabel: '광고',
-      title: '무신사 무진장 AI 공모전, PICK MY STYLE',
+      title: 'PICK MY STYLE',
       year: '2025',
       format: '브랜드 광고',
+      source: '무신사',
       youtubeUrl: 'https://www.youtube.com/watch?v=BL73KI6sYd4',
       theme: 'dark'
     }
@@ -543,6 +553,7 @@ window.FrushSite = (() => {
             <p class="text-lg font-semibold ${textColor}">${work.title}</p>
             <div class="mt-4 space-y-2 text-sm ${subColor}">
               <p><span class="font-semibold ${textColor}">종류</span> ${work.format}</p>
+              ${options.showSource && work.source ? `<p><span class="font-semibold ${textColor}">소재</span> ${work.source}</p>` : ''}
             </div>
           </div>
         </button>
@@ -928,7 +939,7 @@ window.FrushSite = (() => {
     if (config.partnerTargetId) renderPartners(config.partnerTargetId);
     if (config.featuredTargetId) renderWorks(config.featuredTargetId, featuredWorkIds, { surface: 'dark' });
     if (config.strengthsAwardsTargetId) renderStrengthsAndAwards(config.strengthsAwardsTargetId);
-    if (config.collectionTargetId && config.collectionKey) renderWorks(config.collectionTargetId, config.collectionKey, { surface: 'light', dark: false });
+    if (config.collectionTargetId && config.collectionKey) renderWorks(config.collectionTargetId, config.collectionKey, { surface: 'light', dark: false, showSource: true });
 
     setupNavbar();
     setupModal();
