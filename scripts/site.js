@@ -1172,18 +1172,20 @@ window.FrushSite = (() => {
 
     const render = () => {
       const slide = slides[index];
+      const isYoutube = Boolean(slide.youtubeUrl);
+      const poster = slide.img ? assetPath(slide.img) : getYoutubePoster(slide.youtubeUrl);
       if (media) {
-        media.src = assetPath(slide.img);
+        media.src = poster;
         media.alt = slide.title || '';
       }
       if (title) title.textContent = slide.title || '';
       if (tag) tag.textContent = slide.tag || '';
       if (time) time.textContent = slide.time || '';
       if (play) {
-        play.dataset.videoSrc = assetPath(slide.video);
-        play.dataset.videoPoster = assetPath(slide.img);
+        play.dataset.videoSrc = isYoutube ? getYoutubeEmbedUrl(slide.youtubeUrl) : assetPath(slide.video);
+        play.dataset.videoPoster = poster;
         play.dataset.videoTitle = slide.title || '영상 보기';
-        play.dataset.videoType = 'local';
+        play.dataset.videoType = isYoutube ? 'youtube' : 'local';
       }
       dots.forEach((dot, i) => dot.classList.toggle('is-active', i === index));
     };
