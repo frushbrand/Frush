@@ -699,10 +699,22 @@ window.FrushSite = (() => {
       youtubeUrl: 'https://youtube.com/shorts/mD9_x3-3yY8',
       publishedAt: '',
       theme: 'light'
+    },
+    {
+      id: 'yt-najin-yeosu',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '여수에서 온 나진국밥',
+      year: '2025',
+      format: '가맹창업 광고',
+      source: '나진국밥',
+      youtubeUrl: 'https://youtu.be/ICJv9bMZoFw',
+      publishedAt: '',
+      theme: 'dark'
     }
   ];
 
-  const featuredWorkIds = ['yt-shinramyun', 'yt-today-korea', 'yt-occuloc', 'yt-hoochamjal'];
+  const featuredWorkIds = ['yt-lifetime-trailer', 'yt-shinramyun', 'yt-deopocket', 'yt-today-korea', 'yt-oneulman-1', 'yt-occuloc', 'yt-ecotum-30', 'yt-hoochamjal'];
 
   const assetPath = (path) => encodeURI(path);
   const YOUTUBE_EMBED_BASE = 'https://www.youtube.com/embed/';
