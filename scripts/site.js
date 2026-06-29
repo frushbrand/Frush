@@ -94,6 +94,7 @@ window.FrushSite = (() => {
       format: '단편 영화',
       source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=lQCfm9T8jyY',
+      publishedAt: '',
       theme: 'light'
     },
     {
@@ -105,6 +106,7 @@ window.FrushSite = (() => {
       format: '뮤직비디오',
       source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=i8zv0KtnZZ0',
+      publishedAt: '',
       theme: 'light'
     },
     {
@@ -116,6 +118,7 @@ window.FrushSite = (() => {
       format: '축제 홍보',
       source: '상주곶감축제',
       youtubeUrl: 'https://www.youtube.com/watch?v=UndPL9ydZkc',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -128,6 +131,7 @@ window.FrushSite = (() => {
       source: '농심',
       youtubeUrl: 'https://www.youtube.com/watch?v=cN7fM_m0TAM',
       award: { tier: '대상', contest: 'K-브랜드 콘텐츠 농심 부문' },
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -140,6 +144,7 @@ window.FrushSite = (() => {
       source: '공모전',
       youtubeUrl: 'https://www.youtube.com/watch?v=cSMN1ACu6Qc',
       award: { tier: '우수상', contest: '대전 AI 영상 콘텐츠 공모전' },
+      publishedAt: '',
       theme: 'light'
     },
     {
@@ -152,6 +157,7 @@ window.FrushSite = (() => {
       source: 'KOICA',
       youtubeUrl: 'https://www.youtube.com/watch?v=mAIZWyQuPJ4',
       award: { tier: '장려상', contest: '대한민국 인도적 지원 AI 홍보 공모전' },
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -163,6 +169,7 @@ window.FrushSite = (() => {
       format: '브랜드 필름',
       source: 'OCCULOC',
       youtubeUrl: 'https://www.youtube.com/watch?v=WxhH3B0zzkE',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -174,6 +181,7 @@ window.FrushSite = (() => {
       format: '단편 영화',
       source: '자체 제작',
       youtubeUrl: 'https://www.youtube.com/watch?v=edyYgpi27xU',
+      publishedAt: '',
       theme: 'light'
     },
     {
@@ -185,6 +193,7 @@ window.FrushSite = (() => {
       format: '브랜드 광고',
       source: '후참잘',
       youtubeUrl: 'https://www.youtube.com/watch?v=KOKwG5u83Bs',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -196,6 +205,7 @@ window.FrushSite = (() => {
       format: '브랜드 광고',
       source: '무신사',
       youtubeUrl: 'https://www.youtube.com/watch?v=BL73KI6sYd4',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -207,6 +217,7 @@ window.FrushSite = (() => {
       format: '브랜드 광고',
       source: '참효은재가노인복지센터',
       youtubeUrl: 'https://youtu.be/cFjAiNF4OkE',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -218,6 +229,7 @@ window.FrushSite = (() => {
       format: '제품 광고',
       source: '맥도날드',
       youtubeUrl: 'https://youtu.be/TPxmf-OJ8t0',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -229,6 +241,7 @@ window.FrushSite = (() => {
       format: '제품 광고',
       source: 'New York Gong-Gan',
       youtubeUrl: 'https://youtu.be/b7yobYT6gA0',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -240,6 +253,7 @@ window.FrushSite = (() => {
       format: '제품 광고',
       source: '라브라크',
       youtubeUrl: 'https://youtu.be/KSt0_2IU5-8',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -251,6 +265,7 @@ window.FrushSite = (() => {
       format: '브랜드 광고',
       source: '벨노바',
       youtubeUrl: 'https://youtu.be/83RExRbz2_4',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -262,6 +277,7 @@ window.FrushSite = (() => {
       format: '프로포즈 영상',
       source: '개인 주문',
       youtubeUrl: 'https://youtu.be/eySPQtTqLMI',
+      publishedAt: '',
       theme: 'light'
     },
     {
@@ -273,6 +289,7 @@ window.FrushSite = (() => {
       format: '앱 광고',
       source: '바이크마트',
       youtubeUrl: 'https://youtu.be/20BYQaWX8A0',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -284,6 +301,7 @@ window.FrushSite = (() => {
       format: '앱 광고',
       source: '바이크마트',
       youtubeUrl: 'https://youtu.be/kS-V91usrL8',
+      publishedAt: '',
       theme: 'dark'
     },
     {
@@ -295,6 +313,211 @@ window.FrushSite = (() => {
       format: '브랜드 컨텐츠',
       source: '농업회사법인 정담',
       youtubeUrl: 'https://youtube.com/shorts/6MAKS66szeg',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-kpt-final-table',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'KPT & DXG FINAL TABLE',
+      year: '2025',
+      format: '대회 전광판',
+      source: 'KOREAN POKER TOUR',
+      youtubeUrl: 'https://youtu.be/QNNCyXS5n1s',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jeongdam-salt',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '천연소금 4종 제품 소개',
+      year: '2025',
+      format: '제품 광고',
+      source: '농업회사법인 정담',
+      youtubeUrl: 'https://youtube.com/shorts/eJzxE88IoEw',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jeongdam-mushroom',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '천연화장품 백목이버섯 활용법',
+      year: '2025',
+      format: '제품 광고',
+      source: '농업회사법인 정담',
+      youtubeUrl: 'https://youtube.com/shorts/Dag4yWdPpNc',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-kpt-premier',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'KPT PREMIER SERIES CHAMPIONSHIP',
+      year: '2025',
+      format: '대회 전광판',
+      source: 'KOREAN POKER TOUR',
+      youtubeUrl: 'https://youtu.be/ltbjbj85ukI',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-hiro-gourmet',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '폭주하는 미식가, 히로',
+      year: '2025',
+      format: '유튜브 인트로',
+      source: '개인 유튜버',
+      youtubeUrl: 'https://youtu.be/RqgMuEmVS84',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-main',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '학원의 모든 해답, 2026 학에페',
+      year: '2026',
+      format: '행사 메인 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/fA0ViFFsZ60',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-teaser1',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '우리 학원만의 한 끗, 2026 학에페',
+      year: '2026',
+      format: '행사 티저 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/J8PpddgTFpo',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-teaser2',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '학원 성공의 노하우, 2026 학에페',
+      year: '2026',
+      format: '행사 티저 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/YQmgAFsQyG0',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-bikemart-3',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '올리자마자, 쿨거래',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/2dfZLxqFwgs',
+      publishedAt: '',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-bikemart-4',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '바이크마트 슈퍼 세일',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/ycQO1r9RxcE',
+      publishedAt: '',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-deopocket',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '공간을 지키는 탈취제',
+      year: '2025',
+      format: '제품 광고',
+      source: '데오포켓',
+      youtubeUrl: 'https://youtu.be/6XvkUQwWegI',
+      publishedAt: '',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-kfotito',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '멕시코에서 즐기는 인생네컷',
+      year: '2025',
+      format: '매장 디스플레이',
+      source: 'K-FOTITO',
+      youtubeUrl: 'https://youtu.be/HIhTqsPYyH4',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-teaser',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '1997 안재욱이 가고 있어!',
+      year: '2025',
+      format: '행사 티저 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/wNpYFpk-Fi8',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-main',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '1997 안재욱이 상하이에 온다면?',
+      year: '2025',
+      format: '행사 메인 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/7tyImYjmPE0',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene1',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 1",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/pKtRlCxvG-4',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene2',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 2",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/r8G-snSocH0',
+      publishedAt: '',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene3',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 3",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/wv8MMzBINoY',
+      publishedAt: '',
       theme: 'light'
     }
   ];
@@ -534,9 +757,15 @@ window.FrushSite = (() => {
 
     let selected = works;
     if (Array.isArray(filter)) {
+      // Featured: keep the explicit, hand-picked order.
       selected = filter.map((id) => works.find((work) => work.id === id)).filter(Boolean);
     } else if (typeof filter === 'string') {
-      selected = works.filter((work) => work.category === filter);
+      // Category pages: newest publishedAt first (latest lands top-left).
+      // publishedAt is never rendered; it is only a sort key. Items without
+      // a date sort to the end, preserving their array order among themselves.
+      selected = works
+        .filter((work) => work.category === filter)
+        .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
     }
 
     target.innerHTML = selected.map((work) => createWorkCard(work, options)).join('');
