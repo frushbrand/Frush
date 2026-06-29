@@ -296,6 +296,193 @@ window.FrushSite = (() => {
       source: '농업회사법인 정담',
       youtubeUrl: 'https://youtube.com/shorts/6MAKS66szeg',
       theme: 'light'
+    },
+    {
+      id: 'yt-kpt-final-table',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'KPT & DXG FINAL TABLE',
+      year: '2025',
+      format: '대회 전광판',
+      source: 'KOREAN POKER TOUR',
+      youtubeUrl: 'https://youtu.be/QNNCyXS5n1s',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jeongdam-salt',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '천연소금 4종 제품 소개',
+      year: '2025',
+      format: '제품 광고',
+      source: '농업회사법인 정담',
+      youtubeUrl: 'https://youtube.com/shorts/eJzxE88IoEw',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jeongdam-mushroom',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '천연화장품 백목이버섯 활용법',
+      year: '2025',
+      format: '제품 광고',
+      source: '농업회사법인 정담',
+      youtubeUrl: 'https://youtube.com/shorts/Dag4yWdPpNc',
+      theme: 'light'
+    },
+    {
+      id: 'yt-kpt-premier',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: 'KPT PREMIER SERIES CHAMPIONSHIP',
+      year: '2025',
+      format: '대회 전광판',
+      source: 'KOREAN POKER TOUR',
+      youtubeUrl: 'https://youtu.be/ltbjbj85ukI',
+      theme: 'light'
+    },
+    {
+      id: 'yt-hiro-gourmet',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '폭주하는 미식가, 히로',
+      year: '2025',
+      format: '유튜브 인트로',
+      source: '개인 유튜버',
+      youtubeUrl: 'https://youtu.be/RqgMuEmVS84',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-main',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '학원의 모든 해답, 2026 학에페',
+      year: '2026',
+      format: '행사 메인 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/fA0ViFFsZ60',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-teaser1',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '우리 학원만의 한 끗, 2026 학에페',
+      year: '2026',
+      format: '행사 티저 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/J8PpddgTFpo',
+      theme: 'light'
+    },
+    {
+      id: 'yt-mathholic-teaser2',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '학원 성공의 노하우, 2026 학에페',
+      year: '2026',
+      format: '행사 티저 영상',
+      source: '매쓰홀릭',
+      youtubeUrl: 'https://youtu.be/YQmgAFsQyG0',
+      theme: 'light'
+    },
+    {
+      id: 'yt-bikemart-3',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '올리자마자, 쿨거래',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/2dfZLxqFwgs',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-bikemart-4',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '바이크마트 슈퍼 세일',
+      year: '2025',
+      format: '앱 광고',
+      source: '바이크마트',
+      youtubeUrl: 'https://youtu.be/ycQO1r9RxcE',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-deopocket',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '공간을 지키는 탈취제',
+      year: '2025',
+      format: '제품 광고',
+      source: '데오포켓',
+      youtubeUrl: 'https://youtu.be/6XvkUQwWegI',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-kfotito',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '멕시코에서 즐기는 인생네컷',
+      year: '2025',
+      format: '매장 디스플레이',
+      source: 'K-FOTITO',
+      youtubeUrl: 'https://youtu.be/HIhTqsPYyH4',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-teaser',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '1997 안재욱이 가고 있어!',
+      year: '2025',
+      format: '행사 티저 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/wNpYFpk-Fi8',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-main',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '1997 안재욱이 상하이에 온다면?',
+      year: '2025',
+      format: '행사 메인 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/7tyImYjmPE0',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene1',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 1",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/pKtRlCxvG-4',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene2',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 2",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/r8G-snSocH0',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ajw-scene3',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별은 내 가슴에' 명장면 재연 3",
+      year: '2025',
+      format: '행사 서브 영상',
+      source: '안재욱 팬미팅',
+      youtubeUrl: 'https://youtu.be/wv8MMzBINoY',
+      theme: 'light'
     }
   ];
 
@@ -534,9 +721,15 @@ window.FrushSite = (() => {
 
     let selected = works;
     if (Array.isArray(filter)) {
+      // Featured: keep the explicit, hand-picked order.
       selected = filter.map((id) => works.find((work) => work.id === id)).filter(Boolean);
     } else if (typeof filter === 'string') {
-      selected = works.filter((work) => work.category === filter);
+      // Category pages: newest publishedAt first (latest lands top-left).
+      // publishedAt is never rendered; it is only a sort key. Items without
+      // a date sort to the end, preserving their array order among themselves.
+      selected = works
+        .filter((work) => work.category === filter)
+        .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''));
     }
 
     target.innerHTML = selected.map((work) => createWorkCard(work, options)).join('');
