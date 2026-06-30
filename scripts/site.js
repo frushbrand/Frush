@@ -1478,10 +1478,11 @@ window.FrushSite = (() => {
         .slice()
         .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''))[0];
       if (!latest) return;
-      const { hi, lo } = getWorkThumbSet(latest);
-      if (!hi) return;
-      img.onerror = () => { img.onerror = null; img.src = lo; };
-      img.src = hi;
+      // Use the same poster the work cards use (always-present hqdefault)
+      // rather than maxresdefault, which can 404 and fall back to a tiny,
+      // blurry thumbnail when stretched across the card.
+      const thumb = getWorkPoster(latest);
+      if (thumb) img.src = thumb;
     });
   }
 
