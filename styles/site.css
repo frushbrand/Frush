@@ -587,6 +587,24 @@ body {
   white-space: nowrap;
 }
 
+.team-badges {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.7rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.35rem;
+  pointer-events: none;
+}
+
+.team-badge {
+  height: 1.95rem;
+  width: 1.95rem;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 12px rgba(8, 17, 28, 0.4);
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(42px);
