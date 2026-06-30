@@ -23,6 +23,49 @@ window.FrushSite = (() => {
     { src: 'Images/헤라 로고.png', alt: '헤라', gradient: { from: '#67F0D1', via: '#2AE5B9', to: '#1B8F72' } }
   ];
 
+  // Every logo in Images/Partner. Rendered across three marquee rows in a
+  // random order, split evenly with no duplicates between rows.
+  const PARTNER_LOGOS = [
+    'Images/Partner/COCX.png',
+    'Images/Partner/FLEUR JARDIN.png',
+    'Images/Partner/K-FOTITO.png',
+    'Images/Partner/KOICA.png',
+    'Images/Partner/KPT.png',
+    'Images/Partner/NOYDA.png',
+    'Images/Partner/PPL.png',
+    'Images/Partner/경기관광공사.png',
+    'Images/Partner/공간.png',
+    'Images/Partner/그린비전.png',
+    'Images/Partner/김씨네타코.png',
+    'Images/Partner/나진국밥.png',
+    'Images/Partner/나홀로복싱.png',
+    'Images/Partner/농심.png',
+    'Images/Partner/농촌감성.png',
+    'Images/Partner/데오포켓.png',
+    'Images/Partner/라브라크.png',
+    'Images/Partner/루트26.png',
+    'Images/Partner/르누아르.png',
+    'Images/Partner/매쓰홀릭.png',
+    'Images/Partner/맥도날드.png',
+    'Images/Partner/무신사.png',
+    'Images/Partner/바이오던스.png',
+    'Images/Partner/바이크마트.png',
+    'Images/Partner/바이탈플랜트.png',
+    'Images/Partner/법무법인KB.png',
+    'Images/Partner/벨노바.png',
+    'Images/Partner/상주시.png',
+    'Images/Partner/세종기프트.png',
+    'Images/Partner/에코텀.png',
+    'Images/Partner/오늘만싸다.png',
+    'Images/Partner/오설록.png',
+    'Images/Partner/우곱집.png',
+    'Images/Partner/워터픽.png',
+    'Images/Partner/참효은재가노인복지센터.png',
+    'Images/Partner/하진이네버섯뜰에.png',
+    'Images/Partner/헤라.png',
+    'Images/Partner/후참잘.png'
+  ];
+
   const awards = [
     { year: '2025.12', title: '농림축산식품부 장관상 수상', org: '농림축산식품부' },
     { year: '2025.12', title: '대한민국 인도적 지원 AI 홍보 공모전 장려상', org: '한국국제협력단' },
@@ -935,11 +978,12 @@ window.FrushSite = (() => {
     `;
   }
 
-  function createPartnerCard(logo) {
+  function createPartnerCard(src) {
+    const alt = src.split('/').pop().replace(/\.[^.]+$/, '');
     return `
       <div class="partner-card">
         <div class="partner-card__inner">
-          <img src="${assetPath(logo.src)}" alt="${logo.alt}">
+          <img src="${assetPath(src)}" alt="${alt}" loading="lazy">
         </div>
       </div>
     `;
@@ -948,6 +992,35 @@ window.FrushSite = (() => {
   function renderPartners(targetId) {
     const target = document.getElementById(targetId);
     if (!target) return;
+
+    // Shuffle all logos, then split round-robin into three rows so each row
+    // gets a near-equal share with no logo repeated across rows.
+    const shuffled = PARTNER_LOGOS.slice();
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    const rows = [[], [], []];
+    shuffled.forEach((logo, i) => rows[i % 3].push(logo));
+
+    // Row 1 left, row 2 right, row 3 left. Track is duplicated for a seamless
+    // loop; reverse direction makes a row scroll the other way.
+    const rowConfig = [
+      { reverse: false, duration: 52 },
+      { reverse: true, duration: 58 },
+      { reverse: false, duration: 48 }
+    ];
+    const rowsHtml = rows.map((row, i) => {
+      const cfg = rowConfig[i];
+      const cards = [...row, ...row].map(createPartnerCard).join('');
+      return `
+        <div class="partner-marquee">
+          <div class="partner-track${cfg.reverse ? ' partner-track--reverse' : ''}" style="animation-duration:${cfg.duration}s">
+            ${cards}
+          </div>
+        </div>
+      `;
+    }).join('');
 
     target.innerHTML = `
       <section class="reveal" data-reveal>
@@ -958,10 +1031,8 @@ window.FrushSite = (() => {
             <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">프러쉬는 업종과 포맷이 다른 협력사들과 함께 장면의 목적을 설계하고 결과물의 완성도까지 끌어올립니다.</p>
           </div>
         </div>
-        <div class="partner-marquee mt-8">
-          <div class="partner-track">
-            ${[...partners, ...partners].map(createPartnerCard).join('')}
-          </div>
+        <div class="partner-rows mt-8">
+          ${rowsHtml}
         </div>
       </section>
     `;

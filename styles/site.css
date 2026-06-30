@@ -761,6 +761,12 @@ body {
   will-change: transform;
 }
 
+.partner-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
 .partner-marquee {
   overflow: hidden;
   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
@@ -771,8 +777,12 @@ body {
   width: max-content;
   align-items: center;
   gap: 1.25rem;
-  padding: 1rem 1.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   animation: marquee 42s linear infinite;
+}
+
+.partner-track--reverse {
+  animation-direction: reverse;
 }
 
 .partner-marquee:hover .partner-track {
