@@ -1176,19 +1176,17 @@ window.FrushSite = (() => {
   // swap to the always-present fallback so no blank card appears.
   function loadHeroThumb(img, hi, lo) {
     if (!img) return;
-    const useFallback = () => {
-      if (img.getAttribute('src') !== lo) {
-        img.onerror = null;
-        img.src = lo;
-      }
+    // Show hqdefault immediately: it always exists, so no card is ever blank.
+    img.src = lo;
+    if (!hi || hi === lo) return;
+    // Then upgrade to maxresdefault only if it is a real image. Missing maxres
+    // 404s (probe error) or returns a tiny grey placeholder (naturalWidth ~120)
+    // for brand-new uploads — in both cases we keep hqdefault.
+    const probe = new Image();
+    probe.onload = () => {
+      if (probe.naturalWidth > 320) img.src = hi;
     };
-    img.onerror = useFallback;
-    img.onload = () => {
-      if (img.naturalWidth > 0 && img.naturalWidth <= 121 && /maxresdefault/.test(img.src)) {
-        useFallback();
-      }
-    };
-    img.src = hi;
+    probe.src = hi;
   }
 
   function setupStackedPanels() {
@@ -1207,9 +1205,8 @@ window.FrushSite = (() => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
       const thumb = panelImages[index % panelImages.length];
-      const portraitClass = thumb.vertical ? ' stacked-panel-image--portrait' : '';
       panel.innerHTML = `
-        <img class="stacked-panel-image${portraitClass}" alt="" loading="lazy">
+        <img class="stacked-panel-image" alt="" loading="lazy">
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
       `;
