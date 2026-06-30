@@ -794,7 +794,10 @@ window.FrushSite = (() => {
     }
     return {
       hi: getYoutubeThumb(work.youtubeUrl, 'maxresdefault'),
-      lo: getYoutubeThumb(work.youtubeUrl, 'mqdefault')
+      // hqdefault always exists (unlike maxres for brand-new uploads), so it is
+      // a reliable, reasonably sharp fallback — same source the work cards use.
+      lo: getYoutubeThumb(work.youtubeUrl, 'hqdefault'),
+      vertical: /\/shorts\//.test(work.youtubeUrl || '')
     };
   }
 
@@ -1167,6 +1170,27 @@ window.FrushSite = (() => {
     return selection;
   }
 
+  // Load the high-res thumbnail, falling back when it is missing. For very
+  // recent uploads YouTube serves a 120x90 grey placeholder for maxresdefault
+  // with a 200 status (so onerror never fires) — detect that tiny size and
+  // swap to the always-present fallback so no blank card appears.
+  function loadHeroThumb(img, hi, lo) {
+    if (!img) return;
+    const useFallback = () => {
+      if (img.getAttribute('src') !== lo) {
+        img.onerror = null;
+        img.src = lo;
+      }
+    };
+    img.onerror = useFallback;
+    img.onload = () => {
+      if (img.naturalWidth > 0 && img.naturalWidth <= 121 && /maxresdefault/.test(img.src)) {
+        useFallback();
+      }
+    };
+    img.src = hi;
+  }
+
   function setupStackedPanels() {
     const stage = document.getElementById('stacked-panels-scene');
     const container = document.getElementById('stacked-panels-container');
@@ -1183,11 +1207,13 @@ window.FrushSite = (() => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
       const thumb = panelImages[index % panelImages.length];
+      const portraitClass = thumb.vertical ? ' stacked-panel-image--portrait' : '';
       panel.innerHTML = `
-        <img class="stacked-panel-image" src="${thumb.hi}" onerror="this.onerror=null;this.src='${thumb.lo}'" alt="" loading="lazy">
+        <img class="stacked-panel-image${portraitClass}" alt="" loading="lazy">
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
       `;
+      loadHeroThumb(panel.querySelector('.stacked-panel-image'), thumb.hi, thumb.lo);
       container.appendChild(panel);
       return { panel, index };
     });
