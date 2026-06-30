@@ -796,6 +796,19 @@ window.FrushSite = (() => {
     return getYoutubePoster(work.youtubeUrl);
   }
 
+  // mqdefault is a full-frame 16:9 thumbnail (no 4:3 letterbox bars that
+  // hqdefault adds), so it fills cover-cropped card surfaces without black
+  // bands. Used where the thumbnail must fully bleed (hero arch, more-cards).
+  function getYoutubeThumb(url = '', quality = 'hqdefault') {
+    const id = getYoutubeVideoId(url);
+    return id ? `https://i.ytimg.com/vi/${id}/${quality}.jpg` : '';
+  }
+
+  function getWorkThumb(work, quality = 'mqdefault') {
+    if (work.poster) return assetPath(work.poster);
+    return getYoutubeThumb(work.youtubeUrl, quality);
+  }
+
   // Production team badge config. A work can credit one or both teams; both
   // shows two circles. Defaults to Frush when a work has no team set.
   const TEAM_BADGES = {
@@ -1045,22 +1058,15 @@ window.FrushSite = (() => {
         name: '프러쉬 팀',
         en: 'FRUSH TEAM',
         logo: 'Images/ms-icon-150x150_v1.png',
-        desc: '서울대 출신 기획자와 영상 전문가들로 구성되어, 브랜드 목적과 메시지를 설계합니다.',
-        members: [
-          { name: '서보훈', lead: true },
-          { name: '오현수' },
-          { name: '김정민' }
-        ]
+        desc: '서울대 출신 영상·광고 전문가로 구성되어, 브랜드 목적과 메시지를 설계합니다.',
+        members: ['서보훈', '오현수', '김정민']
       },
       {
         name: 'BMH 팀',
         en: 'BMH TEAM',
         logo: 'Images/BMH 로고.jpg',
         desc: 'PD 출신 기획·영상 전문가로 구성되어, 현장감 있는 연출과 완성도를 담당합니다.',
-        members: [
-          { name: '윤세민', lead: true },
-          { name: '이찬영' }
-        ]
+        members: ['윤세민', '이찬영']
       }
     ];
 
@@ -1075,7 +1081,7 @@ window.FrushSite = (() => {
         </div>
         <p class="team-intro__desc">${team.desc}</p>
         <div class="team-intro__members">
-          ${team.members.map((m) => `<span class="member-chip${m.lead ? ' member-chip--lead' : ''}">${m.lead ? '<i class="fas fa-star"></i>' : ''}${m.name}</span>`).join('')}
+          ${team.members.map((name) => `<span class="member-chip">${name}</span>`).join('')}
         </div>
       </div>
     `;
@@ -1119,7 +1125,7 @@ window.FrushSite = (() => {
           <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 <span class="text-brand-main">${awards.length}</span>개</h2>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬 스튜디오의 수상 이력 <span class="text-brand-main">${awards.length}</span>개</h2>
               <p class="mt-3 text-sm leading-6 text-slate-500">국내외 영상·AI 콘텐츠 공모전에서 검증된 기획력과 완성도.</p>
             </div>
             <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-dark text-brand-light shadow-soft md:flex">
@@ -1154,7 +1160,7 @@ window.FrushSite = (() => {
       .slice()
       .sort(byLatest)
       .slice(0, count)
-      .map(getWorkPoster)
+      .map((work) => getWorkThumb(work, 'mqdefault'))
       .filter(Boolean);
 
     const selection = [
@@ -1473,9 +1479,25 @@ window.FrushSite = (() => {
     if (modalTarget) modalTarget.innerHTML = renderModal();
   }
 
+  // Point each "more works" category card at that category's newest thumbnail
+  // so the previews refresh automatically as new works are added.
+  function setLatestCategoryThumbs() {
+    document.querySelectorAll('[data-latest-thumb]').forEach((img) => {
+      const category = img.dataset.latestThumb;
+      const latest = works
+        .filter((work) => work.category === category)
+        .slice()
+        .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''))[0];
+      if (!latest) return;
+      const thumb = getWorkThumb(latest, 'mqdefault');
+      if (thumb) img.src = thumb;
+    });
+  }
+
   function initPage(config) {
     renderShell(config.pageKey);
 
+    setLatestCategoryThumbs();
     if (config.partnerTargetId) renderPartners(config.partnerTargetId);
     if (config.featuredTargetId) renderWorks(config.featuredTargetId, featuredWorkIds, { surface: 'dark' });
     if (config.strengthsAwardsTargetId) renderStrengthsAndAwards(config.strengthsAwardsTargetId);
