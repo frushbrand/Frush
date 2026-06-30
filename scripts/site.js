@@ -812,8 +812,8 @@ window.FrushSite = (() => {
   // Production team badge config. A work can credit one or both teams; both
   // shows two circles. Defaults to Frush when a work has no team set.
   const TEAM_BADGES = {
-    frush: { src: 'Images/frush-badge.svg', label: '프러쉬 제작' },
-    bmh: { src: 'Images/bmh-badge.svg', label: 'BMH 제작' }
+    frush: { src: 'Images/ms-icon-150x150_v1.png', label: '프러쉬 참여작' },
+    bmh: { src: 'Images/bmh-badge.svg', label: 'BMH 참여작' }
   };
 
   function getTeams(work) {
@@ -825,7 +825,7 @@ window.FrushSite = (() => {
   function renderTeamBadges(work) {
     const badges = getTeams(work).map((team) => {
       const badge = TEAM_BADGES[team];
-      return `<img class="team-badge" src="${assetPath(badge.src)}" alt="${badge.label}" title="${badge.label}" loading="lazy">`;
+      return `<span class="team-badge" data-tooltip="${badge.label}"><img class="team-badge__img" src="${assetPath(badge.src)}" alt="${badge.label}" loading="lazy"></span>`;
     }).join('');
     return `<span class="team-badges">${badges}</span>`;
   }
