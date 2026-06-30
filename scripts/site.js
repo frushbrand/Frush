@@ -2,34 +2,8 @@ window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
   const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 18;
-  // Hero arch card images. Placeholder photos for now — to use your own, drop
-  // files into Images/ (or Image_Storage/) and replace the entries below with
-  // their paths, e.g. 'Images/내 작업.png'. Local paths are URL-encoded
-  // automatically, so spaces and Korean filenames are fine.
-  const PANEL_IMAGES = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-    'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
-    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
-    'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80',
-    'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80',
-    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&q=80',
-    'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80',
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80',
-    'https://images.unsplash.com/photo-1510784722466-f2aa240c3c4a?w=600&q=80',
-    'https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=600&q=80',
-    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
-    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
-    'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=600&q=80',
-    'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80',
-    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
-    'https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=600&q=80',
-    'https://images.unsplash.com/photo-1501696461415-6bd6660c6742?w=600&q=80',
-    'https://images.unsplash.com/photo-1445962125599-30f582ac21f4?w=600&q=80',
-    'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=600&q=80',
-    'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600&q=80'
-  ];
+  // Hero arch card images are built at render time from the latest works
+  // (see buildHeroPanels), so the arch auto-updates as newer videos are added.
   const GRADIENT_OVERLAYS = [
     'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(236,72,153,0.45) 100%)',
     'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(59,130,246,0.45) 100%)',
@@ -1066,36 +1040,93 @@ window.FrushSite = (() => {
       { value: 'ALL', label: '세로형·광고·필름 전 포맷' }
     ];
 
+    const teams = [
+      {
+        name: '프러쉬 팀',
+        en: 'FRUSH TEAM',
+        logo: 'Images/ms-icon-150x150_v1.png',
+        desc: '서울대 출신 기획자와 영상 전문가들로 구성되어, 브랜드 목적과 메시지를 설계합니다.',
+        members: [
+          { name: '서보훈', lead: true },
+          { name: '오현수' },
+          { name: '김정민' }
+        ]
+      },
+      {
+        name: 'BMH 팀',
+        en: 'BMH TEAM',
+        logo: 'Images/BMH 로고.jpg',
+        desc: 'PD 출신 기획·영상 전문가로 구성되어, 현장감 있는 연출과 완성도를 담당합니다.',
+        members: [
+          { name: '윤세민', lead: true },
+          { name: '이찬영' }
+        ]
+      }
+    ];
+
+    const teamBlock = (team) => `
+      <div class="team-intro">
+        <div class="team-intro__head">
+          <span class="team-intro__logo"><img src="${assetPath(team.logo)}" alt="${team.name} 로고"></span>
+          <div>
+            <p class="team-intro__eyebrow">${team.en}</p>
+            <h3 class="team-intro__name">${team.name}</h3>
+          </div>
+        </div>
+        <p class="team-intro__desc">${team.desc}</p>
+        <div class="team-intro__members">
+          ${team.members.map((m) => `<span class="member-chip${m.lead ? ' member-chip--lead' : ''}">${m.lead ? '<i class="fas fa-star"></i>' : ''}${m.name}</span>`).join('')}
+        </div>
+      </div>
+    `;
+
     target.innerHTML = `
-      <section class="grid items-stretch gap-6 lg:grid-cols-[0.92fr_1.08fr]">
-        <article class="strength-card strength-card--team flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
-          <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
-          <h2 class="mt-4 text-3xl font-semibold leading-[1.18] text-white sm:text-[2.4rem]">전략과 실행, 그리고 신뢰를<br class="hidden sm:block"> 한 팀으로 연결합니다</h2>
-          <p class="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
-          <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
-            <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
-          </div>
-          <div class="strength-stat-row mt-auto pt-8">
-            ${stats.map((stat) => `
-              <div class="strength-stat">
-                <span class="strength-stat__value">${stat.value}</span>
-                <span class="strength-stat__label">${stat.label}</span>
+      <div class="space-y-6">
+        <section class="grid items-stretch gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+          <article class="strength-card strength-card--team flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
+            <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Why Frush</p>
+            <h2 class="mt-4 text-3xl font-semibold leading-[1.18] text-white sm:text-[2.4rem]">전략과 실행, 그리고 신뢰를<br class="hidden sm:block"> 한 팀으로 연결합니다</h2>
+            <p class="mt-5 max-w-xl text-sm leading-7 text-white/70 sm:text-base">서울대 출신 대표, PD 출신 기획자, 전문성 있는 영상 작업자 팀이 함께 브랜드 목적을 정리하고 결과물까지 밀도 있게 완성합니다.</p>
+            <div class="team-photo-frame mt-8 overflow-hidden rounded-[1.75rem]">
+              <img src="${assetPath(TEAM_PHOTO_URL)}" alt="프러쉬 스튜디오 팀 단체 사진" class="h-full w-full object-cover">
+            </div>
+            <div class="strength-stat-row mt-auto pt-8">
+              ${stats.map((stat) => `
+                <div class="strength-stat">
+                  <span class="strength-stat__value">${stat.value}</span>
+                  <span class="strength-stat__label">${stat.label}</span>
+                </div>
+              `).join('')}
+            </div>
+          </article>
+          <article class="strength-card strength-card--awards flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
+            <div class="flex items-start justify-between gap-4">
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Teams</p>
+                <h2 class="mt-3 text-3xl font-semibold text-brand-text">함께하는 <span class="text-brand-main">두 팀</span></h2>
+                <p class="mt-3 text-sm leading-6 text-slate-500">프러쉬 스튜디오 안에서 프러쉬 팀과 BMH 팀이 협력해 기획부터 제작까지 함께합니다.</p>
               </div>
-            `).join('')}
-          </div>
-        </article>
-        <article class="strength-card strength-card--awards flex flex-col rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
-          <div class="flex items-start justify-between gap-4">
+              <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-dark text-brand-light shadow-soft md:flex">
+                <i class="fas fa-users text-xl"></i>
+              </div>
+            </div>
+            <div class="team-intro-stack mt-7">
+              ${teams.map(teamBlock).join('')}
+            </div>
+          </article>
+        </section>
+        <section class="strength-card strength-card--awards awards-band rounded-[2.25rem] p-7 shadow-soft reveal sm:p-9" data-reveal>
+          <div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Awards</p>
-              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 <span class="text-brand-main">7</span>개</h2>
+              <h2 class="mt-3 text-3xl font-semibold text-brand-text">프러쉬의 수상 이력 <span class="text-brand-main">${awards.length}</span>개</h2>
               <p class="mt-3 text-sm leading-6 text-slate-500">국내외 영상·AI 콘텐츠 공모전에서 검증된 기획력과 완성도.</p>
             </div>
             <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-dark text-brand-light shadow-soft md:flex">
               <i class="fas fa-award text-xl"></i>
             </div>
           </div>
-          <div class="mt-7 grid flex-1 content-start gap-3.5 sm:grid-cols-2">
+          <div class="mt-7 grid gap-3.5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
             ${awards.map((award) => `
               <div class="award-chip rounded-[1.4rem] border border-slate-200/70 bg-white px-5 py-4">
                 <div class="flex flex-wrap items-center gap-2.5 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-brand-main">
@@ -1107,15 +1138,47 @@ window.FrushSite = (() => {
               </div>
             `).join('')}
           </div>
-        </article>
-      </section>
+        </section>
+      </div>
     `;
+  }
+
+  // Latest thumbnails for the hero arch: 6 vertical, 3 Frush + 3 BMH ads,
+  // 3 Frush + 3 BMH others — sorted newest-first so the arch auto-refreshes
+  // as new works land, then shuffled so categories read as a natural mix.
+  function buildHeroPanels() {
+    const byLatest = (a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || '');
+    const hasTeam = (work, team) => getTeams(work).includes(team);
+    const pick = (predicate, count) => works
+      .filter(predicate)
+      .slice()
+      .sort(byLatest)
+      .slice(0, count)
+      .map(getWorkPoster)
+      .filter(Boolean);
+
+    const selection = [
+      ...pick((w) => w.category === 'vertical', 6),
+      ...pick((w) => w.category === 'ads' && hasTeam(w, 'frush'), 3),
+      ...pick((w) => w.category === 'ads' && hasTeam(w, 'bmh'), 3),
+      ...pick((w) => w.category === 'others' && hasTeam(w, 'frush'), 3),
+      ...pick((w) => w.category === 'others' && hasTeam(w, 'bmh'), 3)
+    ];
+
+    for (let i = selection.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [selection[i], selection[j]] = [selection[j], selection[i]];
+    }
+    return selection;
   }
 
   function setupStackedPanels() {
     const stage = document.getElementById('stacked-panels-scene');
     const container = document.getElementById('stacked-panels-container');
     if (!stage || !container) return;
+
+    const panelImages = buildHeroPanels();
+    if (!panelImages.length) return;
 
     let targetPointerX = 0;
     let targetPointerY = 0;
@@ -1125,7 +1188,7 @@ window.FrushSite = (() => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
       panel.innerHTML = `
-        <div class="stacked-panel-image" style="background-image:url('${assetPath(PANEL_IMAGES[index % PANEL_IMAGES.length])}')"></div>
+        <div class="stacked-panel-image" style="background-image:url('${panelImages[index % panelImages.length]}')"></div>
         <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
