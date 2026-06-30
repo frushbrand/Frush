@@ -245,7 +245,14 @@ body {
   width: 100%;
   object-fit: cover;
   object-position: center;
-  transform: scale(1.08);
+  transform: scale(1.02);
+}
+
+/* Vertical (Shorts) thumbnails are a 9:16 frame inside a 16:9 image, so they
+   carry black side bars. Zoom just enough to crop the bars out — maxres has
+   plenty of resolution, so this stays sharp. */
+.stacked-panel-image--portrait {
+  transform: scale(1.32);
 }
 
 .stacked-panel-gradient {
@@ -1546,6 +1553,14 @@ body {
   }
   .phone-card--lift {
     transform: none;
+  }
+  /* Stack the two phone previews so each is full-width and large enough
+     that the social UI overlays don't swallow the video on mobile. */
+  .phone-duo {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 22rem;
+    margin-inline: auto;
   }
 }
 
