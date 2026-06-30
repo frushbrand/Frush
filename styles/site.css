@@ -241,14 +241,15 @@ body {
 }
 
 .stacked-panel-image {
-  background-size: cover;
-  background-position: center;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
   transform: scale(1.08);
 }
 
 .stacked-panel-gradient {
-  mix-blend-mode: soft-light;
-  opacity: 0.85;
+  display: none;
 }
 
 .stacked-panel-vignette {

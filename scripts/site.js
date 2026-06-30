@@ -4,31 +4,6 @@ window.FrushSite = (() => {
   const PANEL_COUNT = 18;
   // Hero arch card images are built at render time from the latest works
   // (see buildHeroPanels), so the arch auto-updates as newer videos are added.
-  const GRADIENT_OVERLAYS = [
-    'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(236,72,153,0.45) 100%)',
-    'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(59,130,246,0.45) 100%)',
-    'linear-gradient(135deg, rgba(245,158,11,0.55) 0%, rgba(239,68,68,0.45) 100%)',
-    'linear-gradient(135deg, rgba(16,185,129,0.45) 0%, rgba(6,182,212,0.55) 100%)',
-    'linear-gradient(135deg, rgba(236,72,153,0.55) 0%, rgba(245,158,11,0.45) 100%)',
-    'linear-gradient(135deg, rgba(59,130,246,0.55) 0%, rgba(99,55,255,0.45) 100%)',
-    'linear-gradient(135deg, rgba(239,68,68,0.45) 0%, rgba(236,72,153,0.55) 100%)',
-    'linear-gradient(135deg, rgba(6,182,212,0.45) 0%, rgba(16,185,129,0.55) 100%)',
-    'linear-gradient(135deg, rgba(99,55,255,0.45) 0%, rgba(6,182,212,0.55) 100%)',
-    'linear-gradient(135deg, rgba(245,158,11,0.45) 0%, rgba(16,185,129,0.55) 100%)',
-    'linear-gradient(135deg, rgba(239,68,68,0.55) 0%, rgba(245,158,11,0.45) 100%)',
-    'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(59,130,246,0.45) 100%)',
-    'linear-gradient(135deg, rgba(16,185,129,0.55) 0%, rgba(99,55,255,0.45) 100%)',
-    'linear-gradient(135deg, rgba(236,72,153,0.45) 0%, rgba(59,130,246,0.55) 100%)',
-    'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(245,158,11,0.45) 100%)',
-    'linear-gradient(135deg, rgba(59,130,246,0.45) 0%, rgba(16,185,129,0.55) 100%)',
-    'linear-gradient(135deg, rgba(245,158,11,0.55) 0%, rgba(99,55,255,0.45) 100%)',
-    'linear-gradient(135deg, rgba(239,68,68,0.45) 0%, rgba(6,182,212,0.55) 100%)',
-    'linear-gradient(135deg, rgba(99,55,255,0.45) 0%, rgba(236,72,153,0.55) 100%)',
-    'linear-gradient(135deg, rgba(16,185,129,0.45) 0%, rgba(245,158,11,0.55) 100%)',
-    'linear-gradient(135deg, rgba(236,72,153,0.55) 0%, rgba(239,68,68,0.45) 100%)',
-    'linear-gradient(135deg, rgba(59,130,246,0.55) 0%, rgba(6,182,212,0.45) 100%)'
-  ];
-
   const pages = {
     home: { label: '홈', href: 'index.html' },
     vertical: { label: '세로형', href: 'vertical.html' },
@@ -809,6 +784,20 @@ window.FrushSite = (() => {
     return getYoutubeThumb(work.youtubeUrl, quality);
   }
 
+  // High-res thumbnail with a safe fallback: maxresdefault (1280x720, sharp,
+  // no letterbox) isn't generated for every video, so pair it with mqdefault
+  // (always present) for an onerror fallback.
+  function getWorkThumbSet(work) {
+    if (work.poster) {
+      const p = assetPath(work.poster);
+      return { hi: p, lo: p };
+    }
+    return {
+      hi: getYoutubeThumb(work.youtubeUrl, 'maxresdefault'),
+      lo: getYoutubeThumb(work.youtubeUrl, 'mqdefault')
+    };
+  }
+
   // Production team badge config. A work can credit one or both teams; both
   // shows two circles. Defaults to Frush when a work has no team set.
   const TEAM_BADGES = {
@@ -1160,8 +1149,8 @@ window.FrushSite = (() => {
       .slice()
       .sort(byLatest)
       .slice(0, count)
-      .map((work) => getWorkThumb(work, 'mqdefault'))
-      .filter(Boolean);
+      .map(getWorkThumbSet)
+      .filter((set) => set.hi);
 
     const selection = [
       ...pick((w) => w.category === 'vertical', 6),
@@ -1193,9 +1182,9 @@ window.FrushSite = (() => {
     const panels = Array.from({ length: PANEL_COUNT }, (_, index) => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
+      const thumb = panelImages[index % panelImages.length];
       panel.innerHTML = `
-        <div class="stacked-panel-image" style="background-image:url('${panelImages[index % panelImages.length]}')"></div>
-        <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
+        <img class="stacked-panel-image" src="${thumb.hi}" onerror="this.onerror=null;this.src='${thumb.lo}'" alt="" loading="lazy">
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
       `;
@@ -1489,8 +1478,10 @@ window.FrushSite = (() => {
         .slice()
         .sort((a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || ''))[0];
       if (!latest) return;
-      const thumb = getWorkThumb(latest, 'mqdefault');
-      if (thumb) img.src = thumb;
+      const { hi, lo } = getWorkThumbSet(latest);
+      if (!hi) return;
+      img.onerror = () => { img.onerror = null; img.src = lo; };
+      img.src = hi;
     });
   }
 
