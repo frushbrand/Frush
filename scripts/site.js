@@ -2,34 +2,8 @@ window.FrushSite = (() => {
   const KAKAO_URL = 'https://open.kakao.com/me/frush';
   const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 18;
-  // Hero arch card images. Placeholder photos for now — to use your own, drop
-  // files into Images/ (or Image_Storage/) and replace the entries below with
-  // their paths, e.g. 'Images/내 작업.png'. Local paths are URL-encoded
-  // automatically, so spaces and Korean filenames are fine.
-  const PANEL_IMAGES = [
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80',
-    'https://images.unsplash.com/photo-1518020382113-a7e8fc38eac9?w=600&q=80',
-    'https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=600&q=80',
-    'https://images.unsplash.com/photo-1501854140801-50d01698950b?w=600&q=80',
-    'https://images.unsplash.com/photo-1682687220742-aba13b6e50ba?w=600&q=80',
-    'https://images.unsplash.com/photo-1475924156734-496f6cac6ec1?w=600&q=80',
-    'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=600&q=80',
-    'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600&q=80',
-    'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?w=600&q=80',
-    'https://images.unsplash.com/photo-1510784722466-f2aa240c3c4a?w=600&q=80',
-    'https://images.unsplash.com/photo-1682687220063-4742bd7fd538?w=600&q=80',
-    'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&q=80',
-    'https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&q=80',
-    'https://images.unsplash.com/photo-1540390769625-2fc3f8b1d50c?w=600&q=80',
-    'https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80',
-    'https://images.unsplash.com/photo-1472214103451-9374bd1c798e?w=600&q=80',
-    'https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=600&q=80',
-    'https://images.unsplash.com/photo-1490682143684-14369e18dce8?w=600&q=80',
-    'https://images.unsplash.com/photo-1501696461415-6bd6660c6742?w=600&q=80',
-    'https://images.unsplash.com/photo-1445962125599-30f582ac21f4?w=600&q=80',
-    'https://images.unsplash.com/photo-1455156218388-5e61b526818b?w=600&q=80',
-    'https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=600&q=80'
-  ];
+  // Hero arch card images are built at render time from the latest works
+  // (see buildHeroPanels), so the arch auto-updates as newer videos are added.
   const GRADIENT_OVERLAYS = [
     'linear-gradient(135deg, rgba(99,55,255,0.55) 0%, rgba(236,72,153,0.45) 100%)',
     'linear-gradient(135deg, rgba(6,182,212,0.55) 0%, rgba(59,130,246,0.45) 100%)',
@@ -1169,10 +1143,42 @@ window.FrushSite = (() => {
     `;
   }
 
+  // Latest thumbnails for the hero arch: 6 vertical, 3 Frush + 3 BMH ads,
+  // 3 Frush + 3 BMH others — sorted newest-first so the arch auto-refreshes
+  // as new works land, then shuffled so categories read as a natural mix.
+  function buildHeroPanels() {
+    const byLatest = (a, b) => (b.publishedAt || '').localeCompare(a.publishedAt || '');
+    const hasTeam = (work, team) => getTeams(work).includes(team);
+    const pick = (predicate, count) => works
+      .filter(predicate)
+      .slice()
+      .sort(byLatest)
+      .slice(0, count)
+      .map(getWorkPoster)
+      .filter(Boolean);
+
+    const selection = [
+      ...pick((w) => w.category === 'vertical', 6),
+      ...pick((w) => w.category === 'ads' && hasTeam(w, 'frush'), 3),
+      ...pick((w) => w.category === 'ads' && hasTeam(w, 'bmh'), 3),
+      ...pick((w) => w.category === 'others' && hasTeam(w, 'frush'), 3),
+      ...pick((w) => w.category === 'others' && hasTeam(w, 'bmh'), 3)
+    ];
+
+    for (let i = selection.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [selection[i], selection[j]] = [selection[j], selection[i]];
+    }
+    return selection;
+  }
+
   function setupStackedPanels() {
     const stage = document.getElementById('stacked-panels-scene');
     const container = document.getElementById('stacked-panels-container');
     if (!stage || !container) return;
+
+    const panelImages = buildHeroPanels();
+    if (!panelImages.length) return;
 
     let targetPointerX = 0;
     let targetPointerY = 0;
@@ -1182,7 +1188,7 @@ window.FrushSite = (() => {
       const panel = document.createElement('div');
       panel.className = 'stacked-panel';
       panel.innerHTML = `
-        <div class="stacked-panel-image" style="background-image:url('${assetPath(PANEL_IMAGES[index % PANEL_IMAGES.length])}')"></div>
+        <div class="stacked-panel-image" style="background-image:url('${panelImages[index % panelImages.length]}')"></div>
         <div class="stacked-panel-gradient" style="background:${GRADIENT_OVERLAYS[index % GRADIENT_OVERLAYS.length]}"></div>
         <div class="stacked-panel-vignette"></div>
         <div class="stacked-panel-border"></div>
