@@ -1172,8 +1172,8 @@ window.FrushSite = (() => {
             <div class="flex items-start justify-between gap-4">
               <div>
                 <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Teams</p>
-                <h2 class="mt-3 text-3xl font-semibold text-brand-text">함께하는 <span class="text-brand-main">두 팀</span></h2>
-                <p class="mt-3 text-sm leading-6 text-slate-500">프러쉬 스튜디오 안에서 프러쉬 팀과 BMH 팀이 협력해 기획부터 제작까지 함께합니다.</p>
+                <h2 class="mt-3 text-3xl font-semibold text-brand-text">함께하는 <span class="text-brand-main">사람들</span></h2>
+                <p class="mt-3 text-sm leading-6 text-slate-500">프러쉬 스튜디오 안에 소속된 여러 팀이 유기적으로 협력해 기획부터 제작까지 완성합니다.</p>
               </div>
               <div class="hidden h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-dark text-brand-light shadow-soft md:flex">
                 <i class="fas fa-users text-xl"></i>
