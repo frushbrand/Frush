@@ -1,5 +1,5 @@
 window.FrushSite = (() => {
-  const KAKAO_URL = 'https://open.kakao.com/me/frush';
+  const KAKAO_URL = 'https://pf.kakao.com/_zHnVX';
   const TEAM_PHOTO_URL = 'Images/5인 단체사진_프러쉬.png';
   const PANEL_COUNT = 18;
   // Hero arch card images are built at render time from the latest works
