@@ -1027,7 +1027,7 @@ window.FrushSite = (() => {
         <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div class="border-b border-slate-200/80 pb-6 md:pb-8">
             <p class="text-sm font-semibold uppercase tracking-[0.28em] text-brand-main">Partners</p>
-            <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">협력 업체와 브랜드가 Frush와 함께 움직입니다</h2>
+            <h2 class="mt-3 text-3xl font-semibold text-brand-text sm:text-4xl">수많은 협력 업체와 브랜드가 Frush와 함께 움직입니다</h2>
             <p class="mt-4 max-w-2xl text-sm leading-7 text-slate-500 sm:text-base">프러쉬는 업종과 포맷이 다른 협력사들과 함께 장면의 목적을 설계하고 결과물의 완성도까지 끌어올립니다.</p>
           </div>
         </div>
