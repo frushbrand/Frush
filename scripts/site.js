@@ -768,6 +768,58 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-06-30',
       theme: 'light'
+    },
+    {
+      id: 'yt-baleun-fan',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '여름에 꼭 필요한 선풍기',
+      year: '2026',
+      format: '제품 광고',
+      source: '바른루틴',
+      youtubeUrl: 'https://youtube.com/shorts/zk--UVzi7Zw',
+      team: ['frush', 'bmh'],
+      publishedAt: '2026-06-24',
+      theme: 'light'
+    },
+    {
+      id: 'yt-baleun-metalpad',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '아이스 쿨링 메탈 패드 선풍기',
+      year: '2026',
+      format: '제품 광고',
+      source: '바른루틴',
+      youtubeUrl: 'https://youtube.com/shorts/dzjK8bO0A1s',
+      team: ['frush', 'bmh'],
+      publishedAt: '2026-06-24',
+      theme: 'light'
+    },
+    {
+      id: 'yt-ddangyeoyo-1',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '1등도 역시 땡겨요!',
+      year: '2026',
+      format: '앱 광고',
+      source: '땡겨요',
+      youtubeUrl: 'https://www.youtube.com/watch?v=YJCV9w6zJvo',
+      team: ['bmh'],
+      publishedAt: '2026-07-02',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-ddangyeoyo-2',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '모든 순간 땡긴다',
+      year: '2026',
+      format: '앱 광고',
+      source: '땡겨요',
+      youtubeUrl: 'https://www.youtube.com/watch?v=Aa_EMd8Ijmg',
+      team: ['bmh'],
+      publishedAt: '2026-07-02',
+      theme: 'dark'
     }
   ];
 
