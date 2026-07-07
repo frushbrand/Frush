@@ -26,6 +26,8 @@ window.FrushSite = (() => {
   // Every logo in Images/Partner. Rendered across three marquee rows in a
   // random order, split evenly with no duplicates between rows.
   const PARTNER_LOGOS = [
+    'Images/Partner/ALOHA IDEAS.png',
+    'Images/Partner/피플인.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
