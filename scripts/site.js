@@ -822,6 +822,19 @@ window.FrushSite = (() => {
       team: ['bmh'],
       publishedAt: '2026-07-02',
       theme: 'dark'
+    },
+    {
+      id: 'yt-three-pigs',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '아기돼지 삼형제 동화',
+      year: '2026',
+      format: '2D 동화',
+      source: '알로하 아이디어스',
+      youtubeUrl: 'https://youtu.be/rX5F3RroW_Q',
+      team: ['frush'],
+      publishedAt: '2026-07-01',
+      theme: 'light'
     }
   ];
 
