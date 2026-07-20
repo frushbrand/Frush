@@ -28,6 +28,7 @@ window.FrushSite = (() => {
   const PARTNER_LOGOS = [
     'Images/Partner/260707 알로하아이디어스.png',
     'Images/Partner/260707 피플인.png',
+    'Images/Partner/260710 피토니끄.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
@@ -834,6 +835,19 @@ window.FrushSite = (() => {
       youtubeUrl: 'https://youtu.be/rX5F3RroW_Q',
       team: ['frush'],
       publishedAt: '2026-07-01',
+      theme: 'light'
+    },
+    {
+      id: 'yt-phytonique',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '올 여름 체취 고민 끝!',
+      year: '2026',
+      format: '제품 광고',
+      source: 'PHYTONIQUE',
+      youtubeUrl: 'https://youtube.com/shorts/-vi60VWDaQ0',
+      team: ['frush'],
+      publishedAt: '2026-07-10',
       theme: 'light'
     }
   ];
