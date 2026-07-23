@@ -849,6 +849,19 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-07-10',
       theme: 'light'
+    },
+    {
+      id: 'yt-tenth-spring',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'열번째 봄' 예고편",
+      year: '2026',
+      format: '프로포즈 영상',
+      source: '개인 주문',
+      youtubeUrl: 'https://www.youtube.com/watch?v=bYMLUII96Hc',
+      team: ['frush'],
+      publishedAt: '2026-07-11',
+      theme: 'light'
     }
   ];
 
