@@ -867,7 +867,7 @@ window.FrushSite = (() => {
       id: 'yt-dajeongi-1',
       category: 'vertical',
       categoryLabel: '세로형',
-      title: '가족의 위한 가장 다정한 선택',
+      title: '가족을 위한 가장 다정한 선택',
       year: '2026',
       format: '앱 광고',
       source: '다정이 케어',
