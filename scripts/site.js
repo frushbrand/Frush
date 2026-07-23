@@ -862,6 +862,32 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-07-11',
       theme: 'light'
+    },
+    {
+      id: 'yt-dajeongi-1',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '가족의 위한 가장 다정한 선택',
+      year: '2026',
+      format: '앱 광고',
+      source: '다정이 케어',
+      youtubeUrl: 'https://youtube.com/shorts/hR3I8wj3af0',
+      team: ['frush'],
+      publishedAt: '2026-07-06',
+      theme: 'light'
+    },
+    {
+      id: 'yt-dajeongi-2',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '부모님을 위한 다정한 돌봄',
+      year: '2026',
+      format: '앱 광고',
+      source: '다정이 케어',
+      youtubeUrl: 'https://youtube.com/shorts/kqfr9Ow2H58',
+      team: ['frush'],
+      publishedAt: '2026-07-06',
+      theme: 'light'
     }
   ];
 
