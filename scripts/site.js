@@ -888,6 +888,19 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-07-06',
       theme: 'light'
+    },
+    {
+      id: 'yt-belief-in',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'믿음 속에서' 예고편",
+      year: '2026',
+      format: '프로포즈 영상',
+      source: '개인 주문',
+      youtubeUrl: 'https://youtu.be/x5hfepfbZJE',
+      team: ['frush'],
+      publishedAt: '2026-07-23',
+      theme: 'light'
     }
   ];
 
