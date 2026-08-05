@@ -901,6 +901,32 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-07-23',
       theme: 'light'
+    },
+    {
+      id: 'yt-jaynaqueen-1',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '피부가 좋아지는 순서',
+      year: '2026',
+      format: '브랜드 광고',
+      source: '제이나퀸',
+      youtubeUrl: 'https://youtube.com/shorts/zj4Hh_ihNdw',
+      team: ['bmh'],
+      publishedAt: '2026-08-01',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jaynaqueen-2',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '특허 받은 325 크림',
+      year: '2026',
+      format: '제품 광고',
+      source: '제이나퀸',
+      youtubeUrl: 'https://youtube.com/shorts/G2x8rryz2Xg',
+      team: ['bmh'],
+      publishedAt: '2026-08-01',
+      theme: 'light'
     }
   ];
 
