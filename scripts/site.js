@@ -29,6 +29,7 @@ window.FrushSite = (() => {
     'Images/Partner/260707 알로하아이디어스.png',
     'Images/Partner/260707 피플인.png',
     'Images/Partner/260710 피토니끄.png',
+    'Images/Partner/260801 제이나퀸.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
@@ -900,6 +901,32 @@ window.FrushSite = (() => {
       youtubeUrl: 'https://youtu.be/x5hfepfbZJE',
       team: ['frush'],
       publishedAt: '2026-07-23',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jaynaqueen-1',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '피부가 좋아지는 순서',
+      year: '2026',
+      format: '브랜드 광고',
+      source: '제이나퀸',
+      youtubeUrl: 'https://youtube.com/shorts/zj4Hh_ihNdw',
+      team: ['bmh'],
+      publishedAt: '2026-08-01',
+      theme: 'light'
+    },
+    {
+      id: 'yt-jaynaqueen-2',
+      category: 'vertical',
+      categoryLabel: '세로형',
+      title: '특허 받은 325 크림',
+      year: '2026',
+      format: '제품 광고',
+      source: '제이나퀸',
+      youtubeUrl: 'https://youtube.com/shorts/G2x8rryz2Xg',
+      team: ['bmh'],
+      publishedAt: '2026-08-01',
       theme: 'light'
     }
   ];
