@@ -29,6 +29,7 @@ window.FrushSite = (() => {
     'Images/Partner/260707 알로하아이디어스.png',
     'Images/Partner/260707 피플인.png',
     'Images/Partner/260710 피토니끄.png',
+    'Images/Partner/260801 제이나퀸.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
