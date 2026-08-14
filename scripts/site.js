@@ -928,6 +928,19 @@ window.FrushSite = (() => {
       team: ['bmh'],
       publishedAt: '2026-08-01',
       theme: 'light'
+    },
+    {
+      id: 'yt-find-star',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: "'별을 찾아서' 예고편",
+      year: '2026',
+      format: '프로포즈 영상',
+      source: '개인 주문',
+      youtubeUrl: 'https://youtu.be/6ml742MFfTs',
+      team: ['frush'],
+      publishedAt: '2026-08-01',
+      theme: 'light'
     }
   ];
 
