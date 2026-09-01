@@ -30,6 +30,8 @@ window.FrushSite = (() => {
     'Images/Partner/260707 피플인.png',
     'Images/Partner/260710 피토니끄.png',
     'Images/Partner/260801 제이나퀸.png',
+    'Images/Partner/260901 NH농협은행.png',
+    'Images/Partner/260901 부산관광공사.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
@@ -940,6 +942,32 @@ window.FrushSite = (() => {
       youtubeUrl: 'https://youtu.be/6ml742MFfTs',
       team: ['frush'],
       publishedAt: '2026-08-01',
+      theme: 'light'
+    },
+    {
+      id: 'yt-nh-loan',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '개인사업자 보증서 담보 대출',
+      year: '2026',
+      format: '금융 광고',
+      source: '농협 은행',
+      youtubeUrl: 'https://youtu.be/xDUkT_2JpBs',
+      team: ['frush', 'bmh'],
+      publishedAt: '2026-08-13',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-busan-marine-conf',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '2026 해양관광 컨퍼런스 오프닝 & 클로징',
+      year: '2026',
+      format: '행사 영상',
+      source: '부산관광공사',
+      youtubeUrl: 'https://youtu.be/c_ngW6cyXUo',
+      team: ['bmh'],
+      publishedAt: '2026-08-26',
       theme: 'light'
     }
   ];
