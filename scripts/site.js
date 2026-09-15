@@ -30,8 +30,11 @@ window.FrushSite = (() => {
     'Images/Partner/260707 피플인.png',
     'Images/Partner/260710 피토니끄.png',
     'Images/Partner/260801 제이나퀸.png',
+    'Images/Partner/260830 페넬로페.png',
     'Images/Partner/260901 NH농협은행.png',
     'Images/Partner/260901 부산관광공사.png',
+    'Images/Partner/260914 리버티.png',
+    'Images/Partner/260915 다이빙 히어로.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
@@ -969,6 +972,45 @@ window.FrushSite = (() => {
       team: ['bmh'],
       publishedAt: '2026-08-26',
       theme: 'light'
+    },
+    {
+      id: 'yt-bamsae-penelope',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '페넬로페와 함께 하는 좋은 아침',
+      year: '2026',
+      format: '제품 광고',
+      source: '밤새굿잠',
+      youtubeUrl: 'https://youtu.be/VyeKHKInDkU',
+      team: ['frush'],
+      publishedAt: '2026-08-30',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-liberty-daypanty',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '이제는 낮에도 자유롭게!',
+      year: '2026',
+      format: '제품 광고',
+      source: '리버티 데이팬티',
+      youtubeUrl: 'https://youtu.be/XbNlN743f0U',
+      team: ['frush'],
+      publishedAt: '2026-09-14',
+      theme: 'dark'
+    },
+    {
+      id: 'yt-diving-hero',
+      category: 'ads',
+      categoryLabel: '광고',
+      title: '우리는 더 깊은 곳으로 들어갑니다',
+      year: '2026',
+      format: '브랜드 필름',
+      source: '다이빙 히어로',
+      youtubeUrl: 'https://youtu.be/oqzteyHSo_U',
+      team: ['frush'],
+      publishedAt: '2026-09-15',
+      theme: 'dark'
     }
   ];
 
