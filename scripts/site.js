@@ -35,6 +35,7 @@ window.FrushSite = (() => {
     'Images/Partner/260901 부산관광공사.png',
     'Images/Partner/260914 리버티.png',
     'Images/Partner/260915 다이빙 히어로.png',
+    'Images/Partner/260930 에데나 봉안당.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
