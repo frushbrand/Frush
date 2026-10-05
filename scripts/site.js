@@ -35,6 +35,7 @@ window.FrushSite = (() => {
     'Images/Partner/260901 부산관광공사.png',
     'Images/Partner/260914 리버티.png',
     'Images/Partner/260915 다이빙 히어로.png',
+    'Images/Partner/260930 에데나 봉안당.png',
     'Images/Partner/COCX.png',
     'Images/Partner/FLEUR JARDIN.png',
     'Images/Partner/K-FOTITO.png',
@@ -1011,6 +1012,19 @@ window.FrushSite = (() => {
       team: ['frush'],
       publishedAt: '2026-09-15',
       theme: 'dark'
+    },
+    {
+      id: 'yt-edena-bongandang',
+      category: 'others',
+      categoryLabel: '기타 영상',
+      title: '에데나 봉안당 소개 영상',
+      year: '2026',
+      format: '실사 영상',
+      source: '낙원추모공원',
+      youtubeUrl: 'https://youtu.be/6xLpvg5BSGs',
+      team: ['frush'],
+      publishedAt: '2026-09-30',
+      theme: 'light'
     }
   ];
 
